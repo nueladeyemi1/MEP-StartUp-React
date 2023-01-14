@@ -1,0 +1,52 @@
+.customeContainer {
+  max-width: 1310px !important;
+  margin: auto !important;
+}
+.bgFooter {
+  background-color: #222222 !important;
+}
+.colorList {
+  color: #b2b2b2 !important;
+  text-align: left !important;
+}
+.item:hover {
+  color: #6f9cc8 !important;
+  cursor: pointer !important;
+}
+.titleList {
+  font-size: 17px !important;
+  text-align: left !important;
+  font-weight: 600 !important;
+}
+.thirdSectionParagraph {
+  color: #b2b2b2 !important;
+  text-align: left !important;
+}
+/* .buttonStyle {
+  background-color: #717fe0;
+  border-radius: 25px;
+  margin-top: 35px;
+  margin-bottom: 1px;
+} */
+
+.col-xs-6 {
+  display: flex;
+  padding: 15rem !important;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+
+li,
+ul {
+  list-style: none;
+}
+
+.social__icons {
+  display: flex !important;
+  justify-content: center !important;
+}

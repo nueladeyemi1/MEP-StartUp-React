@@ -73,31 +73,11 @@ const Footer1 = () => {
             </ul>
           </section>
 
-          {/* <div className="col1">
-            <Col>
-              <h6 className="mb-4">CONTACT US</h6>
-              <Column>
-                <FooterLink>
-                  <GeoAltFill className="me-2"></GeoAltFill>
-                  12345 Street name, PlaceHolder Street, Fagba Lagos.
-                </FooterLink>
-                <FooterLink>
-                  <EnvelopeFill className="me-2"></EnvelopeFill>
-                  info@Zicad.com
-                </FooterLink>
-                <FooterLink>
-                  <PhoneFill className="me-2"></PhoneFill>
-                  0810-0000-000
-                </FooterLink>
-              </Column>
-            </Col>
-          </div> */}
-
           <div className="col-xs-6">
             <h4 className={`text-white ${styles.titleList}`}>CONTACT US</h4>
             <br />
             <p className={styles.thirdSectionParagraph}>
-              <PhoneFill className="me-2"></PhoneFill> +2348-162-728-300,
+              <PhoneFill className="me-2"></PhoneFill> +2348-162-728-300 |
               +2348-053-454-579
               <br />
               <br />

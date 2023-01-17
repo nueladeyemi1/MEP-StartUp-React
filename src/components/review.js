@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import people from "./data";
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
 const Review = () => {
@@ -33,6 +33,23 @@ const Review = () => {
     setIndex(checkNumber(randomNumber));
   };
 
+  useEffect(() => {
+    const lastIndex = people.length - 1;
+    if (index < 0) {
+      setIndex(lastIndex);
+    }
+    if (index > lastIndex) {
+      setIndex(0);
+    }
+  }, [index, people]);
+
+  useEffect(() => {
+    let slider = setInterval(() => {
+      setIndex(index + 1);
+    }, 5000);
+    return () => clearInterval(slider);
+  }, [index]);
+
   return (
     <article className="review">
       <div className="img-container">
@@ -52,9 +69,6 @@ const Review = () => {
           <FaChevronRight />
         </button>
       </div>
-      <button className="random-btn" onClick={randomPerson}>
-        surprise me
-      </button>
     </article>
   );
 };

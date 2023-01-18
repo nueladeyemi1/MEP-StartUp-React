@@ -8,6 +8,7 @@ export const services = [
     title: "Our Mission",
     text:
       "To become a leading indigenous MEP consulting firm, focusing on building a team of skilled professionals, developing a reputation for excellent service, using latest technology, building industry networks and seeking new opportunities for growth.",
+    list: [],
   },
   {
     id: 2,
@@ -15,17 +16,20 @@ export const services = [
     title: "Our Vision",
     text:
       "To become a firm that exemplifies innovation and consistently pushes the boundaries of excellence in MEP (mechanical, electrical, and plumbing) service delivery, by continuously researching and staying up-to-date with the latest industry trends and advancements in technology.",
+    list: [],
   },
   {
     id: 3,
     icon: <GiStabbedNote />,
     title: "Core Values",
+    text: "Our Core values include:",
     list: [
       "Creativity",
       "Excellence",
       "Integrity",
       "Team work",
-      "Innovation, Courage",
+      "Innovation",
+      "Courage",
     ],
   },
 ];

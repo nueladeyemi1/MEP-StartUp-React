@@ -9,23 +9,36 @@ const Services = () => {
       <div className="section-center">
         <article className="header">
           <h3>
-            custom furniture <br /> built only for you
+            MEP Engineering
+            <br /> Consultancy services
           </h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-            dolorum debitis consectetur reprehenderit non aliquam voluptates
-            dolore aut vero consequuntur.
+            We offer a wide range of MEP Engineering Consultancy services in the
+            construction industry, which cuts across the Hospitality and
+            Recreation, Educational, Religious, Residential, Commercial, Oil and
+            Gas, Telecommunications, Agriculture, Industrial and manufacturing,
+            medical and Food Processing sectors of the economy
           </p>
         </article>
         <div className="services-center">
           {services.map((service) => {
             const { id, icon, title, text, list } = service;
+            // const listItems = list.map((lists) => <li>{lists}</li>);
+            console.log(list);
             return (
               <article className="service" key={id}>
                 <span className="icon">{icon}</span>
                 <h4>{title}</h4>
                 <p>{text}</p>
-                <p>{list}</p>
+                <p>
+                  <ul>
+                    {list.map((lists) => (
+                      <li>
+                        <div>{lists}</div>
+                      </li>
+                    ))}
+                  </ul>
+                </p>
               </article>
             );
           })}

@@ -1,8 +1,8 @@
 const reviews = [
   {
     id: 1,
-    name: "susan smith",
-    job: "web developer",
+    name: "XYZ Project",
+    job: "Client",
     image:
       "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg",
     text:
@@ -10,8 +10,8 @@ const reviews = [
   },
   {
     id: 2,
-    name: "anna johnson",
-    job: "web designer",
+    name: "Emmanuel Adeyemi",
+    job: "Project Manager",
     image:
       "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883409/person-2_np9x5l.jpg",
     text:
@@ -19,8 +19,8 @@ const reviews = [
   },
   {
     id: 3,
-    name: "peter jones",
-    job: "intern",
+    name: "PlaceHolder Name",
+    job: "MEP Contractor",
     image:
       "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg",
     text:
@@ -28,8 +28,8 @@ const reviews = [
   },
   {
     id: 4,
-    name: "bill anderson",
-    job: "the boss",
+    name: "PlaceHolder Name",
+    job: "Social Media Manager",
     image:
       "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg",
     text:

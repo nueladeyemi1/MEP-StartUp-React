@@ -85,6 +85,7 @@ main {
 .info {
   margin-bottom: 0.75rem;
 }
+
 .prev-btn,
 .next-btn {
   color: var(--clr-primary-7);
@@ -95,6 +96,37 @@ main {
   transition: var(--transition);
   cursor: pointer;
 }
+
+/* 
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 200px;
+  transform: translateY(-50%);
+  background: var(--clr-grey-5);
+  color: var(--clr-white);
+  width: 1.25rem;
+  height: 1.25rem;
+  display: grid;
+  place-items: center;
+  border-color: transparent;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+} */
+
+.prev-btn:hover,
+.next-btn:hover {
+  background: var(--clr-primary-5);
+}
+.prev-btn {
+  left: 0;
+}
+.next-btn {
+  right: 0;
+}
+
 .prev-btn:hover,
 .next-btn:hover {
   color: var(--clr-primary-5);

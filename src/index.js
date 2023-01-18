@@ -11,6 +11,7 @@ import "./components/review.css";
 import Footer from "./components/footer";
 import Footer1 from "./components/footer1";
 import Review from "./components/review";
+import Services from "./components/Services";
 
 // import "./index.css";
 // import App from "./App";
@@ -31,12 +32,17 @@ function Main() {
         </article>
       </div> */}
       {/* <Footer /> */}
+      <section>
+        <Services />
+        <br />
+        <br />
+      </section>
 
       <section className="container">
         <div className="title">
           <h2>our reviews</h2>
-          <div className="underline"></div>
         </div>
+        <div className="underline"></div>
         <Review />
       </section>
 

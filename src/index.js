@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 // import App from "./App";
-
+import { Router } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import "./style.css";
 import "./App.css";
@@ -12,6 +12,8 @@ import Footer from "./components/footer";
 import Footer1 from "./components/footer1";
 import Review from "./components/review";
 import Services from "./components/Services";
+import { ProductsProvider } from "./components/projects_context";
+import FeaturedProjects from "./components/FeaturedProjects";
 
 // import "./index.css";
 // import App from "./App";
@@ -24,13 +26,11 @@ function Main() {
       <section>
         <Navbar />
       </section>
-      {/* <div className="container">
-        <article>
-          <h1>What is Lorem Ipsum? </h1>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry...
-        </article>
-      </div> */}
+
+      <ProductsProvider>
+        <FeaturedProjects />
+      </ProductsProvider>
+
       {/* <Footer /> */}
       <section>
         <Services />

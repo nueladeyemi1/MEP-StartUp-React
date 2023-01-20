@@ -10,7 +10,7 @@ main {
 }
 .title {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 1.5rem;
 }
 .underline {
   height: 0.25rem;
@@ -20,6 +20,7 @@ main {
   margin-right: auto;
 }
 .container {
+  margin-top: 1.5rem;
   width: 80vw;
   max-width: var(--fixed-width);
 }

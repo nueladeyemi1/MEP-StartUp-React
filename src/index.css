@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.social__icons {
+  display: flex;
+  justify-content: center;
+}
+
+.social__icons li {
+  list-style: none;
+}
+
+.social__icons ul {
+  padding: 0px !important;
+}
+
+.service h4 {
+  color: rgb(245, 171, 66) !important;
+}
+
+.service p {
+  color: white !important;
+}

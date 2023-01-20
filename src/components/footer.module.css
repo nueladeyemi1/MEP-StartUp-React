@@ -3,10 +3,11 @@
   margin: auto !important;
 }
 .bgFooter {
-  background-color: #222222 !important;
+  background-color: rgb(55, 99, 176) !important;
 }
 .colorList {
-  color: #b2b2b2 !important;
+  /* color: #b2b2b2 !important; */
+  color: white !important;
   text-align: left !important;
 }
 .item:hover {
@@ -14,14 +15,17 @@
   cursor: pointer !important;
 }
 .titleList {
+  color: rgb(245, 171, 66) !important;
   font-size: 17px !important;
   text-align: left !important;
   font-weight: 600 !important;
 }
 .thirdSectionParagraph {
-  color: #b2b2b2 !important;
+  /* color: #b2b2b2 !important; */
+  color: white !important;
   text-align: left !important;
 }
+
 /* .buttonStyle {
   background-color: #717fe0;
   border-radius: 25px;

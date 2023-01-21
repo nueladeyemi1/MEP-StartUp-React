@@ -1,13 +1,14 @@
 import { useState } from "react";
-import zicadLogo from "./img/zicadLogo.jpg";
+import zicadlogo from "./img/zicadLogo.jpg";
 import "../styles/navbar.css";
+zicadlogo = zicadlogo;
 
 export default function Navbar() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   return (
     <nav className="navigation">
-      <img src="{zicadLogo}" alt="" style={{ width: "10px", height: "10px" }} />
+      {/* <img src="{zicadlogo}" alt="" style={{ width: "30px", height: "30px" }} /> */}
       <a href="/" className="brand-name">
         Zicad
       </a>

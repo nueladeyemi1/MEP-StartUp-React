@@ -32,6 +32,11 @@ const FeaturedProjects = () => {
           return <Product key={product.id} {...product} />;
         })}
       </div>
+
+      <button href="/" className="btn projectBTN">
+        view all projects
+      </button>
+
       {/* <Router>
         <Link to="/" className="btn">
           view all projects

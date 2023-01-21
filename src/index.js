@@ -14,6 +14,7 @@ import Review from "./components/review";
 import Services from "./components/Services";
 import { ProductsProvider } from "./components/projects_context";
 import FeaturedProjects from "./components/FeaturedProjects";
+import Section1 from "./components/SectionService1";
 
 // import "./index.css";
 // import App from "./App";
@@ -37,6 +38,8 @@ function Main() {
         <br />
         <br />
       </section>
+
+      <Section1 />
 
       <section className="container">
         <div className="title">

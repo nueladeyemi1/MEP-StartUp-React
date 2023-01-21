@@ -1,0 +1,81 @@
+.Section1 {
+  margin-bottom: 1em;
+}
+.section-headings {
+  width: 68%;
+  margin: 5em auto;
+}
+.Section1-heading {
+  font-weight: 100;
+  line-height: 1.5em;
+}
+.Section1-content {
+  font-size: 1.5em;
+  font-weight: 300;
+  margin: 1em;
+}
+.fa-chart-bar,
+.diamond {
+  font-size: 3.5em;
+  color: red;
+  padding: 0.5em;
+  border: 2px solid #0002;
+  border-radius: 50%;
+  margin: 0.5em auto;
+}
+.fa-gem {
+  color: #9262ff;
+}
+.service-Content-section {
+  margin-left: 1em;
+}
+.serviceSection-heading {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: 1em auto;
+}
+.serviceSection-content {
+  width: 100%;
+  font-size: 1em;
+  opacity: 0.6;
+  padding: 1em;
+
+  margin: auto;
+}
+
+.Section1-Services {
+  display: grid !important;
+  grid-template-columns: repeat(2fr);
+}
+
+/* 
+the screen size  */
+
+@media (max-width: 800px) {
+  .Section1 {
+    width: 100%;
+  }
+  .section-headings {
+    width: 100%;
+  }
+  .Section1-heading {
+    width: 100%;
+    font-weight: 400;
+    font-size: 1em;
+  }
+  .Section1-content {
+    width: 100%;
+    font-weight: 400;
+    font-size: 0.7em;
+  }
+  .fa-chart-bar,
+  .diamond {
+    font-size: 2em;
+  }
+  .serviceSection-heading {
+    font-size: 1em;
+  }
+  .serviceSection-content {
+    font-size: 0.7em;
+  }
+}

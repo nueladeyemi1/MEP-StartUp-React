@@ -1,14 +1,14 @@
-import styles from "./footer.module.css";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
+import styles from './footer.module.css'
+import TextField from '@mui/material/TextField'
+import Button from '@mui/material/Button'
 
 import {
   FaFacebookSquare,
   FaInstagram,
   FaLinkedin,
   FaTwitter,
-} from "react-icons/fa";
-import { Link } from "react-router-dom";
+} from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 import {
   PhoneFill,
@@ -17,23 +17,23 @@ import {
   Facebook,
   Instagram,
   Twitter,
-} from "react-bootstrap-icons";
+} from 'react-bootstrap-icons'
 
 const Footer1 = () => {
   /*  const classes = useStyles(); */
   return (
     <footer className={`container-fluid py-4 ${styles.bgFooter} }`}>
-      <div className="row">
+      <div className='row'>
         <div
           className={`container ${styles.customeContainer} d-flex justify-content-between flex-wrap`}
         >
-          <section className=" col-xs-6">
+          <section className=' col-xs-6'>
             <h4 className={`text-white ${styles.titleList}`}>PAGES</h4>
             <br />
 
             <ul className={styles.colorList}>
               <a
-                href="/"
+                href='/'
                 className={`text-reset text-decoration-none ${styles.item}`}
               >
                 About US
@@ -41,7 +41,7 @@ const Footer1 = () => {
 
               <br />
               <a
-                href="/"
+                href='/'
                 className={`text-reset text-decoration-none ${styles.item}`}
               >
                 Services
@@ -49,7 +49,7 @@ const Footer1 = () => {
 
               <br />
               <a
-                href="/"
+                href='/'
                 className={`text-reset text-decoration-none ${styles.item}`}
               >
                 Projects
@@ -57,7 +57,7 @@ const Footer1 = () => {
 
               <br />
               <a
-                href="/"
+                href='/'
                 className={`text-reset text-decoration-none ${styles.item}`}
               >
                 Career
@@ -65,7 +65,7 @@ const Footer1 = () => {
 
               <br />
               <a
-                href="/"
+                href='/'
                 className={`text-reset text-decoration-none ${styles.item}`}
               >
                 Home
@@ -73,19 +73,19 @@ const Footer1 = () => {
             </ul>
           </section>
 
-          <div className="col-xs-6">
+          <div className='col-xs-6'>
             <h4 className={`text-white ${styles.titleList}`}>CONTACT US</h4>
             <br />
             <p className={styles.thirdSectionParagraph}>
-              <PhoneFill className="me-2"></PhoneFill> +2348-162-728-300 |
+              <PhoneFill className='me-2'></PhoneFill> +2348-162-728-300 |
               +2348-053-454-579
               <br />
               <br />
-              <GeoAltFill className="me-2"></GeoAltFill>
+              <GeoAltFill className='me-2'></GeoAltFill>
               11, agbaoku street, off awosika bus stop, opebi Lagos, Nigeria.
               <br />
               <br />
-              <EnvelopeFill className="me-2"></EnvelopeFill>
+              <EnvelopeFill className='me-2'></EnvelopeFill>
               zicadintegrated@gmail.com <br />
               <br />
             </p>
@@ -118,28 +118,28 @@ const Footer1 = () => {
               </ul>
             </section> */}
           </div>
-          <section className="col-xs-6">
+          <section className='col-xs-6'>
             <h4 className={`text-white ${styles.titleList}`}>NEWSLETTER</h4>
             <TextField
-              id="standard-textarea"
-              label="Email"
-              InputLabelProps={{ style: { color: "#b2b2b2" } }}
+              id='standard-textarea'
+              label='Email'
+              InputLabelProps={{ style: { color: '#b2b2b2' } }}
               inputProps={{
                 style: {
-                  color: "#b2b2b2",
+                  color: '#b2b2b2',
                 },
               }}
               fullWidth
-              placeholder="email@example.com"
+              placeholder='email@example.com'
               multiline
-              variant="standard"
+              variant='standard'
             />
             <Button
-              style={{ marginTop: "35px", borderRadius: "25px" }}
+              style={{ marginTop: '35px', borderRadius: '25px' }}
               /* className={classes.buttonStyle} */
               fullWidth
-              variant="contained"
-              color="primary"
+              variant='contained'
+              color='primary'
             >
               Subscribe
             </Button>
@@ -147,30 +147,30 @@ const Footer1 = () => {
         </div>
       </div>
 
-      <section className="social__icons">
+      <section className='social__icons'>
         <ul className={`d-flex ${styles.colorList}`}>
           <li>
             <FaFacebookSquare
               className={styles.item}
-              style={{ fontSize: "1.4rem", margin: "0.6rem" }}
+              style={{ fontSize: '1.4rem', margin: '0.6rem' }}
             />
           </li>
           <li>
             <FaInstagram
               className={styles.item}
-              style={{ fontSize: "1.4rem", margin: "0.6rem" }}
+              style={{ fontSize: '1.4rem', margin: '0.6rem' }}
             />
           </li>
           <li>
             <FaLinkedin
               className={styles.item}
-              style={{ fontSize: "1.4rem", margin: "0.6rem" }}
+              style={{ fontSize: '1.4rem', margin: '0.6rem' }}
             />
           </li>
           <li>
             <FaTwitter
               className={styles.item}
-              style={{ fontSize: "1.4rem", margin: "0.6rem" }}
+              style={{ fontSize: '1.4rem', margin: '0.6rem' }}
             />
           </li>
         </ul>
@@ -178,12 +178,12 @@ const Footer1 = () => {
 
       <div
         /* className={classes.TextDifferentColor} */
-        style={{ textAlign: "center", paddingTop: "20px", color: "#b2b2b2" }}
+        style={{ textAlign: 'center', paddingTop: '20px', color: '#b2b2b2' }}
       >
         Copyright ©2022 All rights reserved
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer1;
+export default Footer1

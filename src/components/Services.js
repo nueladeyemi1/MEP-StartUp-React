@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import { services } from "./servicessubgroup";
-import "./services.css";
+import React from 'react'
+import styled from 'styled-components'
+import { services } from './servicessubgroup'
+import './services.css'
 
 const Services = () => {
   return (
     <Wrapper>
-      <div className="section-center">
-        <article className="header">
+      <div className='section-center'>
+        <article className='header'>
           <h3>
             MEP Engineering
             <br /> Consultancy services
@@ -20,14 +20,14 @@ const Services = () => {
             medical and Food Processing sectors of the economy
           </p>
         </article>
-        <div className="services-center">
+        <div className='services-center'>
           {services.map((service) => {
-            const { id, icon, title, text, list } = service;
+            const { id, icon, title, text, list } = service
             // const listItems = list.map((lists) => <li>{lists}</li>);
-            console.log(list);
+            console.log(list)
             return (
-              <article className="service" key={id}>
-                <span className="icon">{icon}</span>
+              <article className='service' key={id}>
+                <span className='icon'>{icon}</span>
                 <h4>{title}</h4>
                 <p>{text}</p>
                 <p>
@@ -40,13 +40,13 @@ const Services = () => {
                   </ul>
                 </p>
               </article>
-            );
+            )
           })}
         </div>
       </div>
     </Wrapper>
-  );
-};
+  )
+}
 
 const Wrapper = styled.section`
   h3,
@@ -108,5 +108,5 @@ const Wrapper = styled.section`
       transform: translateY(5rem);
     }
   }
-`;
-export default Services;
+`
+export default Services

@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 // import { formatPrice } from "../utils/helpers";
-import { FaSearch } from "react-icons/fa";
-import { Link, Router } from "react-router-dom";
+import { FaSearch } from 'react-icons/fa'
+import { Link, Router } from 'react-router-dom'
 const Project = ({ image, name, price, id }) => {
   return (
     <Wrapper>
-      <div className="container-featured">
+      <div className='container-featured'>
         <img src={image} alt={name} />
         {/* <Router>
           <Link to={`/products/${id}`} className="link">
@@ -19,8 +19,8 @@ const Project = ({ image, name, price, id }) => {
         {/* <p>{formatPrice(price)}</p> */}
       </footer>
     </Wrapper>
-  );
-};
+  )
+}
 const Wrapper = styled.article`
   .container {
     position: relative;
@@ -75,5 +75,5 @@ const Wrapper = styled.article`
     color: var(--clr-primary-5);
     letter-spacing: var(--spacing);
   }
-`;
-export default Project;
+`
+export default Project

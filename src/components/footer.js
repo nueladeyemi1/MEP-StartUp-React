@@ -7,8 +7,8 @@ import {
   SubContainerStyle,
   SubInputStyle,
   SubButtonStyle,
-} from "./footerstyle";
-import { Col, Container, Row } from "react-bootstrap";
+} from './footerstyle'
+import { Col, Container, Row } from 'react-bootstrap'
 // import SubscribeCard from "react-subscribe-card";
 import {
   PhoneFill,
@@ -17,21 +17,21 @@ import {
   Facebook,
   Instagram,
   Twitter,
-} from "react-bootstrap-icons";
+} from 'react-bootstrap-icons'
 // import "../../style.css";
 
 function Footer() {
-  const mailchimpURL = `[Your Mailchimp subscription URL]`;
+  const mailchimpURL = `[Your Mailchimp subscription URL]`
 
   return (
     <Box>
       <Container>
-        <section className="row1">
+        <section className='row1'>
           <Row>
-            <div className="col1">
+            <div className='col1'>
               <Col>
                 <div>
-                  <h6 className="mb-4">SIGN UP FOR OUR NEWSLETTER</h6>
+                  <h6 className='mb-4'>SIGN UP FOR OUR NEWSLETTER</h6>
                   {/* <SubscribeCard
                 mailchimpURL={mailchimpURL}
                 outerCardStyle={OuterCardStyle}
@@ -39,34 +39,34 @@ function Footer() {
                 subInputStyle={SubInputStyle}
                 subButtonStyle={SubButtonStyle}
               /> */}
-                  <FooterLink href="/">
-                    <Social className="me-3">
+                  <FooterLink href='/'>
+                    <Social className='me-3'>
                       <Facebook></Facebook>
                     </Social>
                   </FooterLink>
-                  <FooterLink href="/">
-                    <Social className="me-3">
+                  <FooterLink href='/'>
+                    <Social className='me-3'>
                       <Instagram></Instagram>
                     </Social>
                   </FooterLink>
-                  <FooterLink href="/">
-                    <Social className="me-3">
+                  <FooterLink href='/'>
+                    <Social className='me-3'>
                       <Twitter></Twitter>
                     </Social>
                   </FooterLink>
                 </div>
               </Col>
             </div>
-            <div className="col1">
+            <div className='col1'>
               <Col>
-                <h6 className="mb-4">Navigate</h6>
+                <h6 className='mb-4'>Navigate</h6>
                 <Column>
-                  <FooterLink href="/">Home</FooterLink>
-                  <FooterLink href="/">About</FooterLink>
-                  <FooterLink href="/">Services</FooterLink>
-                  <FooterLink href="/">Projects</FooterLink>
-                  <FooterLink href="/">Career</FooterLink>
-                  <FooterLink href="/">Contact</FooterLink>
+                  <FooterLink href='/'>Home</FooterLink>
+                  <FooterLink href='/'>About</FooterLink>
+                  <FooterLink href='/'>Services</FooterLink>
+                  <FooterLink href='/'>Projects</FooterLink>
+                  <FooterLink href='/'>Career</FooterLink>
+                  <FooterLink href='/'>Contact</FooterLink>
                 </Column>
                 <Column>
                   <FooterLink></FooterLink>
@@ -75,20 +75,20 @@ function Footer() {
                 </Column>
               </Col>
             </div>
-            <div className="col1">
+            <div className='col1'>
               <Col>
-                <h6 className="mb-4">CONTACT US</h6>
+                <h6 className='mb-4'>CONTACT US</h6>
                 <Column>
                   <FooterLink>
-                    <GeoAltFill className="me-2"></GeoAltFill>
+                    <GeoAltFill className='me-2'></GeoAltFill>
                     12345 Street name, PlaceHolder Street, Fagba Lagos.
                   </FooterLink>
                   <FooterLink>
-                    <EnvelopeFill className="me-2"></EnvelopeFill>
+                    <EnvelopeFill className='me-2'></EnvelopeFill>
                     info@Zicad.com
                   </FooterLink>
                   <FooterLink>
-                    <PhoneFill className="me-2"></PhoneFill>
+                    <PhoneFill className='me-2'></PhoneFill>
                     0810-0000-000
                   </FooterLink>
                 </Column>
@@ -98,7 +98,7 @@ function Footer() {
         </section>
       </Container>
     </Box>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

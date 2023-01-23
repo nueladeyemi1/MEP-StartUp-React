@@ -46,7 +46,7 @@ function Main() {
           <h2>our reviews</h2>
         </div>
         <div className='underline'></div>
-        <Review />
+        {/* <Review /> */}
       </section>
 
       <section>

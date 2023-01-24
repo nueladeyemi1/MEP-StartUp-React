@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 // import App from "./App";
-import { Router } from 'react-router-dom'
+import { BrowserRouter, Router } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import './style.css'
 import './App.css'
@@ -15,6 +15,7 @@ import Services from './components/Services'
 import { ProductsProvider } from './components/projects_context'
 import FeaturedProjects from './components/FeaturedProjects'
 import Section1 from './components/SectionService1'
+import { Dashboard } from './components/TheCarousel'
 
 // import "./index.css";
 // import App from "./App";
@@ -27,6 +28,9 @@ function Main() {
       <section>
         <Navbar />
       </section>
+      <BrowserRouter>
+        <Dashboard />
+      </BrowserRouter>
 
       <ProductsProvider>
         <FeaturedProjects />
@@ -46,7 +50,7 @@ function Main() {
           <h2>our reviews</h2>
         </div>
         <div className='underline'></div>
-        {/* <Review /> */}
+        <Review />
       </section>
 
       <section>

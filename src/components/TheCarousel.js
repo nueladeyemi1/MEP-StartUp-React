@@ -17,6 +17,7 @@ import Slide__4 from '../components/img/Slide__4.jpg'
 // import { useProduct } from '../../context'
 // import { Filters } from '../Filters/Filters'
 import { Loader } from './Loader'
+import { Button } from 'react-bootstrap'
 
 const useStyles = makeStyles((theme) => ({
   sliderContainer: {
@@ -43,6 +44,7 @@ export function Dashboard(params) {
   const banners = [
     {
       src: `${Slide__2}`,
+      text: 'This is Testing 1',
       //   name: "Random Name #1",
       description: 'Probably the most random thing you have ever seen!',
       onClick: (e) => {
@@ -51,18 +53,21 @@ export function Dashboard(params) {
     },
     {
       src: `${Slide__1}`,
+      text: 'This is Testing 2',
       onClick: (e) => {
         history.push('/shop/men')
       },
     },
     {
       src: `${Slide__3}`,
+      text: 'This is Testing 3',
       onClick: (e) => {
         history.push('/shop/kids')
       },
     },
     {
       src: `${Slide__4}`,
+      text: 'This is Testing 4',
       onClick: (e) => {
         history.push('/shop/beauty')
       },

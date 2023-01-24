@@ -48,7 +48,12 @@ export function Slider(props) {
       }}
     >
       {sliderItems.map((item, i) => (
-        <Item key={i} item={item} type='IMAGE' className={props.className} />
+        <Item
+          key={i}
+          item={item}
+          type='IMAGE_WITH_CONTENT'
+          className={props.className}
+        />
       ))}
     </Carousel>
   )
@@ -80,9 +85,29 @@ function Item(props) {
       )
     case 'IMAGE_WITH_CONTENT':
       return (
-        <div>
-          <img src='' alt=''></img>
-          <span></span>
+        <div className={className}>
+          <img
+            src={item.src}
+            alt={item?.name}
+            style={{
+              height: '100%',
+              maxHeight: '100%',
+              minHeight: '100%',
+              width: '100%',
+              maxWidth: '100%',
+              minWidth: '100%',
+            }}
+            // onClick={
+            //   // () => {
+            //   item.onClick // ? item.onClick() : null;
+            //   // }
+            // }
+          />
+          {/* <img src='' alt=''></img> */}
+          <span style={{ position: 'absolute', bottom: '10%', zIndex: '20' }}>
+            {/* <button className='btn'>{}</button> */}
+            {item.text}
+          </span>
         </div>
       )
     case 'CONTENT':

@@ -1,4 +1,5 @@
 import Carousel from 'react-material-ui-carousel'
+import { Typography } from '@mui/material'
 
 export function Slider(props) {
   const {
@@ -20,7 +21,7 @@ export function Slider(props) {
       autoPlay={sliderAutoPlay} // ? sliderAutoPlay : true} //{false}
       stopAutoPlayOnHover={sliderStopOnHover} //{sliderStopOnHover ? sliderStopOnHover : false}
       // timeout="300" //kind of blank time
-      interval='3000' //duration after which changes slide
+      interval='5000' //duration after which changes slide
       reverseEdgeAnimationDirection={false}
       navButtonsAlwaysVisible={
         sliderNavigatorsShow ? sliderNavigatorsShow : false
@@ -33,8 +34,8 @@ export function Slider(props) {
       navButtonsProps={{
         style: sliderNavStyle && sliderNavStyle,
       }}
-      // NextIcon={<RandomIcon/>}
-      // PrevIcon={<RandomIcon/>}
+      // NextIcon={<RandomIcon />}
+      // PrevIcon={<RandomIcon />}
       indicators={sliderIndicators ? sliderIndicators : false}
       indicatorIconButtonProps={{
         style: sliderIndicatorsStyle
@@ -62,27 +63,7 @@ function Item(props) {
   const { item, className } = props
   switch (props.type) {
     case 'IMAGE':
-      return (
-        <div className={className}>
-          <img
-            src={item.src}
-            alt={item?.name}
-            style={{
-              height: '100%',
-              maxHeight: '100%',
-              minHeight: '100%',
-              width: '100%',
-              maxWidth: '100%',
-              minWidth: '100%',
-            }}
-            onClick={
-              // () => {
-              item.onClick // ? item.onClick() : null;
-              // }
-            }
-          />
-        </div>
-      )
+      return <div></div>
     case 'IMAGE_WITH_CONTENT':
       return (
         <div className={className}>
@@ -90,6 +71,7 @@ function Item(props) {
             src={item.src}
             alt={item?.name}
             style={{
+              position: 'absolute',
               height: '100%',
               maxHeight: '100%',
               minHeight: '100%',
@@ -97,17 +79,35 @@ function Item(props) {
               maxWidth: '100%',
               minWidth: '100%',
             }}
-            // onClick={
-            //   // () => {
-            //   item.onClick // ? item.onClick() : null;
-            //   // }
-            // }
           />
-          {/* <img src='' alt=''></img> */}
-          <span style={{ position: 'absolute', bottom: '10%', zIndex: '20' }}>
-            {/* <button className='btn'>{}</button> */}
-            {item.text}
-          </span>
+          <Typography>
+            <span
+              align={'right'}
+              style={{
+                position: 'absolute',
+                bottom: '50%',
+                zIndex: '20',
+                color: 'white',
+              }}
+            >
+              <div style={{ textAlign: 'right' }}>
+                <h1>{item.text}</h1>
+              </div>
+              <button
+                align={'right'}
+                className='btn'
+                style={{
+                  textAlign: 'left',
+                  backgroundColor: '#2642af',
+                  display: 'flex',
+                  padding: '0.5rem 2.5rem',
+                  color: 'white',
+                }}
+              >
+                {item.buttonText}
+              </button>
+            </span>
+          </Typography>
         </div>
       )
     case 'CONTENT':
@@ -115,12 +115,4 @@ function Item(props) {
     default:
       return <span></span>
   }
-  //   return (
-  //     <Paper>
-  //       <h2>{props.item.name}</h2>
-  //       <p>{props.item.description}</p>
-
-  //       <Button className="CheckButton">Check it out!</Button>
-  //     </Paper>
-  //   );
 }

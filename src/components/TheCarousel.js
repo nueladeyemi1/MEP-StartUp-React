@@ -37,24 +37,33 @@ export function Dashboard(params) {
     {
       src: `${Slide__2}`,
       text: 'Creating Safe indoor Environment!',
-      buttonText: 'SEE FULL SERVICES',
+      color: 'black',
+      buttonText: 'SEE SERVICES',
+      textContent: '',
       //   name: "Random Name #1",
       description: 'Probably the most random thing you have ever seen!',
     },
     {
       src: `${Slide__1}`,
-      text: 'This is Testing 2',
+      text: 'Innovative Solutions!',
+      color: 'black',
       buttonText: 'ABOUT ZICAD',
+      textContent: '',
     },
     {
       src: `${Slide__3}`,
-      text: 'This is Testing 3',
+      text: 'High Quality service!',
+      color: 'white',
       buttonText: 'CONTACT US',
+      textContent:
+        'Zicad Integrated Engineering services assume single-point accountability from start to finish.',
     },
     {
       src: `${Slide__4}`,
-      text: 'This is Testing 4',
-      buttonText: 'VIEW OUR PROJECTS',
+      text: 'TrustWorthy. Timely Delivery!',
+      color: 'white',
+      buttonText: 'VIEW PROJECTS',
+      textContent: '',
     },
   ]
 

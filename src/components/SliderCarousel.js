@@ -1,5 +1,6 @@
 import Carousel from 'react-material-ui-carousel'
-import { Typography } from '@mui/material'
+// import { Typography } from '@mui/material'
+import './slidertext.css'
 
 export function Slider(props) {
   const {
@@ -21,7 +22,7 @@ export function Slider(props) {
       autoPlay={sliderAutoPlay} // ? sliderAutoPlay : true} //{false}
       stopAutoPlayOnHover={sliderStopOnHover} //{sliderStopOnHover ? sliderStopOnHover : false}
       // timeout="300" //kind of blank time
-      interval='5000' //duration after which changes slide
+      interval='7500' //duration after which changes slide
       reverseEdgeAnimationDirection={false}
       navButtonsAlwaysVisible={
         sliderNavigatorsShow ? sliderNavigatorsShow : false
@@ -80,34 +81,38 @@ function Item(props) {
               minWidth: '100%',
             }}
           />
-          <Typography>
-            <span
-              align={'right'}
+
+          <div className='slider__text'>
+            <div
               style={{
-                position: 'absolute',
-                bottom: '50%',
-                zIndex: '20',
+                color: `${item.color}`,
+              }}
+            >
+              <h1
+                style={{
+                  fontFamily: 'initial',
+                  letterSpacing: '0.2rem',
+                }}
+              >
+                {item.text}
+              </h1>
+              {item.textContent}
+            </div>
+
+            <button
+              className='btn'
+              style={{
+                fontSize: '12px',
+                fontFamily: 'calibri',
+                letterSpacing: '1.5px',
+                backgroundColor: '#2642af',
+                padding: '0.5rem 2rem',
                 color: 'white',
               }}
             >
-              <div style={{ textAlign: 'right' }}>
-                <h1>{item.text}</h1>
-              </div>
-              <button
-                align={'right'}
-                className='btn'
-                style={{
-                  textAlign: 'left',
-                  backgroundColor: '#2642af',
-                  display: 'flex',
-                  padding: '0.5rem 2.5rem',
-                  color: 'white',
-                }}
-              >
-                {item.buttonText}
-              </button>
-            </span>
-          </Typography>
+              {item.buttonText}
+            </button>
+          </div>
         </div>
       )
     case 'CONTENT':

@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 // import App from "./App";
-import { BrowserRouter, Router } from 'react-router-dom'
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import './style.css'
 import './App.scss'
@@ -17,6 +17,7 @@ import FeaturedProjects from './components/FeaturedProjects'
 import Section1 from './components/SectionService1'
 import { Dashboard } from './components/TheCarousel'
 import FeaturesTiles from './components/mepservices/FeaturedServices'
+import About from './pages/About'
 
 // import "./index.css";
 // import App from "./App";
@@ -26,39 +27,40 @@ import FeaturesTiles from './components/mepservices/FeaturedServices'
 function Main() {
   return (
     <>
-      <section>
-        <Navbar />
-      </section>
       <BrowserRouter>
+        <section>
+          <Navbar />
+        </section>
+
         <Dashboard />
+
+        <ProductsProvider>
+          <FeaturedProjects />
+        </ProductsProvider>
+
+        {/* <Footer /> */}
+        <section>
+          <Services />
+          <br />
+          <br />
+        </section>
+
+        {/* <Section1 /> */}
+
+        <FeaturesTiles />
+
+        <section className='container reduce__review'>
+          <div className='title'>
+            <h2>our reviews</h2>
+          </div>
+          <div className='underline'></div>
+          <Review />
+        </section>
+
+        <section>
+          <Footer1 />
+        </section>
       </BrowserRouter>
-
-      <ProductsProvider>
-        <FeaturedProjects />
-      </ProductsProvider>
-
-      {/* <Footer /> */}
-      <section>
-        <Services />
-        <br />
-        <br />
-      </section>
-
-      <Section1 />
-
-      <FeaturesTiles />
-
-      <section className='container reduce__review'>
-        <div className='title'>
-          <h2>our reviews</h2>
-        </div>
-        <div className='underline'></div>
-        <Review />
-      </section>
-
-      <section>
-        <Footer1 />
-      </section>
     </>
   )
 }

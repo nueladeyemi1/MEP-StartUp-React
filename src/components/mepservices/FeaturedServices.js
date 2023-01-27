@@ -52,10 +52,7 @@ const FeaturesTiles = ({
 
   const sectionHeader = {
     title: 'About Zicad Integrated',
-    paragraph: `We are a multi-disciplinary Mechanical, Electrical and Piping Engineering Consultancy services firm. We are trusted by clients to provide the innovative solutions and deliver excellence needed to solve today’s most complex Engineering challenges and maximise value across the asset life cycle of various project.
-To ensure your project is successfully completed on time and on budget, Zicad Integrated Engineering has developed in-house project management tools, drawing standards and design using Computer Aided Design(CAD) and Building Information Modelling (BIM) software packages throughout the design phase of projects as well as master specifications, contract administration standards and procedures, quality control guidelines, and checklists which are available for your specific project requirements.
-Expert engineering solutions
-Creating and maintaining structures we are proud of and that make our clients successful is what drives our relentless pursuit of engineering excellence and quality service. Our engineers bring their creativity backed by the resources and collective knowledge of a large, specialized firm to every project.`,
+    paragraph: `We are a multi-disciplinary engineering firm that provides innovative solutions for complex engineering challenges. We use in-house project management tools, CAD and BIM software, and quality control guidelines to ensure successful completion of projects on time and within budget. Our goal is to create and maintain structures that make our clients successful.`,
   }
 
   return (
@@ -85,9 +82,9 @@ Creating and maintaining structures we are proud of and that make our clients su
                       <h4 className='mt-0 mb-8'>{content.serviceTitle}</h4>
                       <p className='m-0 text-sm text__justify'>
                         {content.serviceText}
-                        <ul style={{ paddingTop: '10px' }}>
+                        <ul style={{ paddingTop: '15px' }}>
                           {content.serviceList.map((list) => (
-                            <li>{list}</li>
+                            <li style={{ paddingBottom: '5px' }}>{list}</li>
                           ))}
                         </ul>
                       </p>

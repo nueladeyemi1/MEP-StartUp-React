@@ -24,7 +24,7 @@ const Services = () => {
           {services.map((service) => {
             const { id, icon, title, text, list } = service
             // const listItems = list.map((lists) => <li>{lists}</li>);
-            console.log(list)
+
             return (
               <article className='service' key={id}>
                 <span className='icon'>{icon}</span>

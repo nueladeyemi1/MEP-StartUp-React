@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import { Link, Router, Route, Routes, Switch } from 'react-router-dom'
+import About from '../pages/About'
+import Contacts from '../pages/Contacts'
 import zicadlogo from './img/zicadLogo.jpg'
 import '../styles/navbar.css'
 zicadlogo = zicadlogo
@@ -39,24 +42,28 @@ export default function Navbar() {
       >
         <ul>
           <li>
-            <a href='/home'>Home</a>
+            <Link to='/'>Home</Link>
           </li>
           <li>
-            <a href='/about'>About</a>
+            <Link to='/about'>About</Link>
           </li>
           <li>
-            <a href='/contact'>Services</a>
+            <Link to='/ServicePage'>Services</Link>
           </li>
           <li>
-            <a href='/contact'>Projects</a>
+            <Link to='/ProjectPage'>Projects</Link>
           </li>
-          <li>
+          {/* <li>
             <a href='/contact'>Career</a>
-          </li>
+          </li> */}
           <li>
-            <a href='/contact'>Contact</a>
+            <Link to='/Contacts'>Contact</Link>
           </li>
         </ul>
+
+        <Routes>
+          <Route path='/about' element={<About />} />
+        </Routes>
       </div>
     </nav>
   )

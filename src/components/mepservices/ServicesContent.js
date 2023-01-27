@@ -7,18 +7,18 @@ export const serviceContents = [
     serviceTitle: 'Mechanical',
     serviceText: ``,
     serviceIcon: `${mechanicalIcon}`,
-    serviceDelay: 0,
+    serviceDelay: '0',
   },
   {
     serviceTitle: 'Electrical',
     serviceText: ``,
     serviceIcon: `${electricalIcon}`,
-    serviceDelay: 200,
+    serviceDelay: '200',
   },
   {
     serviceTitle: 'Piping',
     serviceText: ``,
     serviceIcon: `${pipingIcon}`,
-    serviceDelay: 400,
+    serviceDelay: '400',
   },
 ]

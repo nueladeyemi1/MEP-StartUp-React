@@ -1,9 +1,15 @@
 import React from 'react'
 import classNames from 'classnames'
-import { SectionTilesProps } from '../../utils/SectionProps'
-import SectionHeader from './partials/SectionHeader'
+import { SectionTilesProps } from './SectionProps'
+// import { SectionTilesProps } from '../../utils/SectionProps'
+// import SectionHeader from './partials/SectionHeader'
+import SectionHeader from './SectionHeader'
 import { serviceContents } from './ServicesContent'
-import Image from '../elements/Image'
+import Image from './Image'
+import './featureTiles.css'
+// import '/Users/Emmanuel Adeyemi/Desktop/Codes/MEP StartUp WebApp/mep-startup/MEP-StartUp-React/src/assets/images'
+
+// import Image from '../elements/Image'
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -24,6 +30,7 @@ const FeaturesTiles = ({
   ...props
 }) => {
   const outerClasses = classNames(
+    'tiles-wrap',
     'features-tiles section',
     topOuterDivider && 'has-top-divider',
     bottomOuterDivider && 'has-bottom-divider',
@@ -64,11 +71,11 @@ const FeaturesTiles = ({
                   <div className='tiles-item-inner'>
                     <div className='features-tiles-item-header'>
                       <div className='features-tiles-item-image mb-16'>
-                        <Image
+                        <img
                           src={content.serviceIcon}
                           alt='Features tile icon 01'
-                          width={64}
-                          height={64}
+                          width={30}
+                          height={30}
                         />
                       </div>
                     </div>
@@ -81,7 +88,7 @@ const FeaturesTiles = ({
               )
             })}
 
-            <div
+            {/* <div
               className='tiles-item reveal-from-bottom'
               data-reveal-delay='200'
             >
@@ -89,7 +96,7 @@ const FeaturesTiles = ({
                 <div className='features-tiles-item-header'>
                   <div className='features-tiles-item-image mb-16'>
                     <Image
-                      src={require('./../../assets/images/feature-tile-icon-02.svg')}
+                      src={serviceContents[0].serviceIcon}
                       alt='Features tile icon 02'
                       width={64}
                       height={64}
@@ -115,7 +122,7 @@ const FeaturesTiles = ({
                 <div className='features-tiles-item-header'>
                   <div className='features-tiles-item-image mb-16'>
                     <Image
-                      src={require('./../../assets/images/feature-tile-icon-03.svg')}
+                      src={serviceContents[0].serviceIcon}
                       alt='Features tile icon 03'
                       width={64}
                       height={64}
@@ -138,7 +145,7 @@ const FeaturesTiles = ({
                 <div className='features-tiles-item-header'>
                   <div className='features-tiles-item-image mb-16'>
                     <Image
-                      src={require('./../../assets/images/feature-tile-icon-04.svg')}
+                      src={serviceContents[0].serviceIcon}
                       alt='Features tile icon 04'
                       width={64}
                       height={64}
@@ -164,7 +171,7 @@ const FeaturesTiles = ({
                 <div className='features-tiles-item-header'>
                   <div className='features-tiles-item-image mb-16'>
                     <Image
-                      src={require('./../../assets/images/feature-tile-icon-05.svg')}
+                      src={serviceContents[0].serviceIcon}
                       alt='Features tile icon 05'
                       width={64}
                       height={64}
@@ -180,9 +187,9 @@ const FeaturesTiles = ({
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
-            <div
+            {/* <div
               className='tiles-item reveal-from-bottom'
               data-reveal-delay='400'
             >
@@ -206,7 +213,7 @@ const FeaturesTiles = ({
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

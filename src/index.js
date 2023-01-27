@@ -6,7 +6,7 @@ import './index.css'
 import { BrowserRouter, Router } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import './style.css'
-import './App.css'
+import './App.scss'
 import './components/review.css'
 import Footer from './components/footer'
 import Footer1 from './components/footer1'
@@ -16,6 +16,7 @@ import { ProductsProvider } from './components/projects_context'
 import FeaturedProjects from './components/FeaturedProjects'
 import Section1 from './components/SectionService1'
 import { Dashboard } from './components/TheCarousel'
+import FeaturesTiles from './components/mepservices/FeaturedServices'
 
 // import "./index.css";
 // import App from "./App";
@@ -44,6 +45,8 @@ function Main() {
       </section>
 
       <Section1 />
+
+      <FeaturesTiles />
 
       <section className='container'>
         <div className='title'>

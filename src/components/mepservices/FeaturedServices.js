@@ -51,9 +51,11 @@ const FeaturesTiles = ({
   )
 
   const sectionHeader = {
-    title: 'Build up the whole picture',
-    paragraph:
-      'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.',
+    title: 'About Zicad Integrated',
+    paragraph: `We are a multi-disciplinary Mechanical, Electrical and Piping Engineering Consultancy services firm. We are trusted by clients to provide the innovative solutions and deliver excellence needed to solve today’s most complex Engineering challenges and maximise value across the asset life cycle of various project.
+To ensure your project is successfully completed on time and on budget, Zicad Integrated Engineering has developed in-house project management tools, drawing standards and design using Computer Aided Design(CAD) and Building Information Modelling (BIM) software packages throughout the design phase of projects as well as master specifications, contract administration standards and procedures, quality control guidelines, and checklists which are available for your specific project requirements.
+Expert engineering solutions
+Creating and maintaining structures we are proud of and that make our clients successful is what drives our relentless pursuit of engineering excellence and quality service. Our engineers bring their creativity backed by the resources and collective knowledge of a large, specialized firm to every project.`,
   }
 
   return (
@@ -83,6 +85,11 @@ const FeaturesTiles = ({
                       <h4 className='mt-0 mb-8'>{content.serviceTitle}</h4>
                       <p className='m-0 text-sm text__justify'>
                         {content.serviceText}
+                        <ul style={{ paddingTop: '10px' }}>
+                          {content.serviceList.map((list) => (
+                            <li>{list}</li>
+                          ))}
+                        </ul>
                       </p>
                     </div>
                   </div>

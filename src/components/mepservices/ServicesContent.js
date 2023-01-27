@@ -6,12 +6,15 @@ export const serviceContents = [
   {
     serviceTitle: 'Mechanical',
     serviceText: `We have in depth knowledge in the field of Mechanical Engineering in the construction industry.  As mechanical consulting engineers, we offer the following services:
-Air conditioning & ventilation
-Lifts, Hoists and Escalators
-Building Audit & Specialists Reports
-Refrigeration Design and Supervision
-Smoke Ventilation and Extraction System
-Value Engineering`,
+`,
+    serviceList: [
+      'Air conditioning & ventilation',
+      'Lifts, Hoists and Escalators',
+      'Building Audit & Specialists Reports',
+      'Refrigeration Design and Supervision',
+      'Smoke Ventilation and Extraction System',
+      'Value Engineering',
+    ],
     serviceIcon: `${mechanicalIcon}`,
     serviceDelay: '0',
   },
@@ -19,19 +22,22 @@ Value Engineering`,
     serviceTitle: 'Electrical',
     serviceText: `Our Electrical Consulting Engineers offer quality services in the following Electrical Engineering services:
 
-Lighting Services: Indoor and Outdoor Lighting
-Fire Alarm and Detection System
-Lightning, Earthing and Bonding Protection System
-Voice, Data, Networking & Communication System
-Security: Access Control & CCTV System
-Arc Flash and Power Quality
-Raw & Clean Power Distribution System
-Acoustic and Public Address System
-Renewable Energy
-Value Engineering
-Energy Audit
-Building Automation System
-Value Engineering`,
+`,
+    serviceList: [
+      'Lighting Services: Indoor and Outdoor Lighting',
+      'Fire Alarm and Detection System',
+      'Lightning, Earthing and Bonding Protection System',
+      'Voice, Data, Networking & Communication System',
+      'Security: Access Control & CCTV System',
+      'Arc Flash and Power Quality',
+      'Raw & Clean Power Distribution System',
+      'Acoustic and Public Address System',
+      'Renewable Energy',
+      'Value Engineering',
+      'Energy Audit',
+      'Building Automation System',
+      'Value Engineering',
+    ],
     serviceIcon: `${electricalIcon}`,
     serviceDelay: '200',
   },
@@ -39,12 +45,15 @@ Value Engineering`,
     serviceTitle: 'Piping',
     serviceText: `As Piping Consulting Engineers, we offer the following Piping Engineering design services:
 
-Domestic Hot & Cold Water Distribution Systems (Including Fountains/Water Features and Water Treatment Plant)
-Drainage Systems (Including Rain Water Disposal, Industrial Waste Drainage and Sewage Pumping/Treatment)
-Kitchen/Laundry
-Swimming Pool
-Fuel Oil Storage and Distribution
-Fire Fighting (Fire Extinguishers, hose Reels/Dry & Wet Risers/Sprinklers/Gas & Foam - FM200)`,
+`,
+    serviceList: [
+      'Domestic Hot & Cold Water Distribution Systems (Including Fountains/Water Features and Water Treatment Plant)',
+      'Drainage Systems (Including Rain Water Disposal, Industrial Waste Drainage and Sewage Pumping/Treatment)',
+      'Kitchen/Laundry',
+      'Swimming Pool',
+      'Fuel Oil Storage and Distribution',
+      'Fire Fighting (Fire Extinguishers, hose Reels/Dry & Wet Risers/Sprinklers/Gas & Foam - FM200)',
+    ],
     serviceIcon: `${pipingIcon}`,
     serviceDelay: '400',
   },

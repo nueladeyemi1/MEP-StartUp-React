@@ -22,7 +22,7 @@ const Section1 = () => {
     <div className='container Section1'>
       <div className='section-headings'>
         <h1 className='Section1-heading'>
-          ....At Zicad Integrated Engineering services
+          Zicad Integrated Engineering services
         </h1>
         <p className='Section1-content'>
           We undertake both EPCM and EPC contracts which are further described

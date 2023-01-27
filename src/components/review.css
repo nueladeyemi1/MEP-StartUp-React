@@ -22,8 +22,14 @@ main {
 .container {
   margin-top: 1.5rem;
   width: 80vw;
-  max-width: var(--fixed-width);
+  /* max-width: var(--fixed-width); */
+  /* max-width: 500px; */
 }
+
+.reduce__review {
+  max-width: 620px;
+}
+
 .review {
   background: var(--clr-white);
   padding: 1.5rem 2rem;

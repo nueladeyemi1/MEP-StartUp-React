@@ -48,7 +48,7 @@ function Main() {
 
       <FeaturesTiles />
 
-      <section className='container'>
+      <section className='container reduce__review'>
         <div className='title'>
           <h2>our reviews</h2>
         </div>

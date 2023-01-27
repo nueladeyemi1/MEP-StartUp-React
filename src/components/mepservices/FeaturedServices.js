@@ -81,7 +81,9 @@ const FeaturesTiles = ({
                     </div>
                     <div className='features-tiles-item-content'>
                       <h4 className='mt-0 mb-8'>{content.serviceTitle}</h4>
-                      <p className='m-0 text-sm'>{content.serviceText}</p>
+                      <p className='m-0 text-sm text__justify'>
+                        {content.serviceText}
+                      </p>
                     </div>
                   </div>
                 </div>

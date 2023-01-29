@@ -1,0 +1,9 @@
+{% for project in object_list %}
+<ul>
+<li>Title: {{ project.name }}</li>
+<li>Subtitle: {{ project.image }}</li>
+<li>Author: {{ book.author }}</li>
+<li>ISBN: {{ book.isbn }}</li>
+</ul>
+<img src="{{project.image.url}}" style="width: 100px; height: 100px;">
+{% endfor %}

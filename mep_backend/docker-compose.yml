@@ -1,0 +1,38 @@
+version: '3.2'
+
+services:
+  db:
+    image: postgres:12
+    container_name: mep
+    command: postgres -c 'max_connections=400'
+    environment:
+      POSTGRES_DB: 'mep_db'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+    volumes:
+      - .pgdata:/data/postgres
+    ports:
+      - "5432:5432"
+  
+  web:
+    build: .
+    command: bash -c "python manage.py makemigrations && python manage.py create_admin && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    container_name: mep_web
+    depends_on:
+      - db
+    restart: on-failure
+    volumes:
+      - .:/music_service
+    ports:
+      - "8000:8000"
+
+  # redis:
+  #   container_name: ida-redis
+  #   image: redis:5.0.7-alpine
+  #   volumes:
+  #     - ida_redis_data:/data
+  #   ports:
+  #     - "6380:6379"
+
+# volumes:
+#   ida_redis_data: {}

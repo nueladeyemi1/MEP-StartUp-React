@@ -3,11 +3,23 @@ import styled from 'styled-components'
 // import { formatPrice } from "../utils/helpers";
 import { FaSearch } from 'react-icons/fa'
 import { Link, Router } from 'react-router-dom'
+import { CardMedia } from '@mui/material'
+
+// import dust from '../component/img/'
+
 const Project = ({ image, name, price, id }) => {
+  let k
   return (
     <Wrapper>
       <div className='container-featured'>
-        <img src={image} alt={name} />
+        {console.log(image)}
+        {/* {console.log(
+          image.replace('http://127.0.0.1:8000/', './img/') ===
+            './img/LowerPart.jpg'
+        )} */}
+        {/* image= https://images2.imgbox.com/38/85/iuYyO9RP_o.jpeg */}
+        {<img src={image} alt={name} />}
+        {/* <CardMedia image='http://127.0.0.1:8000/media/icons8-gears-67.png' /> */}
         {/* <Router>
           <Link to={`/products/${id}`} className="link">
             <FaSearch />

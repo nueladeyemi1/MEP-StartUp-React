@@ -13,7 +13,12 @@ import {
   GET_SINGLE_PRODUCT_ERROR,
 } from '../actions'
 
-const initialState = {
+axios.defaults.baseURL = 'http://127.0.0.1:8000'
+axios.defaults.headers = {
+  'Content-Type': 'mulitpart/form-data',
+}
+
+export const initialState = {
   isSidebarOpen: false,
   products_loading: false,
   products_error: false,
@@ -37,10 +42,21 @@ export const ProductsProvider = ({ children }) => {
   }
 
   const fetchProducts = async (url) => {
-    dispatch({ type: GET_PRODUCTS_BEGIN })
+    // dispatch({ type: GET_PRODUCTS_BEGIN })
     try {
       const response = await axios.get(url)
       const products = response.data
+
+      console.log(products)
+
+      products.map((singleProd) => {
+        if (singleProd.feature === true) {
+          initialState.featured_products.push(singleProd)
+        }
+      })
+
+      console.log(initialState.featured_products)
+
       dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products })
     } catch (error) {
       dispatch({ type: GET_PRODUCTS_ERROR })

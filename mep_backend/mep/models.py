@@ -3,9 +3,9 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
-
+from django.utils.translation import gettext_lazy as _
 def upload_to(instance, filename):
-    return 'images/{filename}'.format(filename=filename)
+    return '{filename}'.format(filename=filename)
 
 
 # Create your models here.
@@ -13,7 +13,7 @@ class MepProjects(models.Model):
     name = models.CharField(("Company name"), max_length=255)
     feature = models.BooleanField(default=True)
     description = models.TextField(("Description"), null=True, blank=True, default=None)
-    image = models.ImageField(upload_to=upload_to, blank=True, null=True)
+    image = models.ImageField(_("Image"),upload_to=upload_to, blank=True, null=True)
     def __str__(self):
         return self.name
 

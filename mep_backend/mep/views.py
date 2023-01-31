@@ -18,6 +18,10 @@ class MepListView(generics.ListAPIView):
     queryset = MepProjects.objects.all()
     parser_classes = (MultiPartParser, FormParser)
     serializer_class = MepSerializer
+    def get(self, request, *args, **kwargs):
+        posts = MepProjects.objects.all()
+        serializer = MepSerializer(posts, many=True, context={"request":request})
+        return Response(serializer.data)
 
 class DetailMepView(generics.RetrieveAPIView):
     queryset = MepProjects.objects.all()

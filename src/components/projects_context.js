@@ -47,7 +47,26 @@ export const ProductsProvider = ({ children }) => {
       const response = await axios.get(url)
       const products = response.data
 
-      console.log(products)
+      // console.log(products)
+
+      if (products.length > 1) {
+        const featured_limit = []
+
+        function getRandomArbitrary(min, max) {
+          return Math.floor(Math.random() * (max - min) + min)
+        }
+
+        while (featured_limit.length < 4) {
+          let rands = getRandomArbitrary(
+            0,
+            initialState.featured_products.length
+          )
+          console.log(rands)
+          featured_limit.push(initialState.featured_products[rands])
+        }
+
+        console.log(featured_limit)
+      }
 
       products.map((singleProd) => {
         if (singleProd.feature === true) {
@@ -55,7 +74,7 @@ export const ProductsProvider = ({ children }) => {
         }
       })
 
-      console.log(initialState.featured_products)
+      // console.log(initialState.featured_products)
 
       dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products })
     } catch (error) {

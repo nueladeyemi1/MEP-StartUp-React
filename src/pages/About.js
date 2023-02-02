@@ -1,11 +1,14 @@
-import React from 'react'
-import { Routes } from 'react-router-dom'
-import Navbar from '../components/Navbar'
+// import React from 'react'
+
+// import Navbar from '../components/Navbar'
 
 const About = function() {
   return (
     <>
-      <Navbar />
+      <h1>I am Testing</h1>
+      <h1>I am Testing</h1>
+      <h1>I am Testing</h1>
+      <h1>I am Testing</h1>
     </>
   )
 }

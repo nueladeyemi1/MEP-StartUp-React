@@ -32,44 +32,36 @@ const Footer1 = () => {
             <br />
 
             <ul className={styles.colorList}>
-              <a
-                href='/'
+              <Link
+                to='/about'
                 className={`text-reset text-decoration-none ${styles.item}`}
               >
                 About US
-              </a>
+              </Link>
 
               <br />
-              <a
-                href='/'
+              <Link
+                to='/services'
                 className={`text-reset text-decoration-none ${styles.item}`}
               >
                 Services
-              </a>
+              </Link>
 
               <br />
-              <a
-                href='/'
+              <Link
+                to='/projects'
                 className={`text-reset text-decoration-none ${styles.item}`}
               >
                 Projects
-              </a>
+              </Link>
 
               <br />
-              <a
-                href='/'
-                className={`text-reset text-decoration-none ${styles.item}`}
-              >
-                Career
-              </a>
-
-              <br />
-              <a
-                href='/'
+              <Link
+                to='/'
                 className={`text-reset text-decoration-none ${styles.item}`}
               >
                 Home
-              </a>
+              </Link>
             </ul>
           </section>
 
@@ -89,34 +81,6 @@ const Footer1 = () => {
               zicadintegrated@gmail.com <br />
               <br />
             </p>
-            {/* <section className="social__icons">
-              <ul className={`d-flex ${styles.colorList}`}>
-                <li>
-                  <FaFacebookSquare
-                    className={styles.item}
-                    style={{ fontSize: "1.4rem", margin: "0.6rem" }}
-                  />
-                </li>
-                <li>
-                  <FaInstagram
-                    className={styles.item}
-                    style={{ fontSize: "1.4rem", margin: "0.6rem" }}
-                  />
-                </li>
-                <li>
-                  <FaLinkedin
-                    className={styles.item}
-                    style={{ fontSize: "1.4rem", margin: "0.6rem" }}
-                  />
-                </li>
-                <li>
-                  <FaTwitter
-                    className={styles.item}
-                    style={{ fontSize: "1.4rem", margin: "0.6rem" }}
-                  />
-                </li>
-              </ul>
-            </section> */}
           </div>
           <section className='col-xs-6'>
             <h4 className={`text-white ${styles.titleList}`}>NEWSLETTER</h4>
@@ -177,7 +141,6 @@ const Footer1 = () => {
       </section>
 
       <div
-        /* className={classes.TextDifferentColor} */
         style={{ textAlign: 'center', paddingTop: '20px', color: '#b2b2b2' }}
       >
         Copyright ©2022 All rights reserved

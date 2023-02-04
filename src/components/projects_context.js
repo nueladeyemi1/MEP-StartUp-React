@@ -15,7 +15,7 @@ import {
 
 axios.defaults.baseURL = 'http://127.0.0.1:8000'
 axios.defaults.headers = {
-  'Content-Type': 'mulitpart/form-data',
+  'Content-Type': 'multipart/form-data',
 }
 
 export const initialState = {
@@ -28,6 +28,8 @@ export const initialState = {
   single_product_error: false,
   single_product: {},
 }
+
+let trial
 
 const ProductsContext = React.createContext()
 
@@ -47,7 +49,7 @@ export const ProductsProvider = ({ children }) => {
       const response = await axios.get(url)
       const products = response.data
 
-      // console.log(products)
+      trial = [...products]
 
       if (products.length > 1) {
         const featured_limit = []
@@ -61,11 +63,11 @@ export const ProductsProvider = ({ children }) => {
             0,
             initialState.featured_products.length
           )
-          console.log(rands)
+          // console.log(rands)
           featured_limit.push(initialState.featured_products[rands])
         }
 
-        console.log(featured_limit)
+        // console.log(featured_limit)
       }
 
       products.map((singleProd) => {
@@ -110,6 +112,7 @@ export const ProductsProvider = ({ children }) => {
   )
 }
 
+console.log(initialState.products, trial)
 // make sure use
 export const useProductsContext = () => {
   return useContext(ProductsContext)

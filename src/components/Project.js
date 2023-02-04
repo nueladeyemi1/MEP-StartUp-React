@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 // import { formatPrice } from "../utils/helpers";
 // import { FaSearch } from 'react-icons/fa'
+// import { Link, Routes } from 'react-router-dom'
 
 // import { CardMedia } from '@mui/material'
 
@@ -13,11 +14,11 @@ const Project = ({ image, name, price, id }) => {
       <div className='container-featured'>
         {<img src={image} alt={name} />}
 
-        {/* <Router>
-          <Link to={`/products/${id}`} className="link">
-            <FaSearch />
-          </Link>
-        </Router> */}
+        {/* <Routes>
+        <Link to={`/products/${id}`} className='link'>
+          <FaSearch />
+        </Link>
+        </Routes> */}
       </div>
       <footer>
         <h5>{name}</h5>

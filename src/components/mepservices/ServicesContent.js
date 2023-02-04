@@ -4,6 +4,7 @@ import pipingIcon from './ServiceImg/icons8-pipe-60.png'
 
 export const serviceContents = [
   {
+    id: 0,
     serviceTitle: 'Mechanical',
     serviceText: `We have in depth knowledge in the field of Mechanical Engineering in the construction industry.  As mechanical consulting engineers, we offer the following services:
 `,
@@ -19,6 +20,7 @@ export const serviceContents = [
     serviceDelay: '0',
   },
   {
+    id: 1,
     serviceTitle: 'Electrical',
     serviceText: `Our Electrical Consulting Engineers offer quality services in the following Electrical Engineering services:
 
@@ -42,6 +44,7 @@ export const serviceContents = [
     serviceDelay: '200',
   },
   {
+    id: 2,
     serviceTitle: 'Piping',
     serviceText: `As Piping Consulting Engineers, we offer the following Piping Engineering design services:
 

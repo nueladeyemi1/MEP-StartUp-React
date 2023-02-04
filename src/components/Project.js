@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 // import { formatPrice } from "../utils/helpers";
-import { FaSearch } from 'react-icons/fa'
-import { Link, Router } from 'react-router-dom'
-import { CardMedia } from '@mui/material'
+// import { FaSearch } from 'react-icons/fa'
+
+// import { CardMedia } from '@mui/material'
 
 // import dust from '../component/img/'
 

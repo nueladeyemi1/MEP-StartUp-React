@@ -32,8 +32,8 @@ const Services = () => {
                 <p>{text}</p>
                 <p>
                   <ul>
-                    {list.map((lists) => (
-                      <li>
+                    {list.map((lists, index) => (
+                      <li key={index}>
                         <div>{lists}</div>
                       </li>
                     ))}

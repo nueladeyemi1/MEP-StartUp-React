@@ -64,6 +64,7 @@ const FeaturesTiles = ({
             {serviceContents.map((content) => {
               return (
                 <div
+                  key={content.id}
                   className='tiles-item reveal-from-bottom'
                   data-reveal-delay={content.serviceDelay}
                 >
@@ -83,8 +84,10 @@ const FeaturesTiles = ({
                       <p className='m-0 text-sm text__justify'>
                         {content.serviceText}
                         <ul style={{ paddingTop: '15px' }}>
-                          {content.serviceList.map((list) => (
-                            <li style={{ paddingBottom: '5px' }}>{list}</li>
+                          {content.serviceList.map((list, index) => (
+                            <li key={index} style={{ paddingBottom: '5px' }}>
+                              {list}
+                            </li>
                           ))}
                         </ul>
                       </p>

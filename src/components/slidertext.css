@@ -4,3 +4,9 @@
   left: 50%;
   margin-right: 2.5rem;
 }
+
+
+.slider__context {
+    scale: (0.7);
+}
+

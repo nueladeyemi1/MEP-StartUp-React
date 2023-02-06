@@ -1,7 +1,9 @@
 import React from 'react'
-import { useFilterContext } from '../context/filter_context'
+import { useFilterContext } from '../components/filter_context'
 import { BsFillGridFill, BsList } from 'react-icons/bs'
 import styled from 'styled-components'
+import { initialState } from './projects_context'
+
 const Sort = () => {
   const {
     filtered_products: products,
@@ -27,7 +29,7 @@ const Sort = () => {
           <BsList />
         </button>
       </div>
-      <p>{products.length} products found</p>
+      <p>{initialState.products.length} products found</p>
       <hr />
       <form>
         <label htmlFor='sort'>sort by</label>

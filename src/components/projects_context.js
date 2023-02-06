@@ -49,7 +49,7 @@ export const ProductsProvider = ({ children }) => {
       const response = await axios.get(url)
       const products = response.data
 
-      trial = [...products]
+      initialState.products.push(products)
 
       if (products.length > 1) {
         const featured_limit = []
@@ -112,7 +112,6 @@ export const ProductsProvider = ({ children }) => {
   )
 }
 
-console.log(initialState.products, trial)
 // make sure use
 export const useProductsContext = () => {
   return useContext(ProductsContext)

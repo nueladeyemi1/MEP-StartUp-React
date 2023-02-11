@@ -6,13 +6,18 @@ import ListView from '../components/ListView'
 import { useProductsContext } from '../components/projects_context'
 import { useFilterContext } from './filter_context'
 import { initialState } from '../components/projects_context'
+import { useEffect } from 'react'
+
+console.log(initialState.products)
 
 const ProductList = () => {
   //   const { filtered_products: products, grid_view } = useFilterContext()
 
-  const { products, grid_view } = initialState
+  //   return <ListView products={initialState.products} />
+  //   return <>{initialState.products}</>
+  const { grid_view } = initialState
 
-  if (products.length < 1) {
+  if (initialState.products.length < 1) {
     return (
       <h5 style={{ textTransform: 'none' }}>
         Sorry, no products matched your search.
@@ -22,9 +27,9 @@ const ProductList = () => {
   }
 
   if (grid_view === false) {
-    return <ListView products={products} />
+    return <ListView products={initialState.products} />
   }
-  return <GridView products={products} />
+  return <GridView products={initialState.products} />
 }
 
 export default ProductList

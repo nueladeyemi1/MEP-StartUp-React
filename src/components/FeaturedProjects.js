@@ -29,6 +29,7 @@ const FeaturedProjects = () => {
         <div className='underline'></div>
       </div>
       <div className='section-center featured'>
+        {console.log(initialState.featured_products)}
         {initialState.featured_products.slice(0, 3).map((product) => {
           return <Product key={product.id} {...product} />
         })}

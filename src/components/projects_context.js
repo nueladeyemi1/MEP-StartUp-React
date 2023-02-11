@@ -49,7 +49,8 @@ export const ProductsProvider = ({ children }) => {
       const response = await axios.get(url)
       const products = response.data
 
-      initialState.products.push(products)
+      initialState.products.push(...products)
+      console.log(products, initialState.products)
 
       if (products.length > 1) {
         const featured_limit = []
@@ -97,6 +98,7 @@ export const ProductsProvider = ({ children }) => {
   useEffect(() => {
     fetchProducts(url)
   }, [])
+  // fetchProducts('http://127.0.0.1:8000/api/v1/list/')
 
   return (
     <ProductsContext.Provider

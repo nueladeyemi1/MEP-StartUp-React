@@ -6,16 +6,17 @@ import ListView from '../components/ListView'
 import { useProductsContext } from '../components/projects_context'
 import { useFilterContext } from './filter_context'
 import { initialState } from '../components/projects_context'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 console.log(initialState.products)
 
 const ProductList = () => {
-  //   const { filtered_products: products, grid_view } = useFilterContext()
+  const { filtered_products: products, grid_view } = useFilterContext()
 
   //   return <ListView products={initialState.products} />
   //   return <>{initialState.products}</>
-  const { grid_view } = initialState
+  //   const [listProduct, setListProduct] = useState([]);
+  //   const { grid_view } = initialState
 
   if (initialState.products.length < 1) {
     return (

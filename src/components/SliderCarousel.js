@@ -1,4 +1,5 @@
 import Carousel from 'react-material-ui-carousel'
+import { useNavigate } from 'react-router-dom'
 // import { Typography } from '@mui/material'
 import './slidertext.css'
 
@@ -61,6 +62,7 @@ export function Slider(props) {
   )
 }
 function Item(props) {
+  const navigate = useNavigate()
   const { item, className } = props
   switch (props.type) {
     case 'IMAGE':
@@ -109,6 +111,7 @@ function Item(props) {
                 padding: '0.5rem 2rem',
                 color: 'white',
               }}
+              onClick={() => navigate(`/${item.links}`)}
             >
               {item.buttonText}
             </button>

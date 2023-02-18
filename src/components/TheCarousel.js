@@ -35,6 +35,7 @@ export function Dashboard(params) {
   const [loading, setLoading] = useState(false)
   const banners = [
     {
+      links: 'services',
       src: `${Slide__2}`,
       text: 'Creating Safe indoor Environment!',
       color: 'black',
@@ -44,6 +45,7 @@ export function Dashboard(params) {
       description: 'Probably the most random thing you have ever seen!',
     },
     {
+      links: 'about',
       src: `${Slide__1}`,
       text: 'Innovative Solutions!',
       color: 'black',
@@ -51,6 +53,7 @@ export function Dashboard(params) {
       textContent: '',
     },
     {
+      links: 'contact',
       src: `${Slide__3}`,
       text: 'High Quality service!',
       color: 'white',
@@ -59,6 +62,7 @@ export function Dashboard(params) {
         'Zicad Integrated Engineering services assume single-point accountability from start to finish.',
     },
     {
+      links: 'projects',
       src: `${Slide__4}`,
       text: 'TrustWorthy. Timely Delivery!',
       color: 'white',

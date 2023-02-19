@@ -40,7 +40,8 @@ export function Dashboard(params) {
       text: 'Creating Safe indoor Environment!',
       color: 'black',
       buttonText: 'SEE SERVICES',
-      textContent: '',
+      textContent:
+        'We offer range of amazing engineering and management services',
       //   name: "Random Name #1",
       description: 'Probably the most random thing you have ever seen!',
     },
@@ -50,7 +51,7 @@ export function Dashboard(params) {
       text: 'Innovative Solutions!',
       color: 'black',
       buttonText: 'ABOUT ZICAD',
-      textContent: '',
+      textContent: 'Know about our mission, vision and core values',
     },
     {
       links: 'contact',
@@ -67,7 +68,8 @@ export function Dashboard(params) {
       text: 'TrustWorthy. Timely Delivery!',
       color: 'white',
       buttonText: 'VIEW PROJECTS',
-      textContent: '',
+      textContent:
+        'We have managed and handled simple, complex and intriguing projects',
     },
   ]
 

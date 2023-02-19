@@ -104,6 +104,7 @@ function Item(props) {
             <button
               className='btn'
               style={{
+                marginTop: '25px',
                 fontSize: '12px',
                 fontFamily: 'calibri',
                 letterSpacing: '1.5px',

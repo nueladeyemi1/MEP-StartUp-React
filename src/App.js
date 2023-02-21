@@ -13,6 +13,8 @@ import Navbar from './components/Navbar'
 import Footer1 from './components/footer1'
 import ServicePage from './pages/ServicePage'
 import ProductList from './pages/ProjectPage'
+import ScrollToTop from './components/ScrollToTop'
+import Contacts from './pages/Contacts'
 
 // import "./index.css";
 // import App from "./App";
@@ -23,6 +25,7 @@ function Main() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <section>
           <Navbar />
         </section>
@@ -31,6 +34,7 @@ function Main() {
           <Route path='/about' element={<About />} />
           <Route path='/services' element={<ServicePage />} />
           <Route path='/projects' element={<ProductList />} />
+          <Route path='/contacts' element={<Contacts />} />
         </Routes>
         <section>
           <Footer1 />

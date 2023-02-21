@@ -1,19 +1,6 @@
-// import React from 'react'
-
-// import Navbar from '../components/Navbar'
-
-// const About = function() {
-//   return (
-//     <>
-//       <h1>I am Testing</h1>
-//     </>
-//   )
-// }
-
-// export default About
-
 import React from 'react'
 import classNames from 'classnames'
+import Footer1 from '../components/footer1'
 
 import { SectionTilesProps } from '../components/mepservices/SectionProps'
 // import { SectionTilesProps } from './SectionProps'
@@ -69,13 +56,18 @@ const About = ({
   }
 
   return (
-    <section {...props} className={outerClasses}>
-      <div className='container'>
-        <div className={innerClasses}>
-          <SectionHeader data={sectionHeader} className='center-content' />
+    <>
+      <section {...props} className={outerClasses}>
+        <div className='container'>
+          <div className={innerClasses}>
+            <SectionHeader data={sectionHeader} className='center-content' />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section style={{ position: 'absolute', bottom: '0', width: '100%' }}>
+        <Footer1 />
+      </section>
+    </>
   )
 }
 

@@ -36,9 +36,6 @@ function Main() {
           <Route path='/projects' element={<ProductList />} />
           <Route path='/contacts' element={<Contacts />} />
         </Routes>
-        <section>
-          <Footer1 />
-        </section>
       </BrowserRouter>
     </>
   )

@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer1 from '../components/footer1'
 import styled from 'styled-components'
 import ProductList from '../components/ProductList'
 import Sort from '../components/Sort'
@@ -16,6 +17,9 @@ const ProductsPage = () => {
           </div>
         </div>
       </Wrapper>
+      <section>
+        <Footer1 />
+      </section>
     </main>
   )
 }

@@ -5,6 +5,7 @@ import { ProductsProvider } from './components/projects_context'
 import FeaturedProjects from './components/FeaturedProjects'
 import { Dashboard } from './components/TheCarousel'
 import FeaturesTiles from './components/mepservices/FeaturedServices'
+import Footer1 from './components/footer1'
 
 const Home = function() {
   return (
@@ -28,6 +29,9 @@ const Home = function() {
           </div>
           <div className='underline'></div>
           <Review />
+        </section>
+        <section>
+          <Footer1 />
         </section>
       </ProductsProvider>
     </>

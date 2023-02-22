@@ -2,18 +2,8 @@ import React from 'react'
 import Footer1 from '../components/footer1'
 import Map from '../components/Map'
 
-// const fetchMap = async function() {
-//   try {
-//     const res = await fetch(
-//       'https://www.openstreetmap.org/#map=18/6.59560/3.35755'
-//     )
-//     const data = await res.json
-//     console.log(data)
-//   } catch (error) {
-//     console.log(error.message)
-//   }
-// }
-// fetchMap()
+//
+// ========
 
 const Contacts = function() {
   return (

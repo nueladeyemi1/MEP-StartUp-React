@@ -1,0 +1,30 @@
+/* .form-container form{
+     display:flex;
+    flex-direction: column;
+  } */
+  
+  label{
+    width:150px;
+  }
+  
+  input{
+    width:200px;
+    margin: 2px;
+  } 
+  
+  button{
+    width:100px;
+    padding:2px;
+    margin:5px;
+    
+  }
+  
+  .leaflet-container {
+    width: 25vw;
+    height: 25vh;
+  }
+  
+  .map__area {
+    width: 10%;
+    height: 10%;
+  }

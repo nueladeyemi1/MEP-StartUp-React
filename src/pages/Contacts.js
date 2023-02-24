@@ -3,6 +3,7 @@ import Footer1 from '../components/footer1'
 import Map from '../components/Map'
 import Mapp from '../components/Mapdata'
 import emailjs from 'emailjs-com'
+import 'react-bootstrap'
 
 //
 // ========
@@ -24,22 +25,25 @@ const Contacts = function() {
     <>
       <h2>Company Contact Information</h2>
       <section
-        style={{
-          marginTop: '5rem',
-          display: 'flex',
+      className='row11'
+        // style={{
+        //   marginTop: '5rem',
+        //   display: 'grid',
+        //   position: 'relative',
+        //   padding: '50px 0'
           // justifyContent: 'space-between',
-        }}
+        // }}
       >
-        <div>
+        <div className='col-md-4'>
           zicad Integrated Engineering services
           <div>Address: 11, agbaoku street, off awosika bus stop, opebi Lagos,
           Nigeria.</div>
           <div>Telephone: +2348-162-728-300 | +2348-053-454-579</div>
         <div>zicadintegrated@gmail.com</div>
         </div>
-        <Mapp />
-      </section>
-
+        
+        <div>
+      <Mapp />
       <form className="contact-form" onSubmit={sendEmail}>
       <input type="hidden" name="contact_number" required/>
       <label>Name</label>
@@ -52,6 +56,10 @@ const Contacts = function() {
       <textarea name="html_message" />
       <input type="submit" value="Send" />
     </form>
+    </div>
+      </section>
+
+      
       
       <section style={{ position: 'absolute', bottom: '0', width: '100%' }}>
         <Footer1 />

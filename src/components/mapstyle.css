@@ -12,19 +12,26 @@
     margin: 2px;
   } 
   
-  /* button{
-    width:100px;
-    padding:2px;
-    margin:5px;
-    
-  } */
-  
   .leaflet-container {
-    width: 25vw;
-    height: 25vh;
+    width: 50vw;
+    height: 50vh;
   }
   
-  .map__area {
+  .map {
     width: 10%;
     height: 10%;
+  } 
+  
+  @media screen and (max-width: '480px') {
+    .leaflet-container {
+        width: 25vw;
+        height: 25vh;
+      }
+      
+      .map__area {
+        width: 10%;
+        height: 10%;
+      } 
   }
+  
+ 

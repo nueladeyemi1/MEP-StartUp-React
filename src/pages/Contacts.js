@@ -59,11 +59,13 @@ const Contacts = function() {
     </div>
       </section>
 
-      
-      
-      <section style={{ position: 'absolute', bottom: '0', width: '100%' }}>
+      <section>
         <Footer1 />
       </section>
+      
+      {/* <section style={{ position: 'absolute', bottom: '0', width: '100%' }}>
+        <Footer1 />
+      </section> */}
     </>
   )
 }

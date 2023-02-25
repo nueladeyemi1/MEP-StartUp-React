@@ -13,7 +13,8 @@ import {
   GET_SINGLE_PRODUCT_ERROR,
 } from '../actions'
 
-axios.defaults.baseURL = 'http://127.0.0.1:8000'
+// axios.defaults.baseURL = 'http://127.0.0.1:8000'
+axios.defaults.baseURL = 'http://34.122.156.210:8000'
 axios.defaults.headers = {
   'Content-Type': 'multipart/form-data',
 }

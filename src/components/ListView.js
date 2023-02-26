@@ -1,32 +1,38 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 // import { formatPrice } from '../utils/helpers'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 const ListView = ({ products }) => {
   return (
     <Wrapper>
       {products.map((product) => {
-        const { id, image, name, price, description } = product
+        const { id, image, name, price, description } = product;
         return (
           <article key={id}>
-            <img src={image} alt={name} />
-            <div>
-              <h4>{name}</h4>
-              {/* <h5 className='price'>{formatPrice(price)}</h5> */}
-              <p>{description.substring(0, 150)}...</p>
-              <Link to={`/products/${id}`} className='btn'>
-                Details
-              </Link>
+            <div className="grid__style">
+              <img src={image} alt={name} />
+              <div>
+                <h4>{name}</h4>
+                <p>{description.substring(0, 150)}...</p>
+                <Link
+                  to={`/products/${id}`}
+                  style={{ backgroundColor: "blue", padding: "0.5rem 2.5rem" }}
+                  className="btn"
+                >
+                  Details
+                </Link>
+              </div>
             </div>
           </article>
-        )
+        );
       })}
     </Wrapper>
-  )
-}
+  );
+};
 
 const Wrapper = styled.section`
   display: grid;
+  text-align: left;
   row-gap: 3rem;
   img {
     width: 100%;
@@ -53,13 +59,14 @@ const Wrapper = styled.section`
     padding: 0.25rem 0.5rem;
   }
   @media (min-width: 992px) {
-    article {
+    article .grid__style {
       display: grid;
-      grid-template-columns: auto 1fr;
+      grid-template-columns: repeat(2, 2fr);
+      // grid-template-columns : repeat(auto-fit, minmax(360px, 1fr)
       column-gap: 2rem;
       align-items: center;
     }
   }
-`
+`;
 
-export default ListView
+export default ListView;

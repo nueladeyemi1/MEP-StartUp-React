@@ -10,6 +10,8 @@ import Product from "./Project";
 import { fetchProducts } from "./projects_context";
 
 const FeaturedProjects = () => {
+  const featuredProject = [];
+  const newFeaturedProject = [];
   const navigate = useNavigate();
 
   const [callApi, setCallApi] = useState([]);
@@ -18,10 +20,53 @@ const FeaturedProjects = () => {
     fetchProducts().then((response) => setCallApi(response));
   }, []);
 
-  console.log(callApi);
+  callApi.forEach((prod) => {
+    if (prod.feature === true) {
+      featuredProject.push(prod);
+    }
+  });
 
-  if (callApi) {
-  }
+  // var bucket = [];
+
+  // for (let i = 0; featuredProject.length <= 10; i++) {
+  //   bucket.push(i);
+  // }
+
+  // function getRandomFromBucket() {
+  //   var randomIndex = Math.floor(Math.random() * featuredProject.length);
+  //   if (featuredProject.splice(randomIndex, 1)[0] !== undefined) {
+  //     newFeaturedProject.push(featuredProject.splice(randomIndex, 1)[0]);
+  //   }
+  // }
+
+  // getRandomFromBucket();
+
+  //
+
+  // let sample = 0;
+
+  // while (sample <= 10) {
+  //   const randomNumber = Math.floor(Math.random() * featuredProject.length);
+  //   if (!newFeaturedProject.includes(featuredProject[randomNumber])) {
+  //     newFeaturedProject.push(featuredProject[randomNumber]);
+  //     console.log(newFeaturedProject);
+  //   }
+  //   sample++;
+  // }
+
+  ///
+
+  // do {
+  //   const randomNumber = Math.floor(Math.random() * featuredProject.length);
+  //   if (!newFeaturedProject.includes(featuredProject[randomNumber])) {
+  //     newFeaturedProject.push(featuredProject[randomNumber]);
+  //     console.log(newFeaturedProject);
+  //   }
+
+  //   sample++;
+  // } while (sample <= 10);
+
+  // console.log(newFeaturedProject, featuredProject, featuredProject.length);
 
   const {
     products_loading: loading,
@@ -43,19 +88,18 @@ const FeaturedProjects = () => {
         <div className="underline"></div>
       </div>
       <div className="section-center featured">
-        {console.log(initialState.featured_products)}
+        {/* {console.log(initialState.featured_products)} */}
 
         {/* /// */}
 
-        {callApi.map((product) => {
-          if (product.feature === true)
-            return <Product key={product.id} {...product} />;
-        })}
-        {/* /// */}
-
-        {initialState.featured_products.slice(0, 3).map((product) => {
+        {featuredProject.slice(0, 3).map((product) => {
           return <Product key={product.id} {...product} />;
         })}
+        {/* /// */}
+
+        {/* {initialState.featured_products.slice(0, 3).map((product) => {
+          return <Product key={product.id} {...product} />;
+        })} */}
       </div>
 
       <button

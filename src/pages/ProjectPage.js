@@ -13,7 +13,7 @@ const ProductsPage = () => {
           {/* <Filters /> */}
           <div>
             {/* <Sort /> */}
-            {/* <ProductList /> */}
+            <ProductList />
           </div>
         </div>
       </Wrapper>

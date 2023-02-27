@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 // import { formatPrice } from "../utils/helpers";
 // import { FaSearch } from 'react-icons/fa'
 // import { Link, Routes } from 'react-router-dom'
@@ -8,19 +9,25 @@ import styled from "styled-components";
 
 // import dust from '../component/img/'
 
-const Project = ({ image, name, price, id }) => {
+const Project2 = ({ image, name, price, id, description }) => {
   return (
     <Wrapper>
-      <div className="container-featured">
-        {<img src={image} alt={name} />}
-      </div>
+      <div className="container-featured">{<img src={image} alt={name} />}</div>
       <footer>
-        <h5>{name}</h5>
+        <h4>{name}</h4>
       </footer>
-      
+      <p>{description.substring(0, 150)}...</p>
+
+        <Link
+         to={`/products/${id}`}
+        // style={{textDecoration: "none", padding: "0.5rem 2.5rem"}}
+        // className="btn"
+        >
+                View Details
+        </Link>
     </Wrapper>
-  )
-}
+  );
+};
 const Wrapper = styled.article`
   .container {
     position: relative;
@@ -75,5 +82,5 @@ const Wrapper = styled.article`
     color: var(--clr-primary-5);
     letter-spacing: var(--spacing);
   }
-`
-export default Project
+`;
+export default Project2;

@@ -21,8 +21,8 @@ const ProductsPage = () => {
         <Footer1 />
       </section>
     </>
-  );
-};
+  )
+}
 
 const Wrapper = styled.div`
   .products {
@@ -35,6 +35,6 @@ const Wrapper = styled.div`
       grid-template-columns: 200px 1fr;
     }
   }
-`;
+`
 
-export default ProductsPage;
+export default ProductsPage

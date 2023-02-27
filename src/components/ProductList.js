@@ -44,7 +44,7 @@ const ProductList = () => {
   return (
     <>
       {/* <ListView products={callApi} />; */}
-      <GridView products={callApi} />;
+      <GridView products={callApi} />
     </>
   );
 

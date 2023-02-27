@@ -22,10 +22,13 @@ const FeaturedProjects = () => {
 
   callApi.forEach((prod) => {
     if (prod.feature === true) {
+      prod.description = ''
       featuredProject.push(prod);
     }
   });
 
+
+                {/* </div> */}
   // var bucket = [];
 
   // for (let i = 0; featuredProject.length <= 10; i++) {

@@ -1,35 +1,28 @@
 import React from "react";
 import styled from "styled-components";
-import Project from "./Project";
+// import Project from "./Project";
+import Project2 from "./Project2";
 import { Link } from "react-router-dom";
+import ListView from "./ListView";
 
 const GridView = ({ products }) => {
   return (
     <Wrapper>
       <div className="products-container">
         {products.map((product) => {
-          const { id, image, name, price, description } = product;
-          return (
-            <>
-              <Project key={product.id} {...product} />
-              {/* <div> */}
-              {/* <h4>{name}</h4> */}
-              {/* <p>{description.substring(0, 150)}...</p>
-                <Link
-                  to={`/products/${id}`}
-                  style={{ backgroundColor: "blue", padding: "0.5rem 2.5rem" }}
-                  className="btn"
-                >
-                  Details
-                </Link>
-              </div> */}
-            </>
-          );
+          const { id, image, name, price, description } = product
+          {
+            return (
+              <>
+                <Project2 key={product.id} {...product} />
+              </>
+            );
+          }
         })}
       </div>
     </Wrapper>
-  );
-};
+  )
+}
 
 const Wrapper = styled.section`
   img {
@@ -49,6 +42,6 @@ const Wrapper = styled.section`
       grid-template-columns: repeat(3, 1fr);
     }
   }
-`;
+`
 
-export default GridView;
+export default GridView

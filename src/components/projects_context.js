@@ -36,7 +36,10 @@ export const fetchProducts = async (url1) => {
   // dispatch({ type: GET_PRODUCTS_BEGIN });
   let response;
   try {
-    response = await axios.get("http://34.122.156.210:8000/api/v1/list/");
+    // response = await axios.get("http://34.122.156.210:8000/api/v1/list/");
+    response = await axios.get(
+      "https://mep-backend2-production.up.railway.app/api/v1/list/"
+    );
     let product = response.data;
     return product;
 

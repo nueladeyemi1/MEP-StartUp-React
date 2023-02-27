@@ -43,9 +43,9 @@ export default function Mapp() {
   }, []);
 
   return (
-    <div className="App">
-      {console.log(coords)}
+    // <div className="App">
+      
       <Map coords={coords} display_name={display_name} />
-    </div>
+    // </div>
   );
 }

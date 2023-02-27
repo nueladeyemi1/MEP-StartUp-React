@@ -13,8 +13,8 @@
   } 
   
   .leaflet-container {
-    width: 50vw;
-    height: 50vh;
+    width: 20rem;
+    height: 30vh;
   }
   
   .map {
@@ -24,7 +24,7 @@
   
   @media screen and (max-width: '480px') {
     .leaflet-container {
-        width: 25vw;
+        width: 20vw;
         height: 25vh;
       }
       

@@ -23,7 +23,7 @@ export default function Map({ coords, display_name }) {
   }
 
   return (
-    <div className="map__area">
+    
       <MapContainer
     classsName="map"
     center={[latitude, longitude]}
@@ -40,7 +40,7 @@ export default function Map({ coords, display_name }) {
     </Marker>
     <MapView />
   </MapContainer>
-  </div>
+
     
   );
 }

@@ -20,12 +20,18 @@ const FeaturedProjects = () => {
     fetchProducts().then((response) => setCallApi(response));
   }, []);
 
-  callApi.forEach((prod) => {
-    if (prod.feature === true) {
-      prod.description = ''
-      featuredProject.push(prod);
-    }
-  });
+  
+
+  try {
+    callApi.forEach((prod) => {
+      if (prod.feature === true) {
+        prod.description = "";
+        featuredProject.push(prod);
+      }
+    });
+  } catch (error) {
+    
+  }
 
 
                 {/* </div> */}

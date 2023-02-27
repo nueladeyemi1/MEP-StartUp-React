@@ -14,7 +14,7 @@ const GridView = ({ products }) => {
           {
             return (
               <>
-                <Project2 key={product.id} {...product} />
+                <Project2 key={id} {...product} />
               </>
             );
           }

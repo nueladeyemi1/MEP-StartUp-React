@@ -9,7 +9,7 @@ import { initialState } from "../components/projects_context";
 import { useState, useEffect } from "react";
 import { fetchProducts } from "../components/projects_context";
 
-console.log(initialState.products);
+
 
 const ProductList = () => {
   const [callApi, setCallApi] = useState([]);
@@ -18,21 +18,8 @@ const ProductList = () => {
     fetchProducts().then((response) => setCallApi(response));
   }, []);
 
-  ////
 
-  // const { filtered_products: products, grid_view } = useFilterContext()
-
-  // const { grid_view } = useFilterContext();
-
-  ///
-
-  //   return <ListView products={initialState.products} />
-  //   return <>{initialState.products}</>
-  //   const [listProduct, setListProduct] = useState([]);
-  //   const { grid_view } = initialState
-
-  console.log(callApi);
-
+ 
   if (callApi === undefined || callApi.length < 1) {
     return (
       <h5 style={{ textTransform: "none" }}>
@@ -43,8 +30,7 @@ const ProductList = () => {
 
   return (
     <>
-      {/* <ListView products={callApi} />; */}
-      <GridView products={callApi} />
+      <GridView key={callApi.id} products={callApi} />
     </>
   );
 

@@ -54,7 +54,7 @@ export function Dashboard(params) {
       textContent: 'Know about our mission, vision and core values',
     },
     {
-      links: 'contact',
+      links: 'contacts',
       src: `${Slide__3}`,
       text: 'High Quality service!',
       color: 'white',

@@ -44,6 +44,7 @@ export const fetchProducts = async (url1) => {
 
     // dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
   } catch (error) {
+    // alert(error.message)
     // dispatch({ type: GET_PRODUCTS_ERROR });
   }
 };

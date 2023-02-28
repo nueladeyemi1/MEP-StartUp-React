@@ -9,6 +9,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer1 from "./footer1";
+import ProjectImages from "./ProjectImage";
 
 
 // export const fetchProducts = async () => {
@@ -85,21 +86,33 @@ const [product, setProduct] = useState([]);
   return (
     <>
       <Wrapper>
-        <div className="section section-center page">
-          <Link to="/projects" className="btn">
-            back to projects
-          </Link>
-          <div className="product-center">
-            {/* <ProductImages images={images} /> */}
-            <section className="content">
-              <h2>{product.name}</h2>
-              <p className="desc">{product.description}</p>
-              <p className="info">
-                <span>SKU :</span>
-                {product.id}
-              </p>
-              <hr />
-            </section>
+        <div style={{ minHeight: "50vh" }}>
+          <div className="section section-center page">
+            <Link
+              to="/projects"
+              style={{
+                backgroundColor: "rgb(55, 99, 176)",
+                padding: "0.5rem 5rem",
+                borderRadius: "none",
+                color: "white",
+              }}
+              className="btn"
+            >
+              back to projects
+            </Link>
+            <div className="product-center">
+              <ProjectImages images={product.image} />
+              {/* <ProductImages images={images} /> */}
+              <section className="content">
+                <h2>{product.name}</h2>
+                <p className="desc">{product.description}</p>
+                <p className="info">
+                  <span>Project Number </span>
+                  : {product.id}
+                </p>
+                <hr />
+              </section>
+            </div>
           </div>
         </div>
       </Wrapper>

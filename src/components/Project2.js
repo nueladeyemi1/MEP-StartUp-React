@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 // import { formatPrice } from "../utils/helpers";
@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 // import dust from '../component/img/'
 
 const Project2 = ({ image, name, price, id, description }) => {
+   
   return (
     <Wrapper>
       <div className="container-featured">{<img src={image} alt={name} />}</div>
@@ -17,14 +18,23 @@ const Project2 = ({ image, name, price, id, description }) => {
         <h4>{name}</h4>
       </footer>
       <p>{description.substring(0, 150)}...</p>
-
-        <Link
-         to={`/products/${id}`}
+      <Link
+        to={`/projects/${id}`}
         // style={{textDecoration: "none", padding: "0.5rem 2.5rem"}}
         // className="btn"
-        >
-                View Details
-        </Link>
+      >
+        View Details
+      </Link>
+     
+{/*       
+      <button className={`project__${id}`} onClick={() => {document
+        .querySelector(`.project__${id}`)
+        .addEventListener("click", function (e) {
+          setProjectId(id)
+        });}}>
+    
+        View Details
+      </button> */}
     </Wrapper>
   );
 };

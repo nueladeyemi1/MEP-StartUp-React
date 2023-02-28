@@ -3,13 +3,8 @@ import classNames from "classnames";
 import Footer1 from "../components/footer1";
 
 import { SectionTilesProps } from "../components/mepservices/SectionProps";
-// import { SectionTilesProps } from './SectionProps'
 import SectionHeader from "../components/mepservices/SectionHeader";
-// import SectionHeader from './SectionHeader'
-// import { serviceContents } from './ServicesContent'
-// import Image from './Image'
 import "../components/mepservices/featureTiles.css";
-// import './featureTiles.css'
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -71,8 +66,6 @@ const About = ({
             <SectionHeader data={sectionHeader2} className="center-content" />
           </div>
         </div>
-
-        {/* <button className='btn' style={{backgroundColor: 'blue', color: 'white'}}>Zicad Profile</button> */}
       </section>
       <div
         style={{

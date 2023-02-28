@@ -3,13 +3,9 @@ import {
   Column,
   FooterLink,
   Social,
-  OuterCardStyle,
-  SubContainerStyle,
-  SubInputStyle,
-  SubButtonStyle,
 } from './footerstyle'
 import { Col, Container, Row } from 'react-bootstrap'
-// import SubscribeCard from "react-subscribe-card";
+
 import {
   PhoneFill,
   EnvelopeFill,
@@ -18,7 +14,7 @@ import {
   Instagram,
   Twitter,
 } from 'react-bootstrap-icons'
-// import "../../style.css";
+
 
 function Footer() {
   const mailchimpURL = `[Your Mailchimp subscription URL]`
@@ -32,13 +28,7 @@ function Footer() {
               <Col>
                 <div>
                   <h6 className='mb-4'>SIGN UP FOR OUR NEWSLETTER</h6>
-                  {/* <SubscribeCard
-                mailchimpURL={mailchimpURL}
-                outerCardStyle={OuterCardStyle}
-                subContainerStyle={SubContainerStyle}
-                subInputStyle={SubInputStyle}
-                subButtonStyle={SubButtonStyle}
-              /> */}
+             
                   <FooterLink href='/'>
                     <Social className='me-3'>
                       <Facebook></Facebook>

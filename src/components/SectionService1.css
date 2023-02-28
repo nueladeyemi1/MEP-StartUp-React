@@ -44,15 +44,6 @@
   margin: auto;
 }
 
-/* .Section1-Services {
-  display: grid !important;
-} */
-
-/* .contracts__section {
-} */
-
-/* 
-the screen size  */
 
 @media (min-width: 576px) {
   .row11 {
@@ -67,7 +58,7 @@ the screen size  */
   .row11 {
     display: grid;
     gap: 2rem;
-    /* grid-template-columns: repeat(2, 1fr); */
+  
   }
 
   .Section1 {

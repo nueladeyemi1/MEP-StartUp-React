@@ -30,9 +30,9 @@ export const initialState = {
   single_product: {},
 };
 
-// let url1 = "http://34.122.156.210:8000/api/v1/list/";
 
-export const fetchProducts = async (url1) => {
+
+export const fetchProducts = async () => {
   // dispatch({ type: GET_PRODUCTS_BEGIN });
   let response;
   try {
@@ -43,12 +43,9 @@ export const fetchProducts = async (url1) => {
     let product = response.data;
     return product;
 
-    // console.log(products);
-
-    // dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
+   
   } catch (error) {
-    // alert(error.message)
-    // dispatch({ type: GET_PRODUCTS_ERROR });
+  
   }
 };
 

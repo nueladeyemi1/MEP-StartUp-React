@@ -9,11 +9,9 @@ import Slide__2 from '../components/img/Slide__2.jpg'
 import Slide__3 from '../components/img/Slide__3.jpg'
 import Slide__4 from '../components/img/Slide__4.jpg'
 import { Loader } from './Loader'
-import { Button } from 'react-bootstrap'
 
 const useStyles = makeStyles((theme) => ({
   sliderContainer: {
-    // marginTop: "20px",
     marginBottom: '15px',
   },
   imageSlider: {

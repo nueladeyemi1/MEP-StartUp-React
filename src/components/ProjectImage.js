@@ -3,7 +3,7 @@ import styled from "styled-components";
 const ProjectImages = ({images}) => {
 
   const [main, setMain] = useState([images]);
-  console.log(images)
+  
   return (
     <Wrapper>
       <img src={images} alt="" className="main " />

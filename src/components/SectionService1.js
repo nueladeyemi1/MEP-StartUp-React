@@ -34,7 +34,6 @@ const Section1 = () => {
           <div className='row11'>
             {Services1.map((item) => {
               return (
-                // <div key={item.id} className="col-md-3 secrviceSection-column">
                 <div key={item.id} className='contracts__section'>
                   <i className={item.icon}></i>
                   <h3 className='serviceSection-heading'>{item.heading}</h3>

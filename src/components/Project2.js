@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-// import { formatPrice } from "../utils/helpers";
-// import { FaSearch } from 'react-icons/fa'
-// import { Link, Routes } from 'react-router-dom'
 
-// import { CardMedia } from '@mui/material'
-
-// import dust from '../component/img/'
 
 const Project2 = ({ image, name, price, id, description }) => {
    
@@ -20,21 +14,9 @@ const Project2 = ({ image, name, price, id, description }) => {
       <p>{description.substring(0, 150)}...</p>
       <Link
         to={`/projects/${id}`}
-        // style={{textDecoration: "none", padding: "0.5rem 2.5rem"}}
-        // className="btn"
       >
         View Details
       </Link>
-     
-{/*       
-      <button className={`project__${id}`} onClick={() => {document
-        .querySelector(`.project__${id}`)
-        .addEventListener("click", function (e) {
-          setProjectId(id)
-        });}}>
-    
-        View Details
-      </button> */}
     </Wrapper>
   );
 };
@@ -45,7 +27,8 @@ const Wrapper = styled.article`
     border-radius: var(--radius);
   }
   img {
-    // width: 100%;
+    min-height: 25vh;
+    min-width: 30vh;
     display: block;
     object-fit: cover;
     border-radius: var(--radius);

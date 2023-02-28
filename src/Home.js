@@ -1,4 +1,3 @@
-import Footer from './components/footer'
 import Review from './components/review'
 import Services from './components/Services'
 import { ProductsProvider } from './components/projects_context'
@@ -12,10 +11,7 @@ const Home = function() {
     <>
       <ProductsProvider>
         <Dashboard />
-
         <FeaturedProjects />
-
-        {/* <Footer /> */}
         <section>
           <Services />
           <br />

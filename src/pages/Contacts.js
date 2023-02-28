@@ -5,8 +5,6 @@ import Mapp from '../components/Mapdata'
 import emailjs from 'emailjs-com'
 import { Container, Row, Col } from 'react-bootstrap'
 
-//
-// ========
 
 const Contacts = function() {
   
@@ -25,10 +23,7 @@ const Contacts = function() {
     <>
       <Container>
         <h2 style={{ marginBottom: "2.5rem" }}>Company Contact Information</h2>
-
-        {/* <Row className="mb-5 mt-3"> */}
         <Row className="sec_sp">
-          {/* <Col lg="8"> */}
           <Col lg="5">
             <div className="col-md-4">
               zicad Integrated Engineering services
@@ -67,7 +62,7 @@ const Contacts = function() {
                       placeholder="Name"
                       required
                     />
-                    {/* <input type="hidden" name="contact_number" required /> */}
+        
                   </Col>
                   <br />
                   <Col lg="6" className="form-group">
@@ -78,7 +73,7 @@ const Contacts = function() {
                       placeholder="Subject"
                       required
                     />
-                    {/* <input type="hidden" name="contact_number" required /> */}
+                   
                   </Col>
                   <br />
                   <br />
@@ -119,9 +114,6 @@ const Contacts = function() {
           </Col>
         </Row>
 
-        {/* <section style={{ position: 'absolute', bottom: '0', width: '100%' }}>
-        <Footer1 />
-      </section> */}
       </Container>
       <section>
         <Footer1 />

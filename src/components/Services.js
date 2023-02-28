@@ -23,7 +23,7 @@ const Services = () => {
         <div className='services-center'>
           {services.map((service) => {
             const { id, icon, title, text, list } = service
-            // const listItems = list.map((lists) => <li>{lists}</li>);
+
 
             return (
               <article className='service' key={id}>

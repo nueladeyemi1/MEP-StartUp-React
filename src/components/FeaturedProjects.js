@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { initialState } from "./projects_context";
 import { useProductsContext } from "./projects_context";
 import { initialState } from "./projects_context";
 import { Link, Router, Route, Routes, useNavigate } from "react-router-dom";
@@ -33,50 +32,6 @@ const FeaturedProjects = () => {
     
   }
 
-
-                {/* </div> */}
-  // var bucket = [];
-
-  // for (let i = 0; featuredProject.length <= 10; i++) {
-  //   bucket.push(i);
-  // }
-
-  // function getRandomFromBucket() {
-  //   var randomIndex = Math.floor(Math.random() * featuredProject.length);
-  //   if (featuredProject.splice(randomIndex, 1)[0] !== undefined) {
-  //     newFeaturedProject.push(featuredProject.splice(randomIndex, 1)[0]);
-  //   }
-  // }
-
-  // getRandomFromBucket();
-
-  //
-
-  // let sample = 0;
-
-  // while (sample <= 10) {
-  //   const randomNumber = Math.floor(Math.random() * featuredProject.length);
-  //   if (!newFeaturedProject.includes(featuredProject[randomNumber])) {
-  //     newFeaturedProject.push(featuredProject[randomNumber]);
-  //     console.log(newFeaturedProject);
-  //   }
-  //   sample++;
-  // }
-
-  ///
-
-  // do {
-  //   const randomNumber = Math.floor(Math.random() * featuredProject.length);
-  //   if (!newFeaturedProject.includes(featuredProject[randomNumber])) {
-  //     newFeaturedProject.push(featuredProject[randomNumber]);
-  //     console.log(newFeaturedProject);
-  //   }
-
-  //   sample++;
-  // } while (sample <= 10);
-
-  // console.log(newFeaturedProject, featuredProject, featuredProject.length);
-
   const {
     products_loading: loading,
     products_error: error,
@@ -97,18 +52,10 @@ const FeaturedProjects = () => {
         <div className="underline"></div>
       </div>
       <div className="section-center featured">
-        {/* {console.log(initialState.featured_products)} */}
-
-        {/* /// */}
 
         {featuredProject.slice(0, 3).map((product) => {
           return <Product key={product.id} {...product} />;
         })}
-        {/* /// */}
-
-        {/* {initialState.featured_products.slice(0, 3).map((product) => {
-          return <Product key={product.id} {...product} />;
-        })} */}
       </div>
 
       <button

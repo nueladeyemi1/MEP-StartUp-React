@@ -12,22 +12,6 @@ import Footer1 from "./footer1";
 import ProjectImages from "./ProjectImage";
 
 
-// export const fetchProducts = async () => {
-//   let response;
-//   try {
-//     response = await axios.get(
-//       `https://mep-backend2-production.up.railway.app/api/v1/get/${id}/`
-//     );
-//     let product = response.data;
-//     return product;
-//   } catch (error) {}
-// };
-
-
-
-
-
-
 const SingleProductPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -61,32 +45,10 @@ const [product, setProduct] = useState([]);
   }, [id]);
 
 
-  console.log(product)
-  // useEffect(() => {
-  //   if (error) {
-  //     setTimeout(() => {
-  //       navigate("/");
-  //     }, 3000);
-  //   }
-  //   // eslint-disable-next-line
-  // }, [error]);
-  // if (loading) {
-  //   return <Loading />;
-  // }
-  // if (error) {
-  //   return <Error />;
-  // }
-
-  // const {
-  //   name,
-  //   description,
-  //   id: sku,
-  //   images,
-  // } = product;
   return (
     <>
       <Wrapper>
-        <div style={{ minHeight: "50vh" }}>
+        
           <div className="section section-center page">
             <Link
               to="/projects"
@@ -114,7 +76,7 @@ const [product, setProduct] = useState([]);
               </section>
             </div>
           </div>
-        </div>
+        
       </Wrapper>
       <Footer1 />
     </>

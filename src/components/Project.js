@@ -1,12 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import { formatPrice } from "../utils/helpers";
-// import { FaSearch } from 'react-icons/fa'
-// import { Link, Routes } from 'react-router-dom'
-
-// import { CardMedia } from '@mui/material'
-
-// import dust from '../component/img/'
 
 const Project = ({ image, name, price, id }) => {
   return (
@@ -28,7 +21,8 @@ const Wrapper = styled.article`
     border-radius: var(--radius);
   }
   img {
-    // width: 100%;
+    min-height: 25vh;
+    min-width: 40vh;
     display: block;
     object-fit: cover;
     border-radius: var(--radius);
@@ -75,5 +69,16 @@ const Wrapper = styled.article`
     color: var(--clr-primary-5);
     letter-spacing: var(--spacing);
   }
-`
+
+  @media (min-width: 992px) {
+    img {
+      min-height: 25vh;
+      min-width: 25vh;
+      display: block;
+      object-fit: cover;
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+  }
+`;
 export default Project

@@ -1,13 +1,12 @@
 import "./mapstyle.css";
 import Map from "./Map";
-// import Map from "./Map/Map";
+
 import { useEffect, useState } from "react";
 export default function Mapp() {
   const [coords, setCorrds] = useState({
     latitude: 6.59560,
     longitude: 3.3581
-    // latitude: 6.5953987,
-    // longitude: 3.3560892
+ 
   });
   const [display_name, setName] = useState("Our Office");
 
@@ -43,9 +42,9 @@ export default function Mapp() {
   }, []);
 
   return (
-    // <div className="App">
+   
       
       <Map coords={coords} display_name={display_name} />
-    // </div>
+   
   );
 }

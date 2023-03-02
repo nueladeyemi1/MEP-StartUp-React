@@ -56,7 +56,8 @@
 
   .center-content {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: center;
     text-align: center;
   }
 

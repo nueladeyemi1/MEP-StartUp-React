@@ -5,6 +5,7 @@ import SectionHeader from './SectionHeader'
 import { serviceContents } from './ServicesContent'
 import Image from './Image'
 import './featureTiles.css'
+import { useState } from 'react'
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -24,6 +25,19 @@ const ModifiedServices = ({
   pushLeft,
   ...props
 }) => {
+
+  const [arrayList, setArrayList] = useState([])
+
+  const theArrayList = function (index) {
+    console.log(index)
+    
+      serviceContents.map((serv)=> {
+       setArrayList(serv.serviceList1[index])
+      })
+      // console.log(index, serviceContents.serviceList1)
+  
+  }
+
   const outerClasses = classNames(
     'tiles-wrap',
     'features-tiles section',
@@ -55,46 +69,57 @@ const ModifiedServices = ({
       <div className='container'>
         {/* <div className={innerClasses}> */}
         {/* <SectionHeader data={sectionHeader} className='center-content' /> */}
-        <h4>Zicad Services Includes</h4>
+        <h4>Zicad Services</h4>
         <div className={tilesClasses}>
           {serviceContents.map((content) => {
             return (
               <div
                 key={content.id}
-                className='tiles-item reveal-from-bottom'
+                className="tiles-item reveal-from-bottom"
                 data-reveal-delay={content.serviceDelay}
               >
-                <div className='tiles-item-inner'>
-                  <div className='features-tiles-item-header'>
-                    <div className='features-tiles-item-image mb-16'>
+                <div className="tiles-item-inner">
+                  <div className="features-tiles-item-header">
+                    <div className="features-tiles-item-image mb-16">
                       <img
                         src={content.serviceIcon}
-                        alt='Features tile icon 01'
+                        alt="Features tile icon 01"
                         width={30}
                         height={30}
                       />
                     </div>
                   </div>
-                  <div className='features-tiles-item-content'>
-                    <h4 className='mt-0 mb-8'>{content.serviceTitle}</h4>
-                    <p className='m-0 text-sm text__justify'>
+                  <div className="features-tiles-item-content">
+                    <h4 className="mt-0 mb-8">{content.serviceTitle}</h4>
+                    <p className="m-0 text-sm text__justify">
                       {content.serviceText}
-                      <ul style={{ paddingTop: '15px' }}>
+                      <ul style={{ paddingTop: "15px" }}>
                         {content.serviceList.map((list, index) => (
-                          <li key={index} style={{ paddingBottom: '5px' }}>
+                          <li key={index} style={{ paddingBottom: "5px" }}>
                             {list}
                           </li>
+                        ))}
+                        {content.buttons.map((button, index) => (
+                          <div>
+                            <button
+                              onClick={(e) =>
+                                theArrayList(content.buttons.indexOf(button))
+                              }
+                            >
+                              {button}
+                            </button>
+                            {arrayList.map((subList)=>(<div>{subList}</div>))}
+                          </div>
                         ))}
                       </ul>
                     </p>
                   </div>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
-      {/* </div> */}
     </section>
   )
 }

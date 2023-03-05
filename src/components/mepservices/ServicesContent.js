@@ -4,44 +4,6 @@ import pipingIcon from './ServiceImg/icons8-pipe-60.png'
 
 export const serviceContents = [
   {
-    servicesType: [
-      {
-        id: 0,
-        serviceList: [
-          "Air conditioning & ventilation",
-          "Lifts, Hoists and Escalators",
-          "Building Audit & Specialists Reports",
-          "Refrigeration Design and Supervision",
-          "Smoke Ventilation and Extraction System",
-          "Value Engineering",
-        ],
-        serviceIcon: `${mechanicalIcon}`,
-      },
-      {
-        id: 1,
-        serviceList: [
-          "Air conditioning & ventilation",
-          "Lifts, Hoists and Escalators",
-          "Building Audit & Specialists Reports",
-          "Refrigeration Design and Supervision",
-          "Smoke Ventilation and Extraction System",
-          "Value Engineering",
-        ],
-        serviceIcon: `${mechanicalIcon}`,
-      },
-      {
-        id: 2,
-        serviceList: [
-          "Air conditioning & ventilation",
-          "Lifts, Hoists and Escalators",
-          "Building Audit & Specialists Reports",
-          "Refrigeration Design and Supervision",
-          "Smoke Ventilation and Extraction System",
-          "Value Engineering",
-        ],
-        serviceIcon: `${mechanicalIcon}`,
-      },
-    ],
     id: 0,
     serviceTitle: "Mechanical",
     serviceText: `We have in depth knowledge in the field of Mechanical Engineering in the construction industry.  As mechanical consulting engineers, we offer the following services:
@@ -56,47 +18,17 @@ export const serviceContents = [
     ],
     serviceIcon: `${mechanicalIcon}`,
     serviceDelay: "0",
+    buttons: ["Plumbing", "HVAC", "Fire Fighting", "Gas Layout", "BMS"],
+    serviceList1: [
+      ["Air conditioning & ventilation"],
+      ["Lifts, Hoists and Escalators"],
+      ["Building Audit & Specialists Reports"],
+      ["Refrigeration Design and Supervision"],
+      ["Smoke Ventilation axxxxon System"],
+    ],
   },
 
   {
-    servicesType: [
-      {
-        id: 0,
-        serviceList: [
-          "Air conditioning & ventilation",
-          "Lifts, Hoists and Escalators",
-          "Building Audit & Specialists Reports",
-          "Refrigeration Design and Supervision",
-          "Smoke Ventilation and Extraction System",
-          "Value Engineering",
-        ],
-        serviceIcon: `${mechanicalIcon}`,
-      },
-      {
-        id: 1,
-        serviceList: [
-          "Air conditioning & ventilation",
-          "Lifts, Hoists and Escalators",
-          "Building Audit & Specialists Reports",
-          "Refrigeration Design and Supervision",
-          "Smoke Ventilation and Extraction System",
-          "Value Engineering",
-        ],
-        serviceIcon: `${mechanicalIcon}`,
-      },
-      {
-        id: 2,
-        serviceList: [
-          "Air conditioning & ventilation",
-          "Lifts, Hoists and Escalators",
-          "Building Audit & Specialists Reports",
-          "Refrigeration Design and Supervision",
-          "Smoke Ventilation and Extraction System",
-          "Value Engineering",
-        ],
-        serviceIcon: `${mechanicalIcon}`,
-      },
-    ],
     id: 1,
     serviceTitle: "Electrical",
     serviceText: `Our Electrical Consulting Engineers offer quality services in the following Electrical Engineering services:
@@ -119,6 +51,20 @@ export const serviceContents = [
     ],
     serviceIcon: `${electricalIcon}`,
     serviceDelay: "200",
+    buttons: [
+      "Lighting",
+      "Power System",
+      "Data Center",
+      "Fire Alarm",
+      "Low Current System",
+    ],
+    serviceList1: [
+      ["Air conditioning & ventilation"],
+      ["Lifts, Hoists and Escalators"],
+      ["Building Audit & Specialists Reports"],
+      ["Refrigeration Design and Supervision"],
+      ["aaaaaaaaaaaaaaaaaaaaaaaaaaa"],
+    ],
   },
   //   {
   //     id: 2,
@@ -137,4 +83,85 @@ export const serviceContents = [
   //     serviceIcon: `${pipingIcon}`,
   //     serviceDelay: '400',
   //   },
+];
+
+
+
+export const subServices = [
+  [
+    {
+      id: 0,
+      buttonName: "Plumbing",
+      serviceList: [
+        "Air conditioning & ventilation",
+        "Lifts, Hoists and Escalators",
+        "Building Audit & Specialists Reports",
+        "Refrigeration Design and Supervision",
+        "Smoke Ventilation and Extraction System",
+        "Value Engineering",
+      ],
+    },
+    {
+      id: 1,
+      buttonName: "Plumbing",
+      serviceList: [
+        "Air conditioning & ventilation",
+        "Lifts, Hoists and Escalators",
+        "Building Audit & Specialists Reports",
+        "Refrigeration Design and Supervision",
+        "Smoke Ventilation and Extraction System",
+        "Value Engineering",
+      ],
+    },
+    {
+      id: 2,
+      buttonName: "Plumbing",
+      serviceList: [
+        "Air conditioning & ventilation",
+        "Lifts, Hoists and Escalators",
+        "Building Audit & Specialists Reports",
+        "Refrigeration Design and Supervision",
+        "Smoke Ventilation and Extraction System",
+        "Value Engineering",
+      ],
+    },
+  ],
+  [
+    {
+      id: 0,
+      buttonName: "Plumbing",
+      serviceList: [
+        "Air conditioning & ventilation",
+        "Lifts, Hoists and Escalators",
+        "Building Audit & Specialists Reports",
+        "Refrigeration Design and Supervision",
+        "Smoke Ventilation and Extraction System",
+        "Value Engineering",
+      ],
+    },
+    {
+      id: 1,
+      buttonName: "Plumbing",
+      serviceList: [
+        "Air conditioning & ventilation",
+        "Lifts, Hoists and Escalators",
+        "Building Audit & Specialists Reports",
+        "Refrigeration Design and Supervision",
+        "Smoke Ventilation and Extraction System",
+        "Value Engineering",
+      ],
+    },
+    {
+      id: 2,
+      buttonName: "Plumbing",
+      serviceList: [
+        "Air conditioning & ventilation",
+        "Lifts, Hoists and Escalators",
+        "Building Audit & Specialists Reports",
+        "Refrigeration Design and Supervision",
+        "Smoke Ventilation and Extraction System",
+        "Value Engineering",
+      ],
+    }
+  ]
 ];

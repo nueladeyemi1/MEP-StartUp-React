@@ -28,7 +28,9 @@ const ModifiedServices = ({
   ...props
 }) => {
 
-  const [toggleState, setToggleState] = useState(serviceContents[0].mechanical.id);
+  const [toggleState, setToggleState] = useState(
+    serviceContents[0].mechanical[0].id
+  );
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -75,8 +77,6 @@ const ModifiedServices = ({
   return (
     <section {...props} className={outerClasses}>
       <div className='container'>
-        {/* <div className={innerClasses}> */}
-        {/* <SectionHeader data={sectionHeader} className='center-content' /> */}
         <h4>Zicad Services</h4>
         <div className={tilesClasses}>
           {serviceContents.map((content) => {
@@ -101,27 +101,6 @@ const ModifiedServices = ({
                     <h4 className="mt-0 mb-8">{content.serviceTitle}</h4>
                     <p className="m-0 text-sm text__justify">
                       {content.serviceText}
-
-                      {/* <Tabs contentList={contentList} /> */}
-                      {/* <ul style={{ paddingTop: "15px" }}>
-                        {content.serviceList.map((list, index) => (
-                          <li key={index} style={{ paddingBottom: "5px" }}>
-                            {list}
-                          </li>
-                        ))}
-                        {content.buttons.map((button, index) => (
-                          <div>
-                            <button
-                              onClick={(e) =>
-                                theArrayList(content.buttons.indexOf(button))
-                              }
-                            >
-                              {button}
-                            </button>
-                            {arrayList.map((subList)=>(<div>{subList}</div>))}
-                          </div>
-                        ))}
-                      </ul> */}
                     </p>
                   </div>
                   {content.mechanical.map(
@@ -130,12 +109,19 @@ const ModifiedServices = ({
                         <div key={id} className="container2">
                           <div className="bloc-tabs">
                             <button
+                              style={{
+                                width: '100%',
+                                padding: '8px 0',
+                                textAlign: "left",
+                                // background: "hsl(223, 79%, 64%)",
+                                // background: "hsl(211, 27%, 70%)",
+                              }}
                               className={
                                 toggleState === id ? "tabs active-tabs" : "tabs"
                               }
                               onClick={() => toggleTab(id)}
                             >
-                              {title}
+                              <span style={{ textAlign: "left" }}>{title}</span>
                             </button>
                           </div>
 
@@ -147,11 +133,18 @@ const ModifiedServices = ({
                                   : "content"
                               }
                             >
-                              <h2>{title}</h2>
+                              <h4 style={{ textAlign: "left" }}>{title}</h4>
                               <hr />
                               <ul>
                                 {serviceListContent.map((list, index) => {
-                                  return <li key={index}>{list}</li>;
+                                  return (
+                                    <li
+                                      style={{ textAlign: "left" }}
+                                      key={index}
+                                    >
+                                      {list}
+                                    </li>
+                                  );
                                 })}
                               </ul>
                             </div>

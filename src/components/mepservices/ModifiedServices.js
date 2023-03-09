@@ -6,6 +6,8 @@ import { serviceContents } from './ServicesContent'
 import Image from './Image'
 import './featureTiles.css'
 import { useState } from 'react'
+import Tabs from '../ServiceTabs'
+// import { contentList } from '../ServiceTabContents'
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -25,6 +27,12 @@ const ModifiedServices = ({
   pushLeft,
   ...props
 }) => {
+
+  const [toggleState, setToggleState] = useState(serviceContents[0].mechanical.id);
+
+  const toggleTab = (index) => {
+    setToggleState(index);
+  };
 
   const [arrayList, setArrayList] = useState([])
 
@@ -93,7 +101,9 @@ const ModifiedServices = ({
                     <h4 className="mt-0 mb-8">{content.serviceTitle}</h4>
                     <p className="m-0 text-sm text__justify">
                       {content.serviceText}
-                      <ul style={{ paddingTop: "15px" }}>
+
+                      {/* <Tabs contentList={contentList} /> */}
+                      {/* <ul style={{ paddingTop: "15px" }}>
                         {content.serviceList.map((list, index) => (
                           <li key={index} style={{ paddingBottom: "5px" }}>
                             {list}
@@ -111,9 +121,45 @@ const ModifiedServices = ({
                             {arrayList.map((subList)=>(<div>{subList}</div>))}
                           </div>
                         ))}
-                      </ul>
+                      </ul> */}
                     </p>
                   </div>
+                  {content.mechanical.map(
+                    ({ id, title, serviceListContent }) => {
+                      return (
+                        <div key={id} className="container2">
+                          <div className="bloc-tabs">
+                            <button
+                              className={
+                                toggleState === id ? "tabs active-tabs" : "tabs"
+                              }
+                              onClick={() => toggleTab(id)}
+                            >
+                              {title}
+                            </button>
+                          </div>
+
+                          <div className="content-tabs">
+                            <div
+                              className={
+                                toggleState === id
+                                  ? "content  active-content"
+                                  : "content"
+                              }
+                            >
+                              <h2>{title}</h2>
+                              <hr />
+                              <ul>
+                                {serviceListContent.map((list, index) => {
+                                  return <li key={index}>{list}</li>;
+                                })}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    }
+                  )}
                 </div>
               </div>
             );

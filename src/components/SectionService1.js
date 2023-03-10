@@ -1,4 +1,5 @@
 import React from 'react'
+import Regulator from './Regulator';
 import './SectionService1.css'
 // import Tabs from './ServiceTabs';
 const Section1 = () => {
@@ -22,6 +23,7 @@ const Section1 = () => {
   return (
     <>
     {/* <Tabs /> */}
+    <Regulator />
       <div className="container Section1">
         <div className="section-headings">
           <h1 className="Section1-heading">

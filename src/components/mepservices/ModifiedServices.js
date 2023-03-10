@@ -7,6 +7,9 @@ import Image from './Image'
 import './featureTiles.css'
 import { useState } from 'react'
 import Tabs from '../ServiceTabs'
+import plus from '../img/plus.png'
+import minus from '../img/minus.png'
+
 // import { contentList } from '../ServiceTabContents'
 
 const propTypes = {
@@ -33,6 +36,10 @@ const ModifiedServices = ({
   );
 
   const toggleTab = (index) => {
+    if (toggleState === index) {
+      return null
+    }
+
     setToggleState(index);
   };
 
@@ -97,7 +104,7 @@ const ModifiedServices = ({
                       />
                     </div>
                   </div>
-                  <div className="features-tiles-item-content">
+                  <div style={{paddingBottom: '1.5rem'}} className="features-tiles-item-content">
                     <h4 className="mt-0 mb-8">{content.serviceTitle}</h4>
                     <p className="m-0 text-sm text__justify">
                       {content.serviceText}
@@ -110,17 +117,27 @@ const ModifiedServices = ({
                           <div className="bloc-tabs">
                             <button
                               style={{
-                                width: '100%',
-                                padding: '8px 0',
+                                width: "100%",
+                                padding: "8px 0",
                                 textAlign: "left",
-                                // background: "hsl(223, 79%, 64%)",
-                                // background: "hsl(211, 27%, 70%)",
                               }}
                               className={
                                 toggleState === id ? "tabs active-tabs" : "tabs"
                               }
                               onClick={() => toggleTab(id)}
                             >
+                              <span
+                                style={{
+                                  paddingLeft: "1rem",
+                                  paddingRight: "0.5rem",
+                                }}
+                              >
+                                {toggleState === id ? (
+                                  <img src={minus} width="18px" />
+                                ) : (
+                                  <img src={plus} width="18px" />
+                                )}
+                              </span>
                               <span style={{ textAlign: "left" }}>{title}</span>
                             </button>
                           </div>

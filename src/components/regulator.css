@@ -1,0 +1,16 @@
+.regulator {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.title--regulator {
+  margin-bottom: 50px;
+}
+
+.image_wrapper {
+  margin: 0px 30px;
+}
+
+.image_wrapper img {
+  width: 80%;
+}

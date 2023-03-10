@@ -108,7 +108,7 @@ export const serviceContents = [
   {
     id: 1,
     serviceTitle: "Electrical",
-    serviceText: `Our Electrical Consulting Engineers offer quality services in the following Electrical Engineering services:
+    serviceText: `Our team of Electrical Consulting Engineers have years of experience and offer highly quality services in the following Electrical Engineering services:
 
 `,
     serviceList: [

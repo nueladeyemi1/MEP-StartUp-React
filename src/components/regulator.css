@@ -8,9 +8,15 @@
 }
 
 .image_wrapper {
-  margin: 0px 30px;
+  margin: 0px 20px;
 }
 
 .image_wrapper img {
-  width: 80%;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+    .image_wrapper {
+  margin: 0px 10px;
+}
 }

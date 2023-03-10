@@ -5,6 +5,7 @@ import FeaturedProjects from './components/FeaturedProjects'
 import { Dashboard } from './components/TheCarousel'
 import FeaturesTiles from './components/mepservices/FeaturedServices'
 import Footer1 from './components/footer1'
+import Regulator from './components/Regulator'
 
 const Home = function() {
   return (
@@ -19,6 +20,8 @@ const Home = function() {
         </section>
 
         <FeaturesTiles />
+
+        <Regulator />
         <section className='container reduce__review'>
           <div className='title'>
             <h2>our reviews</h2>

@@ -11,6 +11,7 @@ import plus from '../img/plus.png'
 import minus from '../img/minus.png'
 
 // import { contentList } from '../ServiceTabContents'
+import "../servicetabs.css";
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -36,11 +37,11 @@ const ModifiedServices = ({
   );
 
   const toggleTab = (index) => {
-    if (toggleState === index) {
-      return null
+    if (toggleState === index){
+      setToggleState();
+    } else {
+      setToggleState(index)
     }
-
-    setToggleState(index);
   };
 
   const [arrayList, setArrayList] = useState([])
@@ -146,8 +147,8 @@ const ModifiedServices = ({
                             <div
                               className={
                                 toggleState === id
-                                  ? "content  active-content"
-                                  : "content"
+                                  ? "content1  active-content"
+                                  : "content1"
                               }
                             >
                               <h4 style={{ textAlign: "left" }}>{title}</h4>

@@ -45,7 +45,7 @@ button {
   border: none;
 }
 
-.content {
+.content1 {
   background: white;
   /* padding: 20px; */
   width: 100%;
@@ -55,7 +55,7 @@ button {
 .content h2 {
   padding: 0px 0 5px 0px;
 }
-.content hr {
+.content1 hr {
   width: 100px;
   height: 2px;
   background: #222;

@@ -10,6 +10,7 @@ import './featureTiles.css'
 import plus from "../img/plus.png";
 import minus from "../img/minus.png";
 
+import "../servicetabs.css";
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -35,9 +36,11 @@ const FeaturesTiles = ({
  );
 
  const toggleTab = (index) => {
-   if (toggleState === index) {
-     setToggleState(index);
-   }
+      if (toggleState === index) {
+        setToggleState();
+      } else {
+        setToggleState(index);
+      }
  };
 
   const outerClasses = classNames(
@@ -90,7 +93,10 @@ const FeaturesTiles = ({
                         />
                       </div>
                     </div>
-                    <div className="features-tiles-item-content">
+                    <div
+                      style={{ paddingBottom: "1.5rem" }}
+                      className="features-tiles-item-content"
+                    >
                       <h4 className="mt-0 mb-8">{content.serviceTitle}</h4>
                       <p className="m-0 text-sm text__justify">
                         {content.serviceText}
@@ -136,8 +142,8 @@ const FeaturesTiles = ({
                               <div
                                 className={
                                   toggleState === id
-                                    ? "content  active-content"
-                                    : "content"
+                                    ? "content1  active-content"
+                                    : "content1"
                                 }
                               >
                                 <h4 style={{ textAlign: "left" }}>{title}</h4>

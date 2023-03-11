@@ -15,10 +15,11 @@ const Regulator = () => {
   return (
     <>
       <div className="regulator">
-        <div className="title--regulator">
-          <h1>Our Technology Partner</h1>
+        <div className="title">
+          <h2>Regulation and Codes</h2>
         </div>
-          <Marquee direction="right" speed={80} delay={5}>
+        <div>Zicad's services, culture, mode of operations and designs follow the Standard, Regulation and Codes of the below bodies</div>
+          <Marquee direction="right" speed={20} delay={2}>
             <div className="image_wrapper">
               <img src={ashrea} alt="ashrae" width="60px" height="50px" />
             </div>

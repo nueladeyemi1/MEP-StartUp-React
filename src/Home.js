@@ -20,13 +20,13 @@ const Home = function() {
         </section>
 
         <FeaturesTiles />
-
+        
         <Regulator />
-        <section className='container reduce__review'>
-          <div className='title'>
+        <section className="container reduce__review">
+          <div className="title">
             <h2>our reviews</h2>
           </div>
-          <div className='underline'></div>
+          <div className="underline"></div>
           <Review />
         </section>
         <section>
@@ -34,7 +34,7 @@ const Home = function() {
         </section>
       </ProductsProvider>
     </>
-  )
+  );
 }
 
 export default Home

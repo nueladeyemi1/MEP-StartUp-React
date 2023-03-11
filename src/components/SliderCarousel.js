@@ -74,13 +74,15 @@ function Item(props) {
             src={item.src}
             alt={item?.name}
             style={{
+              backgroundSize: 'cover',
               position: 'absolute',
-              height: '100%',
-              maxHeight: '100%',
-              minHeight: '100%',
-              width: '100%',
-              maxWidth: '100%',
-              minWidth: '100%',
+              backgroundPosition: 'left',
+              // height: '100%',
+              // maxHeight: '100%',
+              // minHeight: '100%',
+              // width: '100%',
+              // maxWidth: '100%',
+              // minWidth: '100%',
             }}
           />
 

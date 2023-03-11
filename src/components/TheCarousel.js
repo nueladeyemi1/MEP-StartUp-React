@@ -4,11 +4,15 @@ import { makeStyles } from '@mui/styles'
 import { Grid } from '@mui/material'
 import { Slider } from './SliderCarousel'
 
-import Slide__1 from '../components/img/Slide__1.jpg'
-import Slide__2 from '../components/img/Slide__2.jpg'
+// import Slide__1 from '../components/img/Slide__1.jpg'
+// import Slide__2 from '../components/img/Slide__2.jpg'
 import Slide__3 from '../components/img/Slide__3.jpg'
-import Slide__4 from '../components/img/Slide__4.jpg'
+// import Slide__4 from '../components/img/wallpaper2.jpg'
 import { Loader } from './Loader'
+
+import Slide__1 from "../components/img/wallpaper3a.jpg";
+import Slide__2 from "../components/img/wallpaper4.jpg";
+import Slide__4 from "../components/img/wallpaper1.jpg";
 
 const useStyles = makeStyles((theme) => ({
   sliderContainer: {

@@ -20,15 +20,17 @@ const Home = function() {
         </section>
 
         <FeaturesTiles />
-        
-        <Regulator />
-        <section className="container reduce__review">
+
+        <div style={{ marginBottom: "4rem" }}>
+          <Regulator />
+        </div>
+        {/* <section className="container reduce__review">
           <div className="title">
             <h2>our reviews</h2>
           </div>
           <div className="underline"></div>
           <Review />
-        </section>
+        </section> */}
         <section>
           <Footer1 />
         </section>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Project = ({ image, name, price, id }) => {
+const Project = ({ image, name}) => {
   return (
     <Wrapper>
       <div className="container-featured">

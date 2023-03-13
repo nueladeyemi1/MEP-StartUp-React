@@ -2,14 +2,24 @@ import React from "react";
 import GridView from "../components/GridView";
 import { useState, useEffect } from "react";
 import { fetchProducts } from "../components/projects_context";
+import LoadingSpinner from "./LoadingSpinner";
 
 const ProductList = () => {
   const [callApi, setCallApi] = useState([]);
 
   useEffect(() => {
     fetchProducts().then((response) => setCallApi(response));
+    setTimeout(()=>{
+      setIsLoading(false)
+    } ,3000)
   }, []);
  
+const [isLoading, setIsLoading] = useState(true);
+
+if (isLoading) {
+  return <LoadingSpinner />;
+}
+
   if (callApi === undefined || callApi.length < 1) {
     return (
       <h5 style={{ textTransform: "none" }}>

@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer1 from "./footer1";
 import ProjectImages from "./ProjectImage";
+import LoadingSpinner from "./LoadingSpinner";
 
 
 const SingleProductPage = () => {
@@ -42,7 +43,21 @@ const [product, setProduct] = useState([]);
   useEffect(() => {
     fetchProducts();
     // eslint-disable-next-line
+    setTimeout(()=>{
+      setIsLoading(false)
+    },3000)
   }, [id]);
+
+  const [isLoading, setIsLoading] = useState(true)
+
+  if (isLoading) {
+    return(
+    <>
+    <LoadingSpinner />
+    <Footer1 />
+    </>
+    )
+  }
 
 
   return (

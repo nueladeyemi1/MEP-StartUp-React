@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 
-const Project2 = ({ image, name, price, id, description }) => {
+const Project2 = ({ image, name, id, description }) => {
    
   return (
     <Wrapper>

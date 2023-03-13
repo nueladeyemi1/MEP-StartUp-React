@@ -4,15 +4,12 @@ import { makeStyles } from '@mui/styles'
 import { Grid } from '@mui/material'
 import { Slider } from './SliderCarousel'
 
-// import Slide__1 from '../components/img/Slide__1.jpg'
-// import Slide__2 from '../components/img/Slide__2.jpg'
-import Slide__3 from '../components/img/Slide__3.jpg'
-// import Slide__4 from '../components/img/wallpaper2.jpg'
 import { Loader } from './Loader'
 
 import Slide__1 from "../components/img/wallpaper3a.jpg";
 import Slide__2 from "../components/img/wallpaper4.jpg";
 import Slide__4 from "../components/img/wallpaper1.jpg";
+import Slide__3 from "../components/img/Slide__3.jpg";
 
 const useStyles = makeStyles((theme) => ({
   sliderContainer: {
@@ -37,43 +34,43 @@ export function Dashboard(params) {
   const [loading, setLoading] = useState(false)
   const banners = [
     {
-      links: 'services',
+      links: "services",
       src: `${Slide__2}`,
-      text: 'Creating Safe indoor Environment!',
-      color: 'black',
-      buttonText: 'SEE SERVICES',
+      text: "Creating Safe indoor Environment!",
+      color: "rgb(55, 99, 176)",
+      buttonText: "SEE SERVICES",
       textContent:
-        'We offer range of amazing engineering and management services',
+        "We offer range of amazing engineering and management services",
       //   name: "Random Name #1",
-      description: 'Probably the most random thing you have ever seen!',
+      description: "Probably the most random thing you have ever seen!",
     },
     {
-      links: 'about',
+      links: "about",
       src: `${Slide__1}`,
-      text: 'Innovative Solutions!',
-      color: 'black',
-      buttonText: 'ABOUT ZICAD',
-      textContent: 'Know about our mission, vision and core values',
+      text: "Innovative Solutions!",
+      color: "white",
+      buttonText: "ABOUT ZICAD",
+      textContent: "Know about our mission, vision and core values",
     },
     {
-      links: 'contacts',
+      links: "contacts",
       src: `${Slide__3}`,
-      text: 'High Quality service!',
-      color: 'white',
-      buttonText: 'CONTACT US',
+      text: "High Quality service!",
+      color: "white",
+      buttonText: "CONTACT US",
       textContent:
-        'Zicad Integrated Engineering services assume single-point accountability from start to finish.',
+        "Zicad Integrated Engineering services assume single-point accountability from start to finish.",
     },
     {
-      links: 'projects',
+      links: "projects",
       src: `${Slide__4}`,
-      text: 'TrustWorthy. Timely Delivery!',
-      color: 'white',
-      buttonText: 'VIEW PROJECTS',
+      text: "TrustWorthy. Timely Delivery!",
+      color: "white",
+      buttonText: "VIEW PROJECTS",
       textContent:
-        'We have managed and handled simple, complex and intriguing projects',
+        "We have managed and handled simple, complex and intriguing projects",
     },
-  ]
+  ];
 
   return (
     <div>

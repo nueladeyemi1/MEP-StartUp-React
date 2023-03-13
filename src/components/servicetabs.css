@@ -1,3 +1,9 @@
+@keyframes transit {
+  100% {
+    transform: translateY(5%);
+  }
+}
+
 .bloc-tabs {
   display: flex;
 }
@@ -34,8 +40,8 @@
   position: absolute;
   top: -5px;
   left: 50%;
-  transform: translateY(-50%);
-  transition: 0.5s opacity ease-in, 0.8s transform ease;
+  /* transform: translateY(-50%);
+  transition: 0.5s opacity ease-in, 0.8s transform ease; */
   width: calc(100% + 2px);
   height: 5px;
 }
@@ -63,5 +69,6 @@ button {
 }
 
 .active-content {
+  /* transition: 1.5s opacity ease-in, 1.8s transform ease; */
   display: block;
 }

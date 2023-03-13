@@ -16,16 +16,12 @@ import LoadingSpinner from "./LoadingSpinner";
 const SingleProductPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  // const {
-  //   single_product_loading: loading,
-  //   single_product_error: error,
-  //   single_product: product,
-  //   fetchSingleProduct,
-  // } = useProductsContext();
 
-const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState([]);
 
+// This will handle the status of API Promise
 
+  const [status, setStatus] = useState(0)
 
   const fetchProducts = async () => {
     let response;
@@ -34,6 +30,8 @@ const [product, setProduct] = useState([]);
         `https://mep-backend2-production.up.railway.app/api/v1/get/${id}/`
       );
     let singleProduct = response.data;
+
+    setStatus(response.request.status);
 
     setProduct(singleProduct);
     } catch (error) {}
@@ -48,9 +46,12 @@ const [product, setProduct] = useState([]);
     },3000)
   }, [id]);
 
+  // This will handle the spinner
+
   const [isLoading, setIsLoading] = useState(true)
 
-  if (isLoading) {
+  //This is initiated until a positive response is gotten
+  if (isLoading && status === 200) {
     return(
     <>
     <LoadingSpinner />

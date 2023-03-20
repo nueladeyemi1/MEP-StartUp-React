@@ -22,32 +22,34 @@ const Regulator = () => {
           Zicad's services, culture, mode of operations and designs follow the
           Standard, Regulation and Codes of the below bodies
         </div>
-        <Marquee gradientWidth="100" direction="right" speed={20} delay={2}>
-          <div className="image_wrapper">
-            <img src={ashrea} alt="ashrae" width="60px" height="50px" />
-          </div>
-          <div className="image_wrapper">
-            <img src={nfpa} alt="NFPA" width="55px" height="50px" />
-          </div>
-          <div className="image_wrapper">
-            <img src={fidic} alt="FIDIC" width="55px" height="50px" />
-          </div>
-          <div className="image_wrapper">
-            <img src={acen} alt="ACEN" width="95px" height="70px" />
-          </div>
-          <div className="image_wrapper">
-            <img src={icc} alt="ICC" width="55px" height="50px" />
-          </div>
-          <div className="image_wrapper">
-            <img src={bsi} alt="bsi" width="80px" height="80px" />
-          </div>
-          <div className="image_wrapper">
-            <img src={smaccna} alt="smaccna" width="80px" height="50px" />
-          </div>
-          <div className="image_wrapper">
-            <img src={usgbcouncil} alt="liy" width="60px" height="50px" />
-          </div>
-        </Marquee>
+        {/* <div style={{ width: "50%", display: "flex", justifyItems: "center" }}> */}
+          <Marquee gradientWidth="100" direction="right" speed={20} delay={2}>
+            <div className="image_wrapper">
+              <img src={ashrea} alt="ashrae" width="60px" height="50px" />
+            </div>
+            <div className="image_wrapper">
+              <img src={nfpa} alt="NFPA" width="55px" height="50px" />
+            </div>
+            <div className="image_wrapper">
+              <img src={fidic} alt="FIDIC" width="55px" height="50px" />
+            </div>
+            <div className="image_wrapper">
+              <img src={acen} alt="ACEN" width="95px" height="70px" />
+            </div>
+            <div className="image_wrapper">
+              <img src={icc} alt="ICC" width="55px" height="50px" />
+            </div>
+            <div className="image_wrapper">
+              <img src={bsi} alt="bsi" width="80px" height="80px" />
+            </div>
+            <div className="image_wrapper">
+              <img src={smaccna} alt="smaccna" width="80px" height="50px" />
+            </div>
+            <div className="image_wrapper">
+              <img src={usgbcouncil} alt="liy" width="60px" height="50px" />
+            </div>
+          </Marquee>
+        {/* </div> */}
       </div>
     </>
   );

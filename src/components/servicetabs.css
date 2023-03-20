@@ -52,11 +52,18 @@ button {
 }
 
 .content1 {
-  background: white;
+  /* background: white; */
   /* padding: 20px; */
   width: 100%;
   height: 100%;
   display: none;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  opacity: 0;
+  left: 0;
+  transform: translateY(-3px);
 }
 .content h2 {
   padding: 0px 0 5px 0px;
@@ -71,4 +78,11 @@ button {
 .active-content {
   /* transition: 1.5s opacity ease-in, 1.8s transform ease; */
   display: block;
+  opacity: 1;
+  transition: 0.5s opacity ease-in, 0.8s transform ease;
+  position: relative;
+  top: 0;
+  z-index: 100;
+  transform: translateY(0px);
+  text-shadow: 0 0 0;
 }

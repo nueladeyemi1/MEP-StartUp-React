@@ -47,7 +47,12 @@ const About = ({
 
   const sectionHeader = {
     title: "About Zicad Integrated",
-    paragraph: `We are a multi-disciplinary engineering firm that provides innovative solutions for complex engineering challenges. We use in-house project management tools, CAD and BIM software, and quality control guidelines to ensure successful completion of projects on time and within budget. Our goal is to create and maintain structures that make our clients successful.`,
+    paragraph: `Zicad Engineering Services Ltd is a dynamic Engineering firm with proven expertise in the built environment. We employ our wealth of experience in the construction industry in achieving and surpassing the expectation of our clients. The company is registered with the Corporate Affairs Commission (CAC) with registration number RC 6866646.
+Our firm undertakes a full range of MEP Engineering services which includes Project Management, Procurement, Mechanical / Electrical / Extra Low Voltage systems installation, Design of Mechanical / Electrical / Extra Low Voltage systems, Preparation of Contract Documents, Evaluation of Tenders, Supervision of construction and commissioning of all types of projects. 
+Our professional assets include a vast network of quality technical service providers, quality technical materials and equipment merchants, the use of Engineering software, Computer aided design tools like Revit(Building Information Modeling) and Autocad to analyze and design complicated Mechanical and Electrical Engineering problems.
+Our clientele extend and are not limited to government institutions, Hospitals, Banks, Industries, Hospitality, Corporate/Commercial and Residential, Agriculture, Oil and Gas e.t.c 
+Our core of highly trained and experienced engineering personnel affords us the ability to undertake simple and complex projects while our quality assurance processes ensure that all our projects are executed in accordance to engineering codes and standards e.g ASHRAE, IEC, CIBSE, IEE e.t.c.
+`,
   };
 
   const sectionHeader2 = {
@@ -60,7 +65,11 @@ const About = ({
       <section {...props} className={outerClasses}>
         <div className="container">
           <div className={innerClasses}>
-            <SectionHeader data={sectionHeader} className="center-content" />
+            <SectionHeader
+              style={{ display: 'flex' }}
+              data={sectionHeader}
+              className="center-content"
+            />
           </div>
           <div style={{ marginTop: "10rem" }} className={innerClasses}>
             <SectionHeader data={sectionHeader2} className="center-content" />

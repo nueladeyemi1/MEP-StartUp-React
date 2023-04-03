@@ -51,7 +51,7 @@ const FeaturesTiles = ({
   )
 
   const sectionHeader = {
-    title: 'About Zicad Integrated',
+    title: 'About Zicad Engineering Services',
     paragraph: `We are a multi-disciplinary engineering firm that provides innovative solutions for complex engineering challenges. We use in-house project management tools, CAD and BIM software, and quality control guidelines to ensure successful completion of projects on time and within budget. Our goal is to create and maintain structures that make our clients successful.`,
   }
 

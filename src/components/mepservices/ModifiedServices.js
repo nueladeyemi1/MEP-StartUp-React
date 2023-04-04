@@ -5,6 +5,13 @@ import SectionHeader from './SectionHeader'
 import { serviceContents } from './ServicesContent'
 import Image from './Image'
 import './featureTiles.css'
+import { useState } from 'react'
+import Tabs from '../ServiceTabs'
+import plus from '../img/plus.png'
+import minus from '../img/minus.png'
+
+// import { contentList } from '../ServiceTabContents'
+import "../servicetabs.css";
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -24,6 +31,31 @@ const ModifiedServices = ({
   pushLeft,
   ...props
 }) => {
+
+  const [toggleState, setToggleState] = useState(
+    serviceContents[0].mechanical[0].id
+  );
+
+  const toggleTab = (index) => {
+    if (toggleState === index){
+      setToggleState();
+    } else {
+      setToggleState(index)
+    }
+  };
+
+  const [arrayList, setArrayList] = useState([])
+
+  const theArrayList = function (index) {
+    console.log(index)
+    
+      serviceContents.map((serv)=> {
+       setArrayList(serv.serviceList1[index])
+      })
+      // console.log(index, serviceContents.serviceList1)
+  
+  }
+
   const outerClasses = classNames(
     'tiles-wrap',
     'features-tiles section',
@@ -53,48 +85,98 @@ const ModifiedServices = ({
   return (
     <section {...props} className={outerClasses}>
       <div className='container'>
-        {/* <div className={innerClasses}> */}
-        {/* <SectionHeader data={sectionHeader} className='center-content' /> */}
-        <h4>Zicad Services Includes</h4>
+        <h4>Zicad Services</h4>
         <div className={tilesClasses}>
           {serviceContents.map((content) => {
             return (
               <div
                 key={content.id}
-                className='tiles-item reveal-from-bottom'
+                className="tiles-item reveal-from-bottom"
                 data-reveal-delay={content.serviceDelay}
               >
-                <div className='tiles-item-inner'>
-                  <div className='features-tiles-item-header'>
-                    <div className='features-tiles-item-image mb-16'>
+                <div className="tiles-item-inner">
+                  <div className="features-tiles-item-header">
+                    <div className="features-tiles-item-image mb-16">
                       <img
                         src={content.serviceIcon}
-                        alt='Features tile icon 01'
+                        alt="Features tile icon 01"
                         width={30}
                         height={30}
                       />
                     </div>
                   </div>
-                  <div className='features-tiles-item-content'>
-                    <h4 className='mt-0 mb-8'>{content.serviceTitle}</h4>
-                    <p className='m-0 text-sm text__justify'>
+                  <div style={{paddingBottom: '1.5rem'}} className="features-tiles-item-content">
+                    <h4 className="mt-0 mb-8">{content.serviceTitle}</h4>
+                    <p className="m-0 text-sm text__justify">
                       {content.serviceText}
-                      <ul style={{ paddingTop: '15px' }}>
-                        {content.serviceList.map((list, index) => (
-                          <li key={index} style={{ paddingBottom: '5px' }}>
-                            {list}
-                          </li>
-                        ))}
-                      </ul>
                     </p>
                   </div>
+                  {content.mechanical.map(
+                    ({ id, title, serviceListContent }) => {
+                      return (
+                        <div key={id} className="container2">
+                          <div className="bloc-tabs">
+                            <button
+                              style={{
+                                width: "100%",
+                                padding: "8px 0",
+                                textAlign: "left",
+                              }}
+                              className={
+                                toggleState === id ? "tabs active-tabs" : "tabs"
+                              }
+                              onClick={() => toggleTab(id)}
+                            >
+                              <span
+                                style={{
+                                  paddingLeft: "1rem",
+                                  paddingRight: "0.5rem",
+                                }}
+                              >
+                                {toggleState === id ? (
+                                  <img src={minus} width="18px" />
+                                ) : (
+                                  <img src={plus} width="18px" />
+                                )}
+                              </span>
+                              <span style={{ textAlign: "left" }}>{title}</span>
+                            </button>
+                          </div>
+
+                          <div className="content-tabs">
+                            <div
+                              className={
+                                toggleState === id
+                                  ? "content1  active-content"
+                                  : "content1"
+                              }
+                            >
+                              <h4 style={{ textAlign: "left" }}>{title}</h4>
+                              <hr />
+                              <ul>
+                                {serviceListContent.map((list, index) => {
+                                  return (
+                                    <li
+                                      style={{ textAlign: "left" }}
+                                      key={index}
+                                    >
+                                      {list}
+                                    </li>
+                                  );
+                                })}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    }
+                  )}
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
-      {/* </div> */}
     </section>
   )
 }

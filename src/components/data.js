@@ -6,36 +6,32 @@ import review__4 from './img/review__4.jpg'
 const reviews = [
   {
     id: 1,
-    name: 'XYZ Project',
-    job: 'Client',
+    name: "PlaceHolder Name 1",
+    job: "Client",
     image: review__1,
-    text:
-      "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
+    text: "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
   },
   {
     id: 2,
-    name: 'Emmanuel Adeyemi',
-    job: 'Project Manager',
+    name: "PlaceHolder Name 2",
+    job: "Project Manager",
     image: review__2,
-    text:
-      'Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.',
+    text: "Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.",
   },
   {
     id: 3,
-    name: 'PlaceHolder Name',
-    job: 'MEP Contractor',
+    name: "PlaceHolder Name 3",
+    job: "MEP Contractor",
     image: review__3,
-    text:
-      'Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.',
+    text: "Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.",
   },
   {
     id: 4,
-    name: 'PlaceHolder Name',
-    job: 'Social Media Manager',
+    name: "PlaceHolder Name 4",
+    job: "Social Media Manager",
     image: review__4,
-    text:
-      'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ',
+    text: "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ",
   },
-]
+];
 
 export default reviews

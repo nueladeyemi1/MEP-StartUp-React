@@ -1,5 +1,6 @@
 import React from 'react'
 import './SectionService1.css'
+
 const Section1 = () => {
   const Services1 = [
     {
@@ -19,33 +20,34 @@ const Section1 = () => {
     },
   ]
   return (
-    <div className='container Section1'>
-      <div className='section-headings'>
-        <h1 className='Section1-heading'>
-          Zicad Integrated Engineering services
-        </h1>
-        <p className='Section1-content'>
-          We undertake both EPCM and EPC contracts which are further described
-          below:
-        </p>
-      </div>
-      <div className='Section1-Services'>
-        <div className='serviced-Items'>
-          <div className='row11'>
-            {Services1.map((item) => {
-              return (
-                // <div key={item.id} className="col-md-3 secrviceSection-column">
-                <div key={item.id} className='contracts__section'>
-                  <i className={item.icon}></i>
-                  <h3 className='serviceSection-heading'>{item.heading}</h3>
-                  <p className='serviceSection-content'>{item.content}</p>
-                </div>
-              )
-            })}
+    <>
+      <div className="container Section1">
+        <div className="section-headings">
+          <h1 className="Section1-heading">
+            Zicad Integrated Engineering services
+          </h1>
+          <p className="Section1-content">
+            We undertake both EPCM and EPC contracts which are further described
+            below:
+          </p>
+        </div>
+        <div className="Section1-Services">
+          <div className="serviced-Items">
+            <div className="row11">
+              {Services1.map((item) => {
+                return (
+                  <div key={item.id} className="contracts__section">
+                    <i className={item.icon}></i>
+                    <h3 className="serviceSection-heading">{item.heading}</h3>
+                    <p className="serviceSection-content">{item.content}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  )
+    </>
+  );
 }
 export default Section1

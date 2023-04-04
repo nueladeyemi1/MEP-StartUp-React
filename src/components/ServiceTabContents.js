@@ -1,0 +1,86 @@
+export const contentList = [
+  {
+    id: 1,
+    
+  },
+  {
+    id: 2,
+    mechanical: [
+      {
+        id: 6,
+        title: "HVAC",
+        serviceListContent: [
+          "Chilled water system (Water cooled chillers, air cooled chillers, primary and secondary closed loop system) Variable Refrigerants Flow (VRF)",
+          "Variable Air Volume (VAV)",
+          "Air handling units, fan coil units (Two or four pipes system)",
+          "Energy recovery wheel system",
+          "DX-Split units systems",
+          "Under floor treatment systems",
+          "Totally fresh air cooling system",
+          "Low temperature/humidity system",
+          "Hot water boilers, steam boilers, heat exchangers",
+        ],
+      },
+      {
+        id: 7,
+        title: "Plumbing",
+        serviceListContent: [
+          "Chir",
+          "Variable Air Volume (VAV)",
+          "Air handling units, fan coil units (Two or four pipes system)",
+          "Energy recovery wheel system",
+          "DX-Split units systems",
+          "Under floor treatment systems",
+          "Totally fresh air cooling system",
+          "Low temperature/humidity system",
+          "Hot water boilers, steam boilers, heat exchangers",
+        ],
+      },
+      {
+        id: 8,
+        title: "FireFighting",
+        serviceListContent: [
+          "Chilled water system (Watf) Variable Refrigerants Flow (VRF)",
+          "Variable Air Volume (VAV)",
+          "Air handling units, fan coil units (Two or four pipes system)",
+          "Energy recovery wheel system",
+          "DX-Split units systems",
+          "Under floor treatment systems",
+          "Totally fresh air cooling system",
+          "Low temperature/humidity system",
+          "Hot water boilers, steam boilers, heat exchangers",
+        ],
+      },
+      {
+        id: 9,
+        title: "Gas Layout",
+        serviceListContent: [
+          " (VRF)",
+          "Variable Air Volume (VAV)",
+          "Air handling units, fan coil units (Two or four pipes system)",
+          "Energy recovery wheel system",
+          "DX-Split units systems",
+          "Under floor treatment systems",
+          "Totally fresh air cooling system",
+          "Low temperature/humidity system",
+          "Hot water boilers, steam boilers, heat exchangers",
+        ],
+      },
+      {
+        id: 10,
+        title: "BMS",
+        serviceListContent: [
+          "Chilled  cooled chillery and secondary closed loop system) Variable Refrigerants Flow (VRF)",
+          "Variable Air Volume (VAV)",
+          "Air handling units, fan coil units (Two or four pipes system)",
+          "Energy recovery wheel system",
+          "DX-Split units systems",
+          "Under floor treatment systems",
+          "Totally fresh air cooling system",
+          "Low temperature/humidity system",
+          "Hot water boilers, steam boilers, heat exchangers",
+        ],
+      },
+    ],
+  },
+];

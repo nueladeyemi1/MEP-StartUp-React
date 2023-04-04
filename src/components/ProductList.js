@@ -1,36 +1,59 @@
-import React from 'react'
-// import { useFilterContext } from '../context/filter_context'
-import GridView from '../components/GridView'
-import ListView from '../components/ListView'
-// import { useProductsContext } from '../components/projects_context'
-import { useProductsContext } from '../components/projects_context'
-import { useFilterContext } from './filter_context'
-import { initialState } from '../components/projects_context'
-import { useState, useEffect } from 'react'
-
-console.log(initialState.products)
+import React from "react";
+import GridView from "../components/GridView";
+import { useState, useEffect } from "react";
+import { fetchProducts } from "../components/projects_context";
+import LoadingSpinner from "./LoadingSpinner";
+import axios from "axios";
 
 const ProductList = () => {
-  const { filtered_products: products, grid_view } = useFilterContext()
+  const [status, setStatus] = useState([]);
 
-  //   return <ListView products={initialState.products} />
-  //   return <>{initialState.products}</>
-  //   const [listProduct, setListProduct] = useState([]);
-  //   const { grid_view } = initialState
+  const [project, setProject] = useState([]);
 
-  if (initialState.products.length < 1) {
-    return (
-      <h5 style={{ textTransform: 'none' }}>
-        Sorry, no products matched your search.
-        {console.log(initialState.featured_products)}
-      </h5>
-    )
+  const apiCall = async function () {
+    try {
+      let response = await axios.get(
+        "https://mep-backend2-production.up.railway.app/api/v1/list/"
+      );
+
+      setProject(response.data)
+      setStatus(response.request.status)
+      
+    } catch (error) {
+      if(status !== 200) {
+        return <>...Error in loading Project {error}</>
+      }
+    }
   }
 
-  if (grid_view === false) {
-    return <ListView products={initialState.products} />
-  }
-  return <GridView products={initialState.products} />
+  useEffect(() => {
+
+    apiCall()
+
+    setTimeout(()=>{
+      setIsLoading(false)
+    } ,3000)
+  }, []);
+ 
+const [isLoading, setIsLoading] = useState(true);
+
+if (isLoading && status === 200) {
+  return <LoadingSpinner />;
 }
 
-export default ProductList
+  if (project === undefined || project.length < 1) {
+    return (
+      <h5 style={{ textTransform: "none" }}>
+        Sorry, no projects available now.
+      </h5>
+    );
+  }
+
+  return (
+    <>
+      <GridView key={project.id} products={project} />
+    </>
+  );
+};
+
+export default ProductList;

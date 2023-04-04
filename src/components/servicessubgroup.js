@@ -52,8 +52,7 @@ export const services = [
   },
 ]
 
-// export const products_url = 'https://course-api.com/react-store-products'
+export const products_url =  "https://mep-backend2-production.up.railway.app/api/v1/list/"
 
-export const products_url = '/api/v1/list/'
+export const single_product_url = `https://mep-backend2-production.up.railway.app/api/v1/get/`;
 
-export const single_product_url = `https://course-api.com/react-store-single-product?id=`

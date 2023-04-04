@@ -1,13 +1,22 @@
-import React from 'react'
-import styled from 'styled-components'
-import Project from './Project'
+import React from "react";
+import styled from "styled-components";
+// import Project from "./Project";
+import Project2 from "./Project2";
+
 
 const GridView = ({ products }) => {
   return (
     <Wrapper>
-      <div className='products-container'>
+      <div className="products-container">
         {products.map((product) => {
-          return <Project key={product.id} {...product} />
+          const { id, image, name, price, description } = product
+          {
+            return (
+              <>
+                <Project2 key={id} {...product} />
+              </>
+            );
+          }
         })}
       </div>
     </Wrapper>

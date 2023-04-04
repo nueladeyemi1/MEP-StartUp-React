@@ -1,0 +1,88 @@
+@keyframes transit {
+  100% {
+    transform: translateY(5%);
+  }
+}
+
+.bloc-tabs {
+  display: flex;
+}
+.tabs {
+    font-size: 14px;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    /* line-height: 26px;
+    outline: none; */
+  /* padding: 15px;
+  text-align: center;
+  width: 50%;
+  background: rgba(128, 128, 128, 0.075);
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+  box-sizing: content-box;
+  position: relative;
+  outline: none; */
+}
+
+/* .tabs:not(:last-child){
+  border-right: 1px solid rgba(0, 0, 0, 0.274);
+} */
+
+.active-tabs  {
+  background: hsl(223, 79%, 64%);
+}
+
+.active-tabs::before {
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  /* transform: translateY(-50%);
+  transition: 0.5s opacity ease-in, 0.8s transform ease; */
+  width: calc(100% + 2px);
+  height: 5px;
+}
+
+
+button {
+  border: none;
+}
+
+.content1 {
+  /* background: white; */
+  /* padding: 20px; */
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  opacity: 0;
+  left: 0;
+  transform: translateY(-3px);
+}
+.content h2 {
+  padding: 0px 0 5px 0px;
+}
+.content1 hr {
+  width: 100px;
+  height: 2px;
+  background: #222;
+  margin-bottom: 5px;
+}
+
+.active-content {
+  /* transition: 1.5s opacity ease-in, 1.8s transform ease; */
+  display: block;
+  opacity: 1;
+  transition: 0.5s opacity ease-in, 0.8s transform ease;
+  position: relative;
+  top: 0;
+  z-index: 100;
+  transform: translateY(0px);
+  text-shadow: 0 0 0;
+}

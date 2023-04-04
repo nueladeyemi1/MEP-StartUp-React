@@ -1,0 +1,22 @@
+.regulator {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.title--regulator {
+  margin-bottom: 50px;
+}
+
+.image_wrapper {
+  margin: 0px 20px;
+}
+
+.image_wrapper img {
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+    .image_wrapper {
+  margin: 0px 10px;
+}
+}

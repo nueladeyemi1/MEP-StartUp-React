@@ -41,22 +41,42 @@ export default function Navbar() {
       >
         <ul>
           <li>
-            <Link to='/'>Home</Link>
+            <Link 
+            onClick={() => {
+              setIsNavExpanded(!isNavExpanded)
+            }} 
+            to='/'>Home</Link>
           </li>
           <li>
-            <Link to='/about'>About</Link>
+            <Link 
+            onClick={() => {
+          setIsNavExpanded(!isNavExpanded)
+        }} 
+        to='/about'>About</Link>
           </li>
           <li>
-            <Link to='/services'>Services</Link>
+            <Link 
+             onClick={() => {
+              setIsNavExpanded(!isNavExpanded)
+            }} 
+            to='/services'>Services</Link>
           </li>
           <li>
-            <Link to='/projects'>Projects</Link>
+            <Link 
+            onClick={() => {
+              setIsNavExpanded(!isNavExpanded)
+            }} 
+            to='/projects'>Projects</Link>
           </li>
           {/* <li>
             <a href='/contact'>Career</a>
           </li> */}
           <li>
-            <Link to='/contacts'>Contact</Link>
+            <Link 
+            onClick={() => {
+              setIsNavExpanded(!isNavExpanded)
+            }} 
+            to='/contacts'>Contact</Link>
           </li>
         </ul>
       </div>

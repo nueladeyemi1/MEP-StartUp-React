@@ -1,4 +1,3 @@
-import Footer from './components/footer'
 import Review from './components/review'
 import Services from './components/Services'
 import { ProductsProvider } from './components/projects_context'
@@ -6,16 +5,14 @@ import FeaturedProjects from './components/FeaturedProjects'
 import { Dashboard } from './components/TheCarousel'
 import FeaturesTiles from './components/mepservices/FeaturedServices'
 import Footer1 from './components/footer1'
+import Regulator from './components/Regulator'
 
 const Home = function() {
   return (
     <>
       <ProductsProvider>
         <Dashboard />
-
         <FeaturedProjects />
-
-        {/* <Footer /> */}
         <section>
           <Services />
           <br />
@@ -23,19 +20,23 @@ const Home = function() {
         </section>
 
         <FeaturesTiles />
-        <section className='container reduce__review'>
-          <div className='title'>
+
+        <div style={{ marginBottom: "4rem" }}>
+          <Regulator />
+        </div>
+        {/* <section className="container reduce__review">
+          <div className="title">
             <h2>our reviews</h2>
           </div>
-          <div className='underline'></div>
+          <div className="underline"></div>
           <Review />
-        </section>
+        </section> */}
         <section>
           <Footer1 />
         </section>
       </ProductsProvider>
     </>
-  )
+  );
 }
 
 export default Home

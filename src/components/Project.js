@@ -1,16 +1,13 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
-const Project = ({ image, name}) => {
+const Project = ({ image, name }) => {
   return (
     <Wrapper>
-      <div className="container-featured">
-        {<img src={image} alt={name} />}
-      </div>
+      <div className='container-featured'>{<img src={image} alt={name} />}</div>
       <footer>
         <h5>{name}</h5>
       </footer>
-      
     </Wrapper>
   )
 }
@@ -80,5 +77,5 @@ const Wrapper = styled.article`
       transition: var(--transition);
     }
   }
-`;
+`
 export default Project

@@ -6,6 +6,7 @@ import { Dashboard } from './components/TheCarousel'
 import FeaturesTiles from './components/mepservices/FeaturedServices'
 import Footer1 from './components/footer1'
 import Regulator from './components/Regulator'
+import Regulator2 from './components/Regulator2'
 
 const Home = function() {
   return (
@@ -21,8 +22,9 @@ const Home = function() {
 
         <FeaturesTiles />
 
-        <div style={{ marginBottom: "4rem" }}>
-          <Regulator />
+        <div style={{ marginBottom: '4rem' }}>
+          {/* <Regulator /> */}
+          <Regulator2 />
         </div>
         {/* <section className="container reduce__review">
           <div className="title">
@@ -36,7 +38,7 @@ const Home = function() {
         </section>
       </ProductsProvider>
     </>
-  );
+  )
 }
 
 export default Home

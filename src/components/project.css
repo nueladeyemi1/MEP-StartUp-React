@@ -1,0 +1,28 @@
+table,
+td,
+td,
+th {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  text-align: center;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+td a,
+td a:link,
+td a:visited {
+  display: inline-block;
+  text-decoration: none;
+  width: 75%;
+  color: #fff;
+  background-color: #7392c8;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  /* color: rgb(55, 99, 176) ; */
+}
+
+td a:hover,
+td a:active {
+  background-color: #5f82c0;
+}

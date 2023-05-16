@@ -3,6 +3,14 @@
   text-align: center;
 }
 
+.regulator_flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* filter: brightness(0); */
+  opacity: 75%;
+}
+
 .title--regulator {
   margin-bottom: 50px;
 }
@@ -16,7 +24,11 @@
 }
 
 @media (max-width: 480px) {
-    .image_wrapper {
-  margin: 0px 10px;
-}
+  .image_wrapper {
+    margin: 0px 10px;
+  }
+
+  /* .regulator_flex {
+    height: 0.8rem;
+  } */
 }

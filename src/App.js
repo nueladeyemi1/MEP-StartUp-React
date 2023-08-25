@@ -14,7 +14,7 @@ import ProductList from './pages/ProjectPage'
 import ScrollToTop from './components/ScrollToTop'
 import Contacts from './pages/Contacts'
 import SingleProductPage from './components/SingleProject'
-
+import PageNotFFound from './PageNotFFound'
 
 function Main() {
   return (
@@ -25,16 +25,17 @@ function Main() {
           <Navbar />
         </section>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<ServicePage />} />
-          <Route path="/projects" element={<ProductList />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/projects/:id" element={<SingleProductPage />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/services' element={<ServicePage />} />
+          <Route path='/projects' element={<ProductList />} />
+          <Route path='/contacts' element={<Contacts />} />
+          <Route path='/projects/:id' element={<SingleProductPage />} />
+          <Route path='*' element={<PageNotFFound />} />
         </Routes>
       </BrowserRouter>
     </>
-  );
+  )
 }
 
 export default Main

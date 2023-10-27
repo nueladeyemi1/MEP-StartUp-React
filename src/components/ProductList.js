@@ -6,34 +6,42 @@ import { fetchProducts } from '../components/projects_context'
 import LoadingSpinner from './LoadingSpinner'
 import axios from 'axios'
 import './project.css'
+import { useProject } from '../supabase/useProject'
 
 const ProductList = () => {
-  const [status, setStatus] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
+  const { isLoading, data } = useProject()
+  console.log(data, 'yes')
+
+  // const [status, setStatus] = useState('')
+  // const [isLoading, setIsLoading] = useState(false)
   const [project, setProject] = useState([])
 
-  const apiCall = async function() {
-    try {
-      setIsLoading(true)
-      const response = await axios.get(
-        'https://mep-backend2-production.up.railway.app/api/v1/list/'
-      )
+  ////
 
-      const data = await response.data
+  // const apiCall = async function() {
+  //   try {
+  //     // setIsLoading(true)
+  //     const response = await axios.get(
+  //       'https://mep-backend2-production.up.railway.app/api/v1/list/'
+  //     )
 
-      setProject(data)
-      setStatus(data.status)
-      setIsLoading(false)
-    } catch (error) {
-      if (status !== 200) {
-        return <>...Error in loading Project {error}</>
-      }
-    }
-  }
+  //     const data = await response.data
 
-  useEffect(() => {
-    apiCall()
-  }, [])
+  //     setProject(data)
+  //     setStatus(data.status)
+  //     // setIsLoading(false)
+  //   } catch (error) {
+  //     if (status !== 200) {
+  //       return <>...Error in loading Project {error}</>
+  //     }
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   apiCall()
+  // }, [])
+
+  ///
 
   // if (isLoading === 'false') {
   //   return <LoadingSpinner />
@@ -51,7 +59,7 @@ const ProductList = () => {
     <>
       {isLoading === true ? (
         <LoadingSpinner />
-      ) : project.length < 1 ? (
+      ) : data?.length < 1 ? (
         <h5 style={{ textTransform: 'none' }}>
           Sorry, no projects available now.
         </h5>
@@ -65,12 +73,19 @@ const ProductList = () => {
             <th>PROJECT STATUS</th>
             <th>FULL DESCRIPTION</th>
           </thead>
+          {data?.map((projectData) => {
+            const {
+              id,
+              project_name,
+              services,
+              client,
+              project_status,
+            } = projectData
 
-          {project.map(({ id, name, services, client, project_status }) => {
             return (
-              <tbody>
+              <tbody key={id}>
                 <td>{id}</td>
-                <td>{name}</td>
+                <td>{project_name}</td>
                 <td>{services}</td>
                 <td>{client}</td>
                 <td>{project_status}</td>
@@ -80,7 +95,6 @@ const ProductList = () => {
               </tbody>
             )
           })}
-
           {/* {console.log(project, id, name, client, feature)} */}
         </table>
       )}

@@ -8,35 +8,41 @@ import Footer1 from './components/footer1'
 import Regulator from './components/Regulator'
 import Regulator2 from './components/Regulator2'
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
 const Home = function() {
+  const queryClient = new QueryClient()
+
   return (
     <>
-      <ProductsProvider>
-        <Dashboard />
-        <FeaturedProjects />
-        <section>
-          <Services />
-          <br />
-          <br />
-        </section>
+      <QueryClientProvider client={queryClient}>
+        <ProductsProvider>
+          <Dashboard />
+          <FeaturedProjects />
+          <section>
+            <Services />
+            <br />
+            <br />
+          </section>
 
-        <FeaturesTiles />
+          <FeaturesTiles />
 
-        <div style={{ marginBottom: '4rem' }}>
-          {/* <Regulator /> */}
-          <Regulator2 />
-        </div>
-        {/* <section className="container reduce__review">
+          <div style={{ marginBottom: '4rem' }}>
+            {/* <Regulator /> */}
+            <Regulator2 />
+          </div>
+          {/* <section className="container reduce__review">
           <div className="title">
             <h2>our reviews</h2>
           </div>
           <div className="underline"></div>
           <Review />
         </section> */}
-        <section>
-          <Footer1 />
-        </section>
-      </ProductsProvider>
+          <section>
+            <Footer1 />
+          </section>
+        </ProductsProvider>
+      </QueryClientProvider>
     </>
   )
 }

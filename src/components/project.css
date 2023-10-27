@@ -2,12 +2,34 @@ table,
 td,
 td,
 th {
+  font-size: 1.2rem;
   border: 1px solid #000;
   border-collapse: collapse;
   text-align: center;
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
+
+  @media only screen and (max-width: 57.81em) {
+    font-size: 0.8rem;
+  }
+
+  @media only screen and (max-width: 28.125em) {
+    font-size: 0.6rem;
+  }
+
+  @media only screen and (max-width: 21.875em) {
+    font-size: 0.5rem;
+  }
 }
+
+.section-center-table {
+  @media only screen and (max-width: 28.125em) {
+    width: 98vw;
+  }
+}
+/* table {
+  width: 10%;
+} */
 
 td a,
 td a:link,
@@ -19,6 +41,10 @@ td a:visited {
   background-color: #7392c8;
   padding: 0.6rem 1.2rem;
   border-radius: 0.5rem;
+
+  @media only screen and (max-width: 57.81em) {
+    padding: 0.3rem 0.6rem;
+  }
   /* color: rgb(55, 99, 176) ; */
 }
 

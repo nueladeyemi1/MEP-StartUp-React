@@ -8,13 +8,14 @@
   display: flex;
 }
 .tabs {
-    font-size: 14px;
-    display: block;
-    cursor: pointer;
-    position: relative;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    /* line-height: 26px;
+  font-size: 14px;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  transition: all 0.5s;
+  /* line-height: 26px;
     outline: none; */
   /* padding: 15px;
   text-align: center;
@@ -31,11 +32,13 @@
   border-right: 1px solid rgba(0, 0, 0, 0.274);
 } */
 
-.active-tabs  {
+.active-tabs {
   background: hsl(223, 79%, 64%);
+  transition: all 0.5s;
 }
 
 .active-tabs::before {
+  transition: all 0.5s;
   display: block;
   position: absolute;
   top: -5px;
@@ -44,8 +47,8 @@
   transition: 0.5s opacity ease-in, 0.8s transform ease; */
   width: calc(100% + 2px);
   height: 5px;
+  transition: all 0.5s;
 }
-
 
 button {
   border: none;
@@ -64,15 +67,18 @@ button {
   opacity: 0;
   left: 0;
   transform: translateY(-3px);
+  transition: all 0.5s;
 }
 .content h2 {
   padding: 0px 0 5px 0px;
+  transition: all 0.5s;
 }
 .content1 hr {
   width: 100px;
   height: 2px;
   background: #222;
   margin-bottom: 5px;
+  transition: all 0.5s;
 }
 
 .active-content {
@@ -85,4 +91,5 @@ button {
   z-index: 100;
   transform: translateY(0px);
   text-shadow: 0 0 0;
+  transition: all 0.5s;
 }

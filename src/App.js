@@ -15,25 +15,32 @@ import ScrollToTop from './components/ScrollToTop'
 import Contacts from './pages/Contacts'
 import SingleProductPage from './components/SingleProject'
 import PageNotFFound from './PageNotFFound'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import Admin from './admin/Admin'
 
 function Main() {
+  const queryClient = new QueryClient()
+
   return (
     <>
-      <BrowserRouter>
-        <ScrollToTop />
-        <section>
-          <Navbar />
-        </section>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/services' element={<ServicePage />} />
-          <Route path='/projects' element={<ProductList />} />
-          <Route path='/contacts' element={<Contacts />} />
-          <Route path='/projects/:id' element={<SingleProductPage />} />
-          <Route path='*' element={<PageNotFFound />} />
-        </Routes>
-      </BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <ScrollToTop />
+          <section>
+            <Navbar />
+          </section>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/services' element={<ServicePage />} />
+            <Route path='/projects' element={<ProductList />} />
+            <Route path='/contacts' element={<Contacts />} />
+            <Route path='/projects/:id' element={<SingleProductPage />} />
+            <Route path='*' element={<PageNotFFound />} />
+            <Route path='/admin' element={<Admin />} />
+          </Routes>
+        </BrowserRouter>
+      </QueryClientProvider>
     </>
   )
 }

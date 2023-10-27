@@ -21,13 +21,17 @@ const PageNotFFound = () => {
           justifyContent: 'center',
           marginTop: '4.8rem',
           marginBottom: '3.2rem',
+          paddingLeft: '0.5rem',
+          paddingRight: '0.5rem',
           gap: '2.4rem',
         }}
       >
-        <img style={{ maxWidth: '100%' }} src={image} alt='page not found' />
-        <p style={{ color: 'red', fontWeight: '700' }}>
-          Sorry! Something went wronng, this page cannot be found
+        <img style={{ maxWidth: '75%' }} src={image} alt='page not found' />
+
+        <p style={{ color: 'red', fontWeight: '700', textAlign: 'center' }}>
+          Sorry! Something went wrong, this page cannot be found
         </p>
+
         <button
           style={{
             padding: '0.6rem 2.4rem',

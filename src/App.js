@@ -17,6 +17,7 @@ import SingleProductPage from './components/SingleProject'
 import PageNotFFound from './PageNotFFound'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Admin from './admin/Admin'
+import AdminLogin from './admin/AdminLogin'
 
 function Main() {
   const queryClient = new QueryClient()
@@ -38,6 +39,7 @@ function Main() {
             <Route path='/projects/:id' element={<SingleProductPage />} />
             <Route path='*' element={<PageNotFFound />} />
             <Route path='/admin' element={<Admin />} />
+            <Route path='/adminlogin' element={<AdminLogin />} />
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>

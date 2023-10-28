@@ -48,3 +48,8 @@ article h1 {
   background-color: var(--clr-primary-7) !important;
   color: white;
 }
+
+.projectBTN:hover {
+  color: white;
+  background-color: var(--clr-grey-3) !important;
+}

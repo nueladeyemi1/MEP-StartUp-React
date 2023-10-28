@@ -24,22 +24,22 @@ const Regulator2 = () => {
         {/* <div style={{ width: "50%", display: "flex", justifyItems: "center" }}> */}
         <section className='regulator_flex'>
           <div className='image_wrapper'>
-            <img src={ashrea} alt='ashrae' width='60px' height='50px' />
+            <img src={ashrea} alt='ashrae' height='50px' />
           </div>
           <div className='image_wrapper'>
-            <img src={nfpa} alt='NFPA' width='55px' height='50px' />
+            <img src={nfpa} alt='NFPA' height='50px' />
           </div>
           <div className='image_wrapper'>
-            <img src={fidic} alt='FIDIC' width='55px' height='50px' />
+            <img src={fidic} alt='FIDIC' height='50px' />
           </div>
           <div className='image_wrapper'>
-            <img src={acen} alt='ACEN' width='95px' height='70px' />
+            <img src={acen} alt='ACEN' height='70px' />
           </div>
           <div className='image_wrapper'>
-            <img src={icc} alt='ICC' width='55px' height='50px' />
+            <img src={icc} alt='ICC' height='50px' />
           </div>
           <div className='image_wrapper'>
-            <img src={bsi} alt='bsi' width='80px' height='80px' />
+            <img src={bsi} alt='bsi' height='80px' />
           </div>
           <div className='image_wrapper'>
             <img src={smaccna} alt='smaccna' width='80px' height='50px' />

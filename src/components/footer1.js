@@ -2,6 +2,8 @@ import styles from './footer.module.css'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 
+// import './footer.module.css'
+
 import {
   FaFacebookSquare,
   FaInstagram,
@@ -41,7 +43,7 @@ const Footer1 = () => {
   }
 
   return (
-    <footer className={`container-fluid py-4 ${styles.bgFooter} }`}>
+    <footer className={`footer-fs container-fluid py-4 ${styles.bgFooter} }`}>
       <div className='row'>
         <div
           className={`container ${styles.customeContainer} d-flex justify-content-between flex-wrap`}

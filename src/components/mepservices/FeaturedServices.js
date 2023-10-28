@@ -106,6 +106,8 @@ const FeaturesTiles = ({
                             <div className='bloc-tabs'>
                               <button
                                 style={{
+                                  display: 'flex',
+                                  alignItems: 'center',
                                   width: '100%',
                                   padding: '8px 0',
                                   textAlign: 'left',

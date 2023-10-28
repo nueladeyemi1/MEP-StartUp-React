@@ -1,25 +1,29 @@
-import { useState } from "react";
-import "./servicetabs.css";
+import { useState } from 'react'
+import './servicetabs.css'
 
-function Tabs({contentList}) {
-  const [toggleState, setToggleState] = useState(contentList[0].id);
+function Tabs({ contentList }) {
+  const [toggleState, setToggleState] = useState(contentList[0].id)
 
   const toggleTab = (index) => {
-    setToggleState(index);
-  };
+    setToggleState(index)
+  }
 
   return (
     <>
-      {contentList.map(({id, mechanical})=> {
+      {contentList.map(({ id, mechanical }) => {
         return (
-          <section style={{display: 'flex', justifyContent: 'space-between'}} key={id}>
+          <section
+            style={{ display: 'flex', justifyContent: 'space-between' }}
+            key={id}
+          >
             {mechanical.map(({ id, title, serviceListContent }) => {
               return (
-                <div key={id} className="container">
-                  <div className="bloc-tabs">
+                <div key={id} className='container'>
+                  <div className='bloc-tabs'>
                     <button
+                      // style={{ display: 'flex', justifyContent: 'center' }}
                       className={
-                        toggleState === id ? "tabs active-tabs" : "tabs"
+                        toggleState === id ? 'tabs active-tabs' : 'tabs'
                       }
                       onClick={() => toggleTab(id)}
                     >
@@ -27,31 +31,31 @@ function Tabs({contentList}) {
                     </button>
                   </div>
 
-                  <div className="content-tabs">
+                  <div className='content-tabs'>
                     <div
                       className={
                         toggleState === id
-                          ? "content  active-content"
-                          : "content"
+                          ? 'content  active-content'
+                          : 'content'
                       }
                     >
                       <h2>{title}</h2>
                       <hr />
                       <ul>
                         {serviceListContent.map((list, index) => {
-                          return <li key={index}>{list}</li>;
+                          return <li key={index}>{list}</li>
                         })}
                       </ul>
                     </div>
                   </div>
                 </div>
-              );
+              )
             })}
           </section>
-        );
+        )
       })}
     </>
-  );
+  )
 }
 
-export default Tabs;
+export default Tabs

@@ -59,3 +59,10 @@ li div {
   display: flex !important;
   justify-content: center !important;
 }
+
+/* .footer-fs {
+
+  @media only screen and (max-width: 16.875em) {
+    font-size: 0.5rem !important;
+  }
+} */

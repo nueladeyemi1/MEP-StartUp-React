@@ -4,6 +4,8 @@ import supabase from '../supabase/supabase'
 import { useImage } from '../supabase/useImage'
 import { useUpload } from '../supabase/useUpload'
 
+import './admin.css'
+
 const Admin = () => {
   const [projectName, setProjectName] = useState('')
   const [client, setClient] = useState('')
@@ -47,34 +49,47 @@ const Admin = () => {
 
   return (
     <>
-      <div className='section-center admin-section'>
+      <div className=' admin-section'>
         <form onSubmit={handleSubmit}>
           <div className='form-input-box'>
-            <label>Project Name:</label>
+            <label className='admin-label'>Project Name:</label>
             <input
+              className='admin-text-input'
               onChange={(e) => setProjectName(e.target.value)}
               type='text'
             />
           </div>
           <div className='form-input-box'>
-            <label>Client/Architect:</label>
-            <input onChange={(e) => setClient(e.target.value)} type='text' />
+            <label className='admin-label'>Client/Architect:</label>
+            <input
+              className='admin-text-input'
+              onChange={(e) => setClient(e.target.value)}
+              type='text'
+            />
           </div>
           <div className='form-input-box'>
-            <label>Services:</label>
-            <input onChange={(e) => setService(e.target.value)} type='text' />
+            <label className='admin-label'>Services:</label>
+            <input
+              className='admin-text-input'
+              onChange={(e) => setService(e.target.value)}
+              type='text'
+            />
           </div>
           <div className='form-input-box'>
-            <label>Description:</label>
+            <label className='admin-label'>Description:</label>
             <textarea
+              className='admin-textarea'
               onChange={(e) => setDescription(e.target.value)}
               type='text'
             />
           </div>
 
           <div className='form-input-box'>
-            <label>Project Status:</label>
-            <select onChange={(e) => setProjectStatus(e.target.value)}>
+            <label className='admin-label'>Project Status:</label>
+            <select
+              className='admin-select'
+              onChange={(e) => setProjectStatus(e.target.value)}
+            >
               <option>On-going</option>
               <option>Completed</option>
               <option>Commission</option>
@@ -82,11 +97,11 @@ const Admin = () => {
           </div>
 
           <div className='form-input-box'>
-            <label>Upload Image:</label>
+            <label className='admin-label'>Upload Image:</label>
             <input onChange={(e) => setImage(e.target.files[0])} type='file' />
           </div>
 
-          <button>Submit</button>
+          <button className='btn admin-btn'>Submit</button>
         </form>
       </div>
       <Footer1 />

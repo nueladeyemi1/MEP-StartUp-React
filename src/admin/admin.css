@@ -1,0 +1,65 @@
+.admin-section {
+  margin: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-label {
+  margin-bottom: 0.25rem;
+}
+
+.form-input-box {
+  margin-bottom: 1rem;
+}
+
+.admin-text-input {
+  border: 0.1px solid rgb(130, 130, 177);
+  outline: none;
+  width: 100%;
+  padding: 4px 0;
+}
+
+.admin-textarea {
+  width: 75%;
+  height: 7rem;
+  border: 0.1px solid rgb(130, 130, 177);
+  outline: none;
+}
+
+.admin-btn {
+  background-color: rgb(55, 99, 176);
+  border: none;
+  color: white;
+  border-radius: 0;
+  padding: 0.5rem 2.5rem;
+  margin-top: 0.5rem;
+}
+
+.admin-btn:hover {
+  background-color: rgb(74, 104, 157);
+  color: white;
+}
+
+.admin-select {
+  border: 0.1px solid rgb(130, 130, 177);
+  width: 57.5%;
+  padding: 4px 0;
+  outline: none;
+}
+
+/*
+Login
+*/
+
+.admin-login-header {
+  color: rgb(55, 99, 176);
+  margin-bottom: 2rem;
+}
+
+.btn-login-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -76,7 +76,9 @@ function Item(props) {
             style={{
               backgroundSize: 'cover',
               position: 'absolute',
-              backgroundPosition: 'left',
+              backgroundPosition: 'center',
+              objectFit: 'cover',
+              transition: 'all 0.6s',
               // height: '100%',
               // maxHeight: '100%',
               // minHeight: '100%',

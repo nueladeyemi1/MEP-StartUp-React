@@ -24,14 +24,13 @@ const Services = () => {
           {services.map((service) => {
             const { id, icon, title, text, list } = service
 
-
             return (
               <article className='service' key={id}>
                 <span className='icon'>{icon}</span>
                 <h4>{title}</h4>
                 <p>{text}</p>
                 <p>
-                  <ul>
+                  <ul style={{ listStyle: 'none' }}>
                     {list.map((lists, index) => (
                       <li key={index}>
                         <div>{lists}</div>

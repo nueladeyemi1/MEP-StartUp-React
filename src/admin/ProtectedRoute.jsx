@@ -7,18 +7,23 @@ import { useLogin } from '../supabase/useLogin'
 import AdminLogin from './AdminLogin'
 
 const ProtectedRoute = () => {
-  const { username, password } = useContext(Context)
+  const data = JSON.parse(localStorage.getItem('user'))
 
-  //   console.log(username, password)
+  const { role = undefined } = data?.user
+  const { isLoading } = useLogin()
+  if (role === undefined || role !== 'authenticated')
+    return window.location.replace('/adminlogin')
 
-  const { isLoading, isError, isAuthenticated, data } = useLogin({
-    email: username,
-    password: password,
-  })
+  //   console.log(data, isLoading, isAuthenticated, isError)
 
-  if (!isAuthenticated) return window.location.replace('/adminlogin')
-
-  console.log(data, isLoading, isAuthenticated, isError)
+  //   return isLoading ? (
+  //     <>
+  //       <LoadingSpinner />
+  //       <Footer1 />
+  //     </>
+  //   ) : (
+  //     <>{isAuthenticated ? <Outlet /> : <AdminLogin />}</>
+  //   )
 
   return isLoading ? (
     <>
@@ -26,7 +31,7 @@ const ProtectedRoute = () => {
       <Footer1 />
     </>
   ) : (
-    <>{isAuthenticated ? <Outlet /> : <AdminLogin />}</>
+    <Outlet />
   )
 }
 

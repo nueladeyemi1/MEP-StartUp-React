@@ -51,7 +51,7 @@ const Admin = () => {
   return (
     <>
       <div className=' admin-section'>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={() => handleSubmit}>
           <div className='form-input-box'>
             <label className='admin-label'>Project Name:</label>
             <input

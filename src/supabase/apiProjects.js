@@ -56,3 +56,18 @@ export async function uploadImage(image) {
 
   return data
 }
+
+export async function getUser({ email, password }) {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  })
+
+  if (error) {
+    console.error(error)
+    throw new Error('Project not found')
+  }
+
+  //   console.log({ email, password }, 'aaaaaaa')
+  return data
+}

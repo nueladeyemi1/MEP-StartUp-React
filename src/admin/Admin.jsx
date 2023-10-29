@@ -1,4 +1,5 @@
 import { useState } from 'react'
+// import { Outlet } from 'react-router-dom'
 import Footer1 from '../components/footer1'
 import supabase from '../supabase/supabase'
 import { useImage } from '../supabase/useImage'
@@ -57,6 +58,7 @@ const Admin = () => {
               className='admin-text-input'
               onChange={(e) => setProjectName(e.target.value)}
               type='text'
+              required
             />
           </div>
           <div className='form-input-box'>
@@ -65,6 +67,7 @@ const Admin = () => {
               className='admin-text-input'
               onChange={(e) => setClient(e.target.value)}
               type='text'
+              required
             />
           </div>
           <div className='form-input-box'>
@@ -73,6 +76,7 @@ const Admin = () => {
               className='admin-text-input'
               onChange={(e) => setService(e.target.value)}
               type='text'
+              required
             />
           </div>
           <div className='form-input-box'>
@@ -81,6 +85,7 @@ const Admin = () => {
               className='admin-textarea'
               onChange={(e) => setDescription(e.target.value)}
               type='text'
+              required
             />
           </div>
 
@@ -89,6 +94,7 @@ const Admin = () => {
             <select
               className='admin-select'
               onChange={(e) => setProjectStatus(e.target.value)}
+              required
             >
               <option>On-going</option>
               <option>Completed</option>

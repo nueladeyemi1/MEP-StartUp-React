@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Toaster } from 'react-hot-toast'
 // import { Outlet } from 'react-router-dom'
 import Footer1 from '../components/footer1'
 import supabase from '../supabase/supabase'
@@ -17,12 +18,12 @@ const Admin = () => {
 
   const { isLoading, mutate } = useUpload()
 
-  //   const { imageData } = useImage(image)
-  //   console.log(imageData, image)
+  const { mutateFile, data } = useImage()
 
-  const { publicURL } = supabase.storage
-    .from('image')
-    .getPublicUrl(`public/${image.name}`)
+  //   console.log(data.path)
+
+  // const {publicURL} = useImage
+  //   console.log(data)
 
   //   console.log({
   //     project_name: projectName,
@@ -39,19 +40,20 @@ const Admin = () => {
     services: service,
     description: description,
     project_status: projectStatus,
-    image: `https://vkcbawkttdldhnomilir.supabase.co/storage/v1/object/public/image/${image.name}`,
+    image: `https://vkcbawkttdldhnomilir.supabase.co/storage/v1/object/public/image/${data?.path}`,
   }
 
   function handleSubmit(e) {
     e.preventDefault()
     mutate(submittedData)
+    e.target.reset()
     console.log('aaaaaaaaa')
   }
 
   return (
     <>
       <div className=' admin-section'>
-        <form onSubmit={() => handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className='form-input-box'>
             <label className='admin-label'>Project Name:</label>
             <input
@@ -104,12 +106,19 @@ const Admin = () => {
 
           <div className='form-input-box'>
             <label className='admin-label'>Upload Image:</label>
-            <input onChange={(e) => setImage(e.target.files[0])} type='file' />
+            <input
+              onChange={(e) => {
+                setImage(e.target.files[0])
+                mutateFile(image)
+              }}
+              type='file'
+            />
           </div>
 
           <button className='btn admin-btn'>Submit</button>
         </form>
       </div>
+      <Toaster />
       <Footer1 />
     </>
   )

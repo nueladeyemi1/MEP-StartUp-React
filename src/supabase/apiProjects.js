@@ -1,3 +1,4 @@
+import { uuid } from 'uuidv4'
 import supabase from './supabase'
 
 export const apiProjects = async function() {
@@ -41,10 +42,14 @@ export async function uploadProject(submittedData) {
 }
 
 export async function uploadImage(image) {
-  //   console.log(submittedData)
+  //   const rand = uuid().v4
+  //   console.log('aaaaaaaaaaaaaaaaaaaa4')
+
+  //   const filename = `${uuid()}-${image.name}`
+
   const { data, error } = await supabase.storage
     .from('image')
-    .upload(`public/${image.name}`, image, {
+    .upload(`${image?.name}`, image, {
       cacheControl: '3600',
       upsert: false,
     })
@@ -54,6 +59,8 @@ export async function uploadImage(image) {
     throw new Error('Project not found')
   }
 
+  //   if (data === undefined) return
+  //   console.log(imageFile)
   return data
 }
 
@@ -70,4 +77,17 @@ export async function getUser({ email, password }) {
 
   //   console.log({ email, password }, 'aaaaaaa')
   return data
+}
+
+export async function getImage(image) {
+  const { error, publicURL } = supabase.storage
+    .from('image')
+    .getPublicUrl(`public/${image?.name}`)
+
+  if (error) {
+    console.error(error)
+    throw new Error('Image cannot be uploaded')
+  }
+
+  return publicURL
 }

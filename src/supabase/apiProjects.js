@@ -2,29 +2,47 @@ import { uuid } from 'uuidv4'
 import supabase from './supabase'
 
 export const apiProjects = async function() {
-  const { data, error } = await supabase.from('project').select('*')
+  // const { data, error } = await supabase.from('project').select('*')
+
+  const { data, error } = await supabase
+    .from('project')
+    .select('*')
+    .range(0, 9)
 
   if (error) {
-    console.error(error)
+    // console.error(error)
     throw new Error('Projects not found')
   }
 
   return data
 }
 
+// export async function getPaginate() {
+
+// const { data, error } = await supabase
+//   .from('countries')
+//   .select('name')
+//   .range(0, 1)
+// }
+
 export async function singleProject(id) {
-  console.log(id)
-  const { data: project, error } = await supabase
+  // console.log(id)
+  const { data, error } = await supabase
     .from('project')
     .select('*')
     .eq('id', id)
 
+  // const { data, error } = await supabase
+  //   .from('cities')
+  //   .select('name, country_id')
+  //   .eq('name', 'The Shire') // Correct
+
   if (error) {
-    console.error(error)
+    // console.error(error)
     throw new Error('Project not found')
   }
 
-  return project
+  return data
 }
 
 export async function uploadProject(submittedData) {
@@ -34,7 +52,7 @@ export async function uploadProject(submittedData) {
     .insert([submittedData])
     .select()
   if (error) {
-    console.error(error)
+    // console.error(error)
     throw new Error('Project not found')
   }
 
@@ -55,7 +73,7 @@ export async function uploadImage(image) {
     })
 
   if (error) {
-    console.error(error)
+    // console.error(error)
     throw new Error('Project not found')
   }
 
@@ -71,7 +89,7 @@ export async function getUser({ email, password }) {
   })
 
   if (error) {
-    console.error(error)
+    // console.error(error)
     throw new Error('Project not found')
   }
 
@@ -85,7 +103,7 @@ export async function getImage(image) {
     .getPublicUrl(`public/${image?.name}`)
 
   if (error) {
-    console.error(error)
+    // console.error(error)
     throw new Error('Image cannot be uploaded')
   }
 

@@ -8,13 +8,20 @@ import axios from 'axios'
 import './project.css'
 import { useProject } from '../supabase/useProject'
 
+const INITIAL_SIZE = 0
+const MAX_PER_PAGE = 9
+const PAGE_SIZE = 10
+
 const ProductList = () => {
   const { isLoading, data } = useProject()
   // console.log(data, 'yes')
 
+  const PAGES = Math.ceil(data?.length / 10)
+  console.log(PAGES)
+
   // const [status, setStatus] = useState('')
   // const [isLoading, setIsLoading] = useState(false)
-  const [project, setProject] = useState([])
+  // const [project, setProject] = useState([])
 
   ////
 
@@ -99,6 +106,14 @@ const ProductList = () => {
         </table>
       )}
       {/* <GridView key={project.id} products={project} /> */}
+      <div className='pagination'>
+        {/* {Array.from({ length: PAGES }, (_, index) => {
+          return <button>{index + 1}</button>
+        })} */}
+
+        <button className='btn admin-btn'>Prev</button>
+        <button className='btn admin-btn'>Next</button>
+      </div>
     </>
   )
 }

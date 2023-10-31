@@ -11,12 +11,12 @@ export function useProject() {
   return { data, isLoading }
 }
 
-export function useSingleProject(id) {
-  const { isLoading, project } = useQuery({
-    queryKey: ['projects'],
-    queryFn: singleProject(id),
-  })
+// export function useSingleProject(id) {
+//   const { isLoading, project } = useQuery({
+//     queryKey: ['projects'],
+//     queryFn: singleProject(id),
+//   })
 
-  //   console.log(data)
-  return { project, isLoading }
-}
+//   //   console.log(data)
+//   return { project, isLoading }
+// }

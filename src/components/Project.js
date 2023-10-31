@@ -20,11 +20,20 @@ const Wrapper = styled.article`
   img {
     min-height: 25vh;
     min-width: 40vh;
+    width: 100%;
+    height: 450px !important;
     display: block;
     object-fit: cover;
+    background-size: cover;
+    background-position: center;
     border-radius: var(--radius);
     transition: var(--transition);
   }
+  img:hover {
+    cursor: pointer;
+    filter: blur(90%);
+  }
+
   .link {
     position: absolute;
     top: 50%;

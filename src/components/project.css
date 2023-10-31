@@ -10,23 +10,26 @@ th {
   padding-bottom: 0.6rem;
 
   @media only screen and (max-width: 57.81em) {
-    font-size: 0.8rem;
+    font-size: 0.8rem !important;
   }
 
   @media only screen and (max-width: 28.125em) {
-    font-size: 0.6rem;
+    font-size: 0.6rem !important;
   }
 
   @media only screen and (max-width: 21.875em) {
-    font-size: 0.5rem;
+    font-size: 0.5rem !important;
   }
 
   @media only screen and (max-width: 16.875em) {
-    font-size: 0.35rem;
+    font-size: 0.35rem !important;
   }
 }
 
 .section-center-table {
+  margin-top: 4rem !important;
+  margin-bottom: 4rem !important;
+
   @media only screen and (max-width: 28.125em) {
     width: 95vw;
   }
@@ -47,7 +50,7 @@ td a:visited {
   border-radius: 0.5rem;
 
   @media only screen and (max-width: 57.81em) {
-    padding: 0.3rem 0.6rem;
+    padding: 0.3rem 0.6rem !important;
   }
   /* color: rgb(55, 99, 176) ; */
 }

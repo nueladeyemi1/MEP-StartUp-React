@@ -44,6 +44,7 @@ const AdminLogin = () => {
           <div className='form-input-box'>
             <label className='admin-label'>Username:</label>
             <input
+              disabled={isLoading}
               value={username}
               className='admin-text-input'
               onChange={(e) => setUsername(e.target.value)}
@@ -54,6 +55,7 @@ const AdminLogin = () => {
           <div className='form-input-box'>
             <label className='admin-label'>Password:</label>
             <input
+              disabled={isLoading}
               value={password}
               className='admin-text-input'
               onChange={(e) => setPassword(e.target.value)}
@@ -66,12 +68,6 @@ const AdminLogin = () => {
               Submit
             </button>
           </div>
-
-          {/* <div className='btn-login-box'>
-            <Link to='/admin' className='btn admin-btn'>
-              Login
-            </Link>
-          </div> */}
         </form>
         <Toaster />
       </div>

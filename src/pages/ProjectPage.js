@@ -11,11 +11,11 @@ const ProductsPage = () => {
     <>
       <QueryClientProvider client={queryClient}>
         {/* <PageHero title='products' /> */}
-        <Wrapper className='page'>
-          <div className='section-center section-center-table products'>
-            <ProductList />
-          </div>
-        </Wrapper>
+        {/* <Wrapper className='page'> */}
+        <div className='section-center section-center-table products'>
+          <ProductList />
+        </div>
+        {/* </Wrapper> */}
         <section>
           <Footer1 />
         </section>
@@ -24,17 +24,17 @@ const ProductsPage = () => {
   )
 }
 
-const Wrapper = styled.div`
-  .products {
-    display: grid;
-    gap: 3rem 1.5rem;
-    margin: 4rem auto;
-  }
-  @media (min-width: 768px) {
-    .products {
-      // grid-template-columns: 200px 1fr;
-    }
-  }
-`
+// const Wrapper = styled.div`
+//   .products {
+//     display: grid;
+//     gap: 3rem 1.5rem;
+//     margin: 4rem auto;
+//   }
+//   @media (min-width: 768px) {
+//     .products {
+//       // grid-template-columns: 200px 1fr;
+//     }
+//   }
+// `
 
 export default ProductsPage

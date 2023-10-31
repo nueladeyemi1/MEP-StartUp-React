@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
 import './style.css'
 import './App.scss'
 import './components/review.css'
+import './components/project.css'
 
 import About from './pages/About'
 import Home from './Home'

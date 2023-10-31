@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { Toaster } from 'react-hot-toast'
+import { toast, Toaster } from 'react-hot-toast'
 // import { Outlet } from 'react-router-dom'
 import Footer1 from '../components/footer1'
+import LoadingSpinner from '../components/LoadingSpinner'
 import supabase from '../supabase/supabase'
 import { useImage } from '../supabase/useImage'
 import { useUpload } from '../supabase/useUpload'
@@ -13,26 +14,18 @@ const Admin = () => {
   const [client, setClient] = useState('')
   const [service, setService] = useState('')
   const [description, setDescription] = useState('')
-  const [projectStatus, setProjectStatus] = useState('')
+  const [projectStatus, setProjectStatus] = useState('On-going')
   const [image, setImage] = useState('')
 
   const { isLoading, mutate } = useUpload()
 
   const { mutateFile, data } = useImage()
 
-  //   console.log(data.path)
+  async function logout() {
+    let { error } = await supabase.auth.signOut()
 
-  // const {publicURL} = useImage
-  //   console.log(data)
-
-  //   console.log({
-  //     project_name: projectName,
-  //     client,
-  //     service,
-  //     description,
-  //     projectStatus,
-  //     image,
-  //   })
+    if (error) toast.error('error, loging out. Please try again!')
+  }
 
   const submittedData = {
     project_name: projectName,
@@ -47,78 +40,99 @@ const Admin = () => {
     e.preventDefault()
     mutate(submittedData)
     e.target.reset()
-    console.log('aaaaaaaaa')
+    // console.log('aaaaaaaaa')
+  }
+
+  function handleLogout() {
+    logout()
+    localStorage.removeItem('user')
+    window.location.replace('/adminlogin')
   }
 
   return (
     <>
-      <div className=' admin-section'>
-        <form onSubmit={handleSubmit}>
-          <div className='form-input-box'>
-            <label className='admin-label'>Project Name:</label>
-            <input
-              className='admin-text-input'
-              onChange={(e) => setProjectName(e.target.value)}
-              type='text'
-              required
-            />
-          </div>
-          <div className='form-input-box'>
-            <label className='admin-label'>Client/Architect:</label>
-            <input
-              className='admin-text-input'
-              onChange={(e) => setClient(e.target.value)}
-              type='text'
-              required
-            />
-          </div>
-          <div className='form-input-box'>
-            <label className='admin-label'>Services:</label>
-            <input
-              className='admin-text-input'
-              onChange={(e) => setService(e.target.value)}
-              type='text'
-              required
-            />
-          </div>
-          <div className='form-input-box'>
-            <label className='admin-label'>Description:</label>
-            <textarea
-              className='admin-textarea'
-              onChange={(e) => setDescription(e.target.value)}
-              type='text'
-              required
-            />
-          </div>
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <>
+          <div className=' admin-section'>
+            <form onSubmit={handleSubmit}>
+              <div className='form-input-box'>
+                <label className='admin-label'>Project Name:</label>
+                <input
+                  className='admin-text-input'
+                  onChange={(e) => setProjectName(e.target.value)}
+                  type='text'
+                  required
+                />
+              </div>
+              <div className='form-input-box'>
+                <label className='admin-label'>Client/Architect:</label>
+                <input
+                  className='admin-text-input'
+                  onChange={(e) => setClient(e.target.value)}
+                  type='text'
+                  required
+                />
+              </div>
+              <div className='form-input-box'>
+                <label className='admin-label'>Services:</label>
+                <input
+                  className='admin-text-input'
+                  onChange={(e) => setService(e.target.value)}
+                  type='text'
+                  required
+                />
+              </div>
+              <div className='form-input-box'>
+                <label className='admin-label'>Description:</label>
+                <textarea
+                  className='admin-textarea'
+                  onChange={(e) => setDescription(e.target.value)}
+                  type='text'
+                  required
+                />
+              </div>
 
-          <div className='form-input-box'>
-            <label className='admin-label'>Project Status:</label>
-            <select
-              className='admin-select'
-              onChange={(e) => setProjectStatus(e.target.value)}
-              required
+              <div className='form-input-box'>
+                <label className='admin-label'>Project Status:</label>
+                <select
+                  className='admin-select'
+                  onChange={(e) => setProjectStatus(e.target.value)}
+                  required
+                >
+                  <option>On-going</option>
+                  <option>Completed</option>
+                  <option>Commission</option>
+                </select>
+              </div>
+
+              <div className='form-input-box'>
+                <label className='admin-label'>Upload Image:</label>
+                <input
+                  onChange={(e) => {
+                    setImage(e.target.files[0])
+                    mutateFile(image)
+                  }}
+                  type='file'
+                />
+              </div>
+              <div className='btn-login-box'>
+                <button className='btn admin-btn'>Submit</button>
+              </div>
+            </form>
+
+            <button
+              style={{ backgroundColor: 'red' }}
+              className='btn admin-btn admin-logout'
+              onClick={handleLogout}
             >
-              <option>On-going</option>
-              <option>Completed</option>
-              <option>Commission</option>
-            </select>
+              Logout
+            </button>
           </div>
-
-          <div className='form-input-box'>
-            <label className='admin-label'>Upload Image:</label>
-            <input
-              onChange={(e) => {
-                setImage(e.target.files[0])
-                mutateFile(image)
-              }}
-              type='file'
-            />
-          </div>
-
-          <button className='btn admin-btn'>Submit</button>
-        </form>
-      </div>
-      <Toaster />
+          <Toaster />
+        </>
+      )}
       <Footer1 />
     </>
   )

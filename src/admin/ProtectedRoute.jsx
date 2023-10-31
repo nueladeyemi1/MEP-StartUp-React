@@ -9,10 +9,13 @@ import AdminLogin from './AdminLogin'
 const ProtectedRoute = () => {
   const data = JSON.parse(localStorage.getItem('user'))
 
-  const { role = undefined } = data?.user
-  const { isLoading } = useLogin()
-  if (role === undefined || role !== 'authenticated')
-    return window.location.replace('/adminlogin')
+  if (data === undefined || !data) return window.location.replace('/adminlogin')
+
+  //   const { role = undefined } = data?.user
+  //   const { isLoading } = useLogin()
+  //   console.log(role)
+  //   if (role === undefined || role !== 'authenticated')
+  //     return window.location.replace('/adminlogin')
 
   //   console.log(data, isLoading, isAuthenticated, isError)
 
@@ -25,14 +28,7 @@ const ProtectedRoute = () => {
   //     <>{isAuthenticated ? <Outlet /> : <AdminLogin />}</>
   //   )
 
-  return isLoading ? (
-    <>
-      <LoadingSpinner />
-      <Footer1 />
-    </>
-  ) : (
-    <Outlet />
-  )
+  return <Outlet />
 }
 
 export default ProtectedRoute

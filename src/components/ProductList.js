@@ -10,7 +10,7 @@ import { useProject } from '../supabase/useProject'
 
 const ProductList = () => {
   const { isLoading, data } = useProject()
-  console.log(data, 'yes')
+  // console.log(data, 'yes')
 
   // const [status, setStatus] = useState('')
   // const [isLoading, setIsLoading] = useState(false)

@@ -31,7 +31,7 @@ th {
   margin-bottom: 4rem !important;
 
   @media only screen and (max-width: 28.125em) {
-    width: 100vw;
+    width: 95vw !important;
     /* margin-left: 2rem; */
   }
 }

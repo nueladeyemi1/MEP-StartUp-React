@@ -26,13 +26,21 @@ import { useState } from 'react'
 function Main() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [currentPage, setCurrentPage] = useState(1)
 
   const queryClient = new QueryClient()
 
   return (
     <>
       <Context.Provider
-        value={{ username, setUsername, password, setPassword }}
+        value={{
+          username,
+          setUsername,
+          password,
+          setPassword,
+          currentPage,
+          setCurrentPage,
+        }}
       >
         <QueryClientProvider client={queryClient}>
           <BrowserRouter>

@@ -7,60 +7,64 @@ import LoadingSpinner from './LoadingSpinner'
 import axios from 'axios'
 import './project.css'
 import { useProject } from '../supabase/useProject'
+import { usePaginate } from '../supabase/usePaginate'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { getPaginate } from '../supabase/apiProjects'
+import { useContext } from 'react'
+import { Context } from '../context/Context'
 
-const INITIAL_SIZE = 0
 const MAX_PER_PAGE = 9
-const PAGE_SIZE = 10
 
 const ProductList = () => {
-  const { isLoading, data } = useProject()
-  // console.log(data, 'yes')
-
-  const PAGES = Math.ceil(data?.length / 10)
-  console.log(PAGES)
-
-  // const [status, setStatus] = useState('')
-  // const [isLoading, setIsLoading] = useState(false)
-  // const [project, setProject] = useState([])
-
-  ////
-
-  // const apiCall = async function() {
-  //   try {
-  //     // setIsLoading(true)
-  //     const response = await axios.get(
-  //       'https://mep-backend2-production.up.railway.app/api/v1/list/'
-  //     )
-
-  //     const data = await response.data
-
-  //     setProject(data)
-  //     setStatus(data.status)
-  //     // setIsLoading(false)
-  //   } catch (error) {
-  //     if (status !== 200) {
-  //       return <>...Error in loading Project {error}</>
-  //     }
-  //   }
-  // }
+  const queryClient = useQueryClient()
+  const [currentPage, setCurrentPage] = useState(1)
+  // const { currentPage, setCurrentPage } = useContext(Context)
 
   // useEffect(() => {
-  //   apiCall()
-  // }, [])
+  //   queryClient.invalidateQueries({ queryKey: ['paginate'] })
+  // }, [currentPage])
 
-  ///
+  ///HANDLING PAGINATION
 
-  // if (isLoading === 'false') {
-  //   return <LoadingSpinner />
-  // } else {
-  //   return (
-  //     <h5 style={{ textTransform: 'none' }}>
-  //       Sorry, no projects available now.
-  //     </h5>
-  //   )
-  // }
+  // const { mutate, data: paginatedData, isLoading } = useMutation({
+  //   mutationKey: ['paginate'],
+  //   mutationFn: (currentStart, currentEnd) =>
+  //     getPaginate(currentStart, currentEnd),
 
-  // const { id, name, feature, client } = project[0]
+  //   onSuccess: () => queryClient.invalidateQueries(),
+  // })
+
+  // const [currentPage, setCurrentPage] = useState(1)
+  const { data, isLoading } = useProject()
+
+  const currentStart = (currentPage - 1) * MAX_PER_PAGE
+  const currentEnd = currentStart + MAX_PER_PAGE
+  const PAGES = Math.ceil(data?.length / 10)
+
+  // const { paginatedData, isLoading } = usePaginate(currentStart, currentEnd)
+
+  // const PAGES = 2
+
+  // console.log(PAGES, currentStart, currentEnd)
+
+  // useEffect(() => {
+  //   mutate(currentStart, currentEnd)
+  //   console.log(currentStart, currentEnd)
+  // }, [currentStart, currentEnd])
+
+  function handleNext() {
+    // queryClient.invalidateQueries({ queryKey: ['paginate'] })
+    if (currentPage < PAGES) setCurrentPage((page) => page + 1)
+  }
+
+  function handlePrev() {
+    // mutate(currentStart, currentEnd)
+    // queryClient.invalidateQueries({ queryKey: ['paginate'] })
+
+    if (currentPage > 1) setCurrentPage((page) => page - 1)
+  }
+
+  // console.log(isLoading, paginatedData)
 
   return (
     <>
@@ -80,7 +84,7 @@ const ProductList = () => {
             <th>PROJECT STATUS</th>
             <th>FULL DESCRIPTION</th>
           </thead>
-          {data?.map((projectData) => {
+          {data?.slice(currentStart, currentEnd)?.map((projectData) => {
             const {
               id,
               project_name,
@@ -111,8 +115,12 @@ const ProductList = () => {
           return <button>{index + 1}</button>
         })} */}
 
-        <button className='btn admin-btn'>Prev</button>
-        <button className='btn admin-btn'>Next</button>
+        <button onClick={handlePrev} className='btn admin-btn'>
+          Prev
+        </button>
+        <button onClick={handleNext} className='btn admin-btn'>
+          Next
+        </button>
       </div>
     </>
   )

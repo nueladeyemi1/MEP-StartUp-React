@@ -2,12 +2,12 @@ import { uuid } from 'uuidv4'
 import supabase from './supabase'
 
 export const apiProjects = async function() {
-  // const { data, error } = await supabase.from('project').select('*')
+  const { data, error } = await supabase.from('project').select('*')
 
-  const { data, error } = await supabase
-    .from('project')
-    .select('*')
-    .range(0, 9)
+  // const { data, error } = await supabase
+  //   .from('project')
+  //   .select('*')
+  //   .range(0, 9)
 
   if (error) {
     // console.error(error)
@@ -17,13 +17,21 @@ export const apiProjects = async function() {
   return data
 }
 
-// export async function getPaginate() {
+export async function getPaginate(currentStart, currentEnd) {
+  const { data, error } = await supabase
+    .from('project')
+    .select('*')
+    .range(currentStart, currentEnd)
 
-// const { data, error } = await supabase
-//   .from('countries')
-//   .select('name')
-//   .range(0, 1)
-// }
+  if (error) {
+    // console.error(error)
+    throw new Error('Projects not found')
+  }
+
+  // console.log(currentStart, currentEnd, data)
+
+  return data
+}
 
 export async function singleProject(id) {
   // console.log(id)
@@ -60,10 +68,29 @@ export async function uploadProject(submittedData) {
 }
 
 export async function uploadImage(image) {
-  //   const rand = uuid().v4
-  //   console.log('aaaaaaaaaaaaaaaaaaaa4')
-
+  // console.log(image)
   //   const filename = `${uuid()}-${image.name}`
+
+  // let imageFile, imageError
+
+  // for (let i = 0; i < image.length; i++) {
+  //   const { data, error } = await supabase.storage
+  //     .from('image')
+  //     .upload(`${image[i]?.name}`, image[i], {
+  //       cacheControl: '3600',
+  //       upsert: false,
+  //     })
+
+  //   console.log(data)
+
+  //   return { data, error }
+  // }
+
+  // if (imageError) {
+  //   throw new Error('Project not found')
+  // }
+
+  // return imageFile
 
   const { data, error } = await supabase.storage
     .from('image')
@@ -73,14 +100,13 @@ export async function uploadImage(image) {
     })
 
   if (error) {
-    // console.error(error)
     throw new Error('Project not found')
   }
 
-  //   if (data === undefined) return
-  //   console.log(imageFile)
   return data
 }
+
+////////
 
 export async function getUser({ email, password }) {
   const { data, error } = await supabase.auth.signInWithPassword({

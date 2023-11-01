@@ -11,7 +11,7 @@ const AdminLogin = () => {
   const { username, password, setUsername, setPassword } = useContext(Context)
   const navigate = useNavigate()
 
-  console.log(username, password)
+  // console.log(username, password)
 
   const { isLoading, isError, mutate } = useLogin()
 

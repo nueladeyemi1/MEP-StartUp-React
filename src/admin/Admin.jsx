@@ -1,3 +1,6 @@
+import { useQueryClient } from '@tanstack/react-query'
+import { useEffect } from 'react'
+import { useRef } from 'react'
 import { useState } from 'react'
 import { toast, Toaster } from 'react-hot-toast'
 // import { Outlet } from 'react-router-dom'
@@ -15,11 +18,41 @@ const Admin = () => {
   const [service, setService] = useState('')
   const [description, setDescription] = useState('')
   const [projectStatus, setProjectStatus] = useState('On-going')
-  const [image, setImage] = useState('')
+  const [image, setImage] = useState([])
+
+  // const imageRef = useRef()
+
+  const queryClient = useQueryClient()
 
   const { isLoading, mutate } = useUpload()
 
   const { mutateFile, data } = useImage()
+  // const imageCont = []
+
+  // console.log(data, image)
+
+  ////////////
+
+  // for (let i = 0; i < imageRef?.current?.files.length; i++) {
+  //   const file = imageRef?.current?.files[i]
+
+  //   const data = new FormData()
+  //   data.append('file', file)
+  //   data.append('upload_preset', 'c_tags')
+
+  //   mutateFile(data)
+
+  // const res = await fetch(`${process.env.NEXT_PUBLIC_CLOUDINARY_API}`, {
+  //   method: "POST",
+  //   body: data,
+  // });
+  // }
+
+  ///////
+
+  // console.log(image, imageContainter)
+
+  // console.log(image, image.length)
 
   async function logout() {
     let { error } = await supabase.auth.signOut()
@@ -110,9 +143,16 @@ const Admin = () => {
               <div className='form-input-box'>
                 <label className='admin-label'>Upload Image:</label>
                 <input
+                  accept='image/*'
+                  // ref={imageRef}
+                  multiple
                   onChange={(e) => {
-                    setImage(e.target.files[0])
-                    mutateFile(image)
+                    setImage(e.target.files)
+                    mutateFile(image[0])
+                    // image.map((img) => mutateFile(img))
+                    queryClient.invalidateQueries({
+                      queryKey: ['upload-image'],
+                    })
                   }}
                   type='file'
                 />

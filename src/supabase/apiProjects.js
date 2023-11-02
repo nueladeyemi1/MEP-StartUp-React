@@ -68,7 +68,6 @@ export async function uploadProject(submittedData) {
 }
 
 export async function uploadImage(image) {
-  // console.log(image)
   //   const filename = `${uuid()}-${image.name}`
 
   // let imageFile, imageError
@@ -81,7 +80,7 @@ export async function uploadImage(image) {
   //       upsert: false,
   //     })
 
-  //   console.log(data)
+  // console.log(image)
 
   //   return { data, error }
   // }

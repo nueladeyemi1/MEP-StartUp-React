@@ -13,7 +13,7 @@ import { getPaginate } from '../supabase/apiProjects'
 import { useContext } from 'react'
 import { Context } from '../context/Context'
 
-const MAX_PER_PAGE = 9
+const MAX_PER_PAGE = 10
 
 const ProductList = () => {
   const queryClient = useQueryClient()

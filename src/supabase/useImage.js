@@ -2,8 +2,6 @@ import { useMutation, useQuery } from '@tanstack/react-query'
 import { getImage, uploadImage } from './apiProjects'
 
 export function useImage() {
-  //   console.log(image)
-
   ///
 
   //   const { data } = useQuery({
@@ -14,7 +12,7 @@ export function useImage() {
   ///
 
   const { mutate: mutateFile, data } = useMutation({
-    mutationFn: (image) => uploadImage(image),
+    mutationFn: (data) => uploadImage(data),
     mutationKey: ['upload-image'],
   })
 

@@ -27,32 +27,16 @@ const Admin = () => {
   const { isLoading, mutate } = useUpload()
 
   const { mutateFile, data } = useImage()
-  // const imageCont = []
+
+  useEffect(() => {
+    mutateFile(image[0])
+
+    // image?.forEach((img) => {
+    //   mutateFile(img)
+    // })
+  }, [image])
 
   // console.log(data, image)
-
-  ////////////
-
-  // for (let i = 0; i < imageRef?.current?.files.length; i++) {
-  //   const file = imageRef?.current?.files[i]
-
-  //   const data = new FormData()
-  //   data.append('file', file)
-  //   data.append('upload_preset', 'c_tags')
-
-  //   mutateFile(data)
-
-  // const res = await fetch(`${process.env.NEXT_PUBLIC_CLOUDINARY_API}`, {
-  //   method: "POST",
-  //   body: data,
-  // });
-  // }
-
-  ///////
-
-  // console.log(image, imageContainter)
-
-  // console.log(image, image.length)
 
   async function logout() {
     let { error } = await supabase.auth.signOut()
@@ -144,15 +128,16 @@ const Admin = () => {
                 <label className='admin-label'>Upload Image:</label>
                 <input
                   accept='image/*'
-                  // ref={imageRef}
                   multiple
                   onChange={(e) => {
                     setImage(e.target.files)
-                    mutateFile(image[0])
+                    // mutateFile(image[0])
+                    // console.log(image)
+
                     // image.map((img) => mutateFile(img))
-                    queryClient.invalidateQueries({
-                      queryKey: ['upload-image'],
-                    })
+                    // queryClient.invalidateQueries({
+                    //   queryKey: ['upload-image'],
+                    // })
                   }}
                   type='file'
                 />

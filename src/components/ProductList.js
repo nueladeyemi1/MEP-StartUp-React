@@ -66,12 +66,12 @@ const ProductList = () => {
 
   // console.log(isLoading, paginatedData)
 
+  if (isLoading) return <LoadingSpinner />
+
   return (
     <>
-      {isLoading === true ? (
-        <LoadingSpinner />
-      ) : data?.length < 1 ? (
-        <h5 style={{ textTransform: 'none' }}>
+      {data?.length < 1 ? (
+        <h5 style={{ textTransform: 'none', textAlign: 'center' }}>
           Sorry, no projects available now.
         </h5>
       ) : (
@@ -110,18 +110,22 @@ const ProductList = () => {
         </table>
       )}
       {/* <GridView key={project.id} products={project} /> */}
-      <div className='pagination'>
-        {/* {Array.from({ length: PAGES }, (_, index) => {
+      {data?.length < 10 ? (
+        ''
+      ) : (
+        <div className='pagination'>
+          {/* {Array.from({ length: PAGES }, (_, index) => {
           return <button>{index + 1}</button>
         })} */}
 
-        <button onClick={handlePrev} className='btn admin-btn'>
-          Prev
-        </button>
-        <button onClick={handleNext} className='btn admin-btn'>
-          Next
-        </button>
-      </div>
+          <button onClick={handlePrev} className='btn admin-btn'>
+            Prev
+          </button>
+          <button onClick={handleNext} className='btn admin-btn'>
+            Next
+          </button>
+        </div>
+      )}
     </>
   )
 }

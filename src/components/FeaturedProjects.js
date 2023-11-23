@@ -19,12 +19,9 @@ const FeaturedProjects = () => {
   // usage:
   const randomElements = getRandomElements(data, 3)
 
-  if (isLoading) {
-    return <Loading />
-  }
-  if (isError) {
-    return <Error />
-  }
+  if (isLoading) return <Loading />
+
+  if (isError) return <Error />
 
   return (
     <Wrapper className='section'>
@@ -34,6 +31,10 @@ const FeaturedProjects = () => {
       </div>
       {isLoading ? (
         <LoadingSpinner />
+      ) : data?.length < 1 ? (
+        <div style={{ textAlign: 'center', fontSize: '1.2rem' }}>
+          Sorry, there is no project currently.
+        </div>
       ) : (
         <>
           <div className='section-center featured'>

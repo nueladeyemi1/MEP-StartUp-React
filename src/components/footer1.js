@@ -99,7 +99,7 @@ const Footer1 = () => {
               <br />
               <br />
               <EnvelopeFill className='me-2'></EnvelopeFill>
-              zicadintegrated@gmail.com <br />
+              info@zicad.com.ng <br />
               <br />
             </p>
           </div>

@@ -39,7 +39,7 @@ const FeaturedProjects = () => {
         <>
           <div className='section-center featured'>
             {// data?.slice(0, 3)
-            randomElements.map((product) => {
+            randomElements?.map((product) => {
               return <Product key={product.id} {...product} />
             })}
           </div>

@@ -43,8 +43,8 @@ export const fetchProducts = async () => {
   } catch (error) {}
 }
 
-///////////////////
-let trial
+// ///////////////////
+// let trial
 
 const ProductsContext = React.createContext()
 

@@ -1,14 +1,11 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import classNames from 'classnames'
 import { SectionTilesProps } from './SectionProps'
 import SectionHeader from './SectionHeader'
 import { serviceContents } from './ServicesContent'
-// import Image from './Image'
 import './featureTiles.css'
-import plus from '../img/plus.png'
-import minus from '../img/minus.png'
 import '../servicetabs.css'
+import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa'
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -126,9 +123,11 @@ const FeaturesTiles = ({
                                   }}
                                 >
                                   {toggleState === id ? (
-                                    <img src={minus} width='18px' />
+                                    // <img src={minus} width='18px' />
+                                    <FaMinusCircle color='white' size={18} />
                                   ) : (
-                                    <img src={plus} width='18px' />
+                                    // <img src={plus} width='18px' />
+                                    <FaPlusCircle size={18} />
                                   )}
                                 </span>
                                 <span style={{ textAlign: 'left' }}>
@@ -145,7 +144,14 @@ const FeaturesTiles = ({
                                     : 'content1'
                                 }
                               >
-                                <h4 style={{ textAlign: 'left' }}>{title}</h4>
+                                <h4
+                                  style={{
+                                    textAlign: 'left',
+                                    color: 'hsl(223, 79%, 64%)',
+                                  }}
+                                >
+                                  {title}
+                                </h4>
                                 <hr />
                                 <ul>
                                   {serviceListContent.map((list, index) => {

@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import Error from './Error'
-import Loading from './Loading'
+
 import Product from './Project'
 import { useProject } from '../supabase/useProject'
 import LoadingSpinner from './LoadingSpinner'
@@ -9,7 +8,7 @@ import LoadingSpinner from './LoadingSpinner'
 const FeaturedProjects = () => {
   const navigate = useNavigate()
 
-  const { isLoading, data, isError } = useProject()
+  const { isLoading, data } = useProject()
 
   function getRandomElements(arr, numElements) {
     const shuffledArray = arr?.sort(() => Math.random() - 0.5)
@@ -19,10 +18,6 @@ const FeaturedProjects = () => {
   // usage:
   const randomElements = getRandomElements(data, 3)
 
-  if (isLoading) return <Loading />
-
-  if (isError) return <Error />
-
   return (
     <Wrapper className='section'>
       <div className='title'>
@@ -31,9 +26,9 @@ const FeaturedProjects = () => {
       </div>
       {isLoading ? (
         <LoadingSpinner />
-      ) : data?.length < 1 ? (
+      ) : data?.length < 1 || !data ? (
         <div style={{ textAlign: 'center', fontSize: '1.2rem' }}>
-          Sorry, there is no project currently.
+          Sorry, there is an error Loading projects currently.
         </div>
       ) : (
         <>
